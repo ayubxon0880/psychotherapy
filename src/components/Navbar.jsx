@@ -1,7 +1,9 @@
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; // Hamburger va close iconlar
+import { Menu, X } from "lucide-react"; // hamburger va close icon uchun
 
 export default function Navbar() {
+    const location = useLocation();
     const [isOpen, setIsOpen] = useState(false);
 
     const menuItems = [
@@ -13,54 +15,58 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="w-full bg-white shadow-sm">
+        <nav className="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
             <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
                 {/* Logo */}
-                <div className="flex items-center space-x-2">
-                    <img
-                        src="/logo.png"
-                        alt="Logo"
-                        className="w-8 h-8"
-                    />
+                <Link to="/" className="flex items-center space-x-2">
+                    <img src="/logo.png" alt="Logo" className="w-8 h-8" />
                     <span className="text-sm font-medium leading-tight">
-                        psycho <br />
-                        therapy.uz
+                        psycho <br /> therapy.uz
                     </span>
-                </div>
+                </Link>
 
-                {/* Menu (Desktop) */}
-                <div className="hidden md:flex space-x-8">
+                {/* Desktop menu */}
+                <div className="hidden md:flex space-x-4">
                     {menuItems.map((item) => (
-                        <a
+                        <Link
                             key={item.name}
-                            href={item.href}
-                            className="text-gray-800 text-sm hover:text-gray-500 transition"
+                            to={item.href}
+                            className={`px-3 py-2 rounded-md text-sm transition ${
+                                location.pathname === item.href
+                                    ? "bg-[#d5beb0] text-black"
+                                    : "text-gray-800 hover:bg-gray-100 hover:text-gray-600"
+                            }`}
                         >
                             {item.name}
-                        </a>
+                        </Link>
                     ))}
                 </div>
 
-                {/* Mobile menu button */}
+                {/* Mobile toggle button */}
                 <button
-                    className="md:hidden p-2 rounded-md hover:bg-gray-100"
                     onClick={() => setIsOpen(!isOpen)}
+                    className="md:hidden focus:outline-none"
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
 
-            {/* Mobile menu dropdown */}
+            {/* Mobile menu */}
             {isOpen && (
-                <div className="md:hidden px-6 pb-4 space-y-2 bg-white shadow">
+                <div className="md:hidden bg-white shadow-md px-6 pb-4 space-y-2">
                     {menuItems.map((item) => (
-                        <a
+                        <Link
                             key={item.name}
-                            href={item.href}
-                            className="block text-gray-800 text-sm hover:text-gray-500 transition"
+                            to={item.href}
+                            onClick={() => setIsOpen(false)}
+                            className={`block px-3 py-2 rounded-md text-sm transition ${
+                                location.pathname === item.href
+                                    ? "bg-[#d5beb0] text-black"
+                                    : "text-gray-800 hover:bg-gray-100 hover:text-gray-600"
+                            }`}
                         >
                             {item.name}
-                        </a>
+                        </Link>
                     ))}
                 </div>
             )}

@@ -54,7 +54,6 @@ export default function Home() {
             img: "/images/spec6.png",
         },
     ];
-
     const [query, setQuery] = useState("");
 
     const suggestions = [
@@ -71,15 +70,14 @@ export default function Home() {
     ];
 
 
-
     const optionsLocation = [
-        { value: "tashkent", label: "Ташкент" },
+        {value: "tashkent", label: "Ташкент"},
     ];
 
     const optionsLanguage = [
-        { value: "uz", label: "O'zbek" },
-        { value: "ru", label: "Русский" },
-        { value: "en", label: "English" }
+        {value: "uz", label: "O'zbek"},
+        {value: "ru", label: "Русский"},
+        {value: "en", label: "English"}
     ];
 
     const [selectedOptionLocation, setSelectedOptionLocation] = useState(optionsLocation[0]);
@@ -91,34 +89,61 @@ export default function Home() {
     useEffect(() => {
         console.log(selectedOptionLocation);
         console.log(selectedOptionLanguage);
-    },[selectedOptionLocation, selectedOptionLanguage]);
-
-
+    }, [selectedOptionLocation, selectedOptionLanguage]);
 
     return (
         <div className="w-full">
-            {showOverlay && <TestOverlay onClose={() => setShowOverlay(false)} />}
+            {showOverlay && <TestOverlay onClose={() => setShowOverlay(false)}/>}
 
             <section
                 className="relative min-h-[70vh] md:min-h-screen bg-cover bg-center flex items-center px-4"
-                style={{ backgroundImage: "url('/images/bg-hero.png')" }}
+                style={{backgroundImage: "url('/images/bg-hero.png')"}}
             >
                 <div className="max-w-6xl mx-auto">
                     <div className="w-full md:w-2/3 text-white">
                         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
-                            Найдите специалиста в области психического здоровья
+                            Психологическая и психотерапевтическая помощь в Узбекистане
                         </h1>
-                        <p className="mb-6 text-base md:text-lg">
-                            На нашем сайте вы можете найти психиатра, психотерапевта, психолога или сексолога.
-                            Используйте фильтры для уточнения поиска и ознакомьтесь с отзывами о специалистах.
-                            Читайте статьи в нашем блоге и узнавайте больше о психическом здоровье.
+                        <p className="text-base md:text-lg">
+                            Psychotherapy.uz — это современная платформа для поиска психологов, психотерапевтов,
+                            сексологов и психиатров.
+                            Мы объединяем лучших специалистов страны и делаем помощь доступной: онлайн и офлайн, на
+                            русском и узбекском языках.
                         </p>
-                        <button
-                            onClick={() => setShowOverlay(true)}
-                            className="px-6 py-3 bg-[#d5beb0] hover:bg-[#a8a89e] text-black rounded-lg font-medium"
-                        >
-                            Найти специалиста
-                        </button>
+                        <p>
+                            • Сертифицированные специалисты
+                        </p>
+                        <p>
+
+                            • Онлайн и очные консультации
+                        </p>
+                        <p>
+                            • Поддержка взрослых, подростков и семей
+                        </p>
+                        <p className={"mb-6 text-base md:text-lg"}>
+                            • Конфиденциальность и безопасность
+                        </p>
+                        <div className="flex gap-4">
+                            <button
+                                onClick={() => setShowOverlay(true)}
+                                className="px-6 py-3 bg-[#d5beb0] hover:bg-[#a8a89e] text-black rounded-lg font-medium"
+                            >
+                                Найти специалиста
+                            </button>
+                            <button
+                                onClick={() => {
+                                    document.getElementById("contact")?.scrollIntoView({
+                                        behavior: "smooth"
+                                    });
+                                }}
+                                className="px-6 py-3 bg-[#d5beb0] hover:bg-[#a8a89e] text-black rounded-lg font-medium"
+                            >
+                                Записаться на консультацию
+                            </button>
+
+                        </div>
+
+
                     </div>
                 </div>
             </section>
@@ -131,15 +156,9 @@ export default function Home() {
                         {/*{["город", "офлайн", "онлайн", "язык"].map((item, i) => (*/}
                         <button
                             className="px-6 md:px-14 py-3 rounded-2xl bg-[#d5beb0] text-white hover:bg-[#7A5240] transition"
-                            onClick={() => setSearchText("офлайн")}
+                            onClick={() => setSearchText(searchText === "офлайн" ? "онлайн" : "офлайн")}
                         >
-                            офлайн
-                        </button>
-                        <button
-                            className="px-6 md:px-14 py-3 rounded-2xl bg-[#d5beb0] text-white hover:bg-[#7A5240] transition"
-                            onClick={() => setSearchText("онлайн")}
-                        >
-                            онлайн
+                            {searchText === "офлайн" ? "онлайн" : "офлайн"}
                         </button>
                         <Select
                             defaultValue={optionsLocation[0]}
@@ -171,7 +190,7 @@ export default function Home() {
                                         color: "#7A5240",
                                     },
                                 }),
-                                indicatorSeparator: () => ({ display: "none" }),
+                                indicatorSeparator: () => ({display: "none"}),
                                 menu: (provided) => ({
                                     ...provided,
                                     borderRadius: "0.75rem",
@@ -209,7 +228,7 @@ export default function Home() {
                                         color: "#7A5240",
                                     },
                                 }),
-                                indicatorSeparator: () => ({ display: "none" }),
+                                indicatorSeparator: () => ({display: "none"}),
                                 menu: (provided) => ({
                                     ...provided,
                                     borderRadius: "0.75rem",
@@ -290,13 +309,15 @@ export default function Home() {
                     <h2 className="text-2xl md:text-4xl font-bold mb-6 text-center">контактная информация</h2>
                     <div className="flex flex-col gap-4 max-w-sm mx-auto">
                         <h2 className="text-xl md:text-2xl font-bold text-center">номер телефона</h2>
-                        <a href="tel:+998909689197" className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full block text-center">
+                        <a href="tel:+998909689197"
+                           className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full block text-center">
                             Позвонить
                         </a>
 
                         <h2 className="text-xl md:text-2xl font-bold text-center">эл. почта</h2>
 
-                        <a href="mailto:admin@psychotherapy.uz" className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full break-words block text-center">
+                        <a href="mailto:admin@psychotherapy.uz"
+                           className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full break-words block text-center">
                             admin@psychotherapy.uz
                         </a>
 

@@ -2,20 +2,22 @@ import TopSpecialists from "../components/Home/TopSpecialists.jsx";
 
 const specialists = [
     {
-        name: "Али Курбанов",
-        direction: "Психотерапевт",
-        city: "Ташкент",
-        experience: "10 лет",
-        description: "тревожность, депрессия, семейные конфликты",
-        img: "/images/spec1.png",
-    },
-    {
         name: "Анна Иванова",
         direction: "Психолог",
         city: "Москва",
         experience: "7 лет",
         description: "стресс, мотивация, личностный рост",
         img: "/images/spec2.png",
+        work_format: ["online","offline"],
+    },
+    {
+        name: "Али Курбанов",
+        direction: "Психотерапевт",
+        city: "Ташкент",
+        experience: "10 лет",
+        description: "тревожность, депрессия, семейные конфликты",
+        img: "/images/spec1.png",
+        work_format: ["online"]
     },
     {
         name: "Иван Петров",
@@ -24,6 +26,7 @@ const specialists = [
         experience: "12 лет",
         description: "кризисные состояния, психосоматика",
         img: "/images/spec3.png",
+        work_format: ["online"]
     },
     {
         name: "Иван Петров",
@@ -32,6 +35,8 @@ const specialists = [
         experience: "12 лет",
         description: "кризисные состояния, психосоматика",
         img: "/images/spec4.png",
+        work_format: ["online"]
+
     },
     {
         name: "Иван Петров",
@@ -40,6 +45,7 @@ const specialists = [
         experience: "12 лет",
         description: "кризисные состояния, психосоматика",
         img: "/images/spec5.png",
+        work_format: ["online"]
     },
     {
         name: "Иван Петров",
@@ -48,6 +54,7 @@ const specialists = [
         experience: "12 лет",
         description: "кризисные состояния, психосоматика",
         img: "/images/spec6.png",
+        work_format: ["online"]
     },
 ];
 
@@ -107,39 +114,6 @@ export default function Specialist() {
                     <p className="text-gray-700 text-lg sm:text-xl mt-4">
                         Напишите нам — обсудим детали!
                     </p>
-                </div>
-            </section>
-
-            {/* Форма */}
-            <section className="max-w-3xl mx-auto space-y-4">
-                <h2 className="font-semibold mb-4 text-center">
-                    Добавить себя или стать партнером
-                </h2>
-
-                <div className="flex flex-col md:flex-row gap-4">
-                    {/* Textarea */}
-                    <textarea
-                        placeholder="О себе..."
-                        className="w-full md:w-1/2 border rounded-lg p-3 focus:outline-none"
-                        rows={6}
-                    />
-
-                    {/* Inputs */}
-                    <div className="flex flex-col gap-4 w-full md:w-1/2">
-                        <input
-                            type="text"
-                            placeholder="Ф.И.О"
-                            className="w-full border rounded-lg p-3 focus:outline-none"
-                        />
-                        <input
-                            type="tel"
-                            placeholder="Номер телефона"
-                            className="w-full border rounded-lg p-3 focus:outline-none"
-                        />
-                        <button className="w-full bg-[#d5beb0] text-white py-2 rounded-lg hover:bg-[#3c2d28]">
-                            отправить
-                        </button>
-                    </div>
                 </div>
             </section>
         </div>
