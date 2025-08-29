@@ -1,62 +1,6 @@
 import TopSpecialists from "../components/Home/TopSpecialists.jsx";
+import {specialists} from "./SpecialistsData.jsx";
 
-const specialists = [
-    {
-        name: "Анна Иванова",
-        direction: "Психолог",
-        city: "Москва",
-        experience: "7 лет",
-        description: "стресс, мотивация, личностный рост",
-        img: "/images/spec2.png",
-        work_format: ["online","offline"],
-    },
-    {
-        name: "Али Курбанов",
-        direction: "Психотерапевт",
-        city: "Ташкент",
-        experience: "10 лет",
-        description: "тревожность, депрессия, семейные конфликты",
-        img: "/images/spec1.png",
-        work_format: ["online"]
-    },
-    {
-        name: "Иван Петров",
-        direction: "Клинический психолог",
-        city: "Санкт-Петербург",
-        experience: "12 лет",
-        description: "кризисные состояния, психосоматика",
-        img: "/images/spec3.png",
-        work_format: ["online"]
-    },
-    {
-        name: "Иван Петров",
-        direction: "Клинический психолог",
-        city: "Санкт-Петербург",
-        experience: "12 лет",
-        description: "кризисные состояния, психосоматика",
-        img: "/images/spec4.png",
-        work_format: ["online"]
-
-    },
-    {
-        name: "Иван Петров",
-        direction: "Клинический психолог",
-        city: "Санкт-Петербург",
-        experience: "12 лет",
-        description: "кризисные состояния, психосоматика",
-        img: "/images/spec5.png",
-        work_format: ["online"]
-    },
-    {
-        name: "Иван Петров",
-        direction: "Клинический психолог",
-        city: "Санкт-Петербург",
-        experience: "12 лет",
-        description: "кризисные состояния, психосоматика",
-        img: "/images/spec6.png",
-        work_format: ["online"]
-    },
-];
 
 export default function Specialist() {
     return (

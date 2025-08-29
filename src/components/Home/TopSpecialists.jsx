@@ -1,31 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import {specialists} from "../../pages/SpecialistsData.jsx";
 
-const specialists = [
-    {
-        name: "Али Курбанов",
-        direction: "Психотерапевт",
-        city: "Ташкент",
-        experience: "10 лет",
-        specialization: "тревожность, депрессия, семейные конфликты",
-        img: "/images/doctor.png",
-    },
-    {
-        name: "Анна Иванова",
-        direction: "Психолог",
-        city: "Москва",
-        experience: "7 лет",
-        specialization: "стресс, мотивация, личностный рост",
-        img: "/images/doctor.png",
-    },
-    {
-        name: "Иван Петров",
-        direction: "Клинический психолог",
-        city: "Санкт-Петербург",
-        experience: "12 лет",
-        specialization: "кризисные состояния, психосоматика",
-        img: "/images/doctor.png",
-    },
-];
 
 function TopSpecialists() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -141,13 +116,14 @@ function TopSpecialists() {
                         ›
                     </button>
 
-                    {/* Book button */}
-                    <button
-                        className="mt-5 bg-[#d5beb0] text-white px-6 py-2 rounded-lg hover:bg-[#3c2d28] transition w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-[#4B3A34]"
+                    <a
+                        href={`https://t.me/psychotherapy_consultant_bot?start=${current.telegram_id}`}
+                        className="mt-5 bg-[#d5beb0] text-white px-6 py-2 rounded-lg hover:bg-[#3c2d28] transition w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-[#4B3A34] text-center inline-block"
                         aria-label={`Записаться к ${current.name}`}
                     >
                         Записаться
-                    </button>
+                    </a>
+
                 </div>
             </div>
 
