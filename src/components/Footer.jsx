@@ -26,7 +26,7 @@ export default function Footer() {
                 <div>
                     <h3 className="font-semibold mb-3">Контакты</h3>
                     <p className="text-sm text-gray-300">📍 Ташкент, Узбекистан</p>
-                    <p className="text-sm text-gray-300">📞 +998 90 968 91 97</p>
+                    <p className="text-sm text-gray-300">📞 +998 77 378 63 67</p>
                     <p className="text-sm text-gray-300">✉ admin@psychoterapy.uz</p>
 
                     <div className="flex space-x-4 mt-3">
@@ -39,7 +39,7 @@ export default function Footer() {
                             <Instagram size={18} />
                         </a>
                         <a
-                            href="https://t.me/aalmv"
+                            href="https://t.me/psychotherapyuz"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition"

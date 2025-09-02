@@ -3,58 +3,9 @@ import {useEffect, useState} from "react";
 import Select from "react-select";
 import TestOverlay from "../components/Home/TestOverlay.jsx";
 import { Analytics } from "@vercel/analytics/react";
+import {specialists} from "../data/specialists.js";
 
 export default function Home() {
-    const specialists = [
-        {
-            name: "Али Курбанов",
-            direction: "Психотерапевт",
-            city: "Ташкент",
-            experience: "10 лет",
-            description: "тревожность, депрессия, семейные конфликты",
-            img: "/images/spec1.png",
-        },
-        {
-            name: "Анна Иванова",
-            direction: "Психолог",
-            city: "Москва",
-            experience: "7 лет",
-            description: "стресс, мотивация, личностный рост",
-            img: "/images/spec2.png",
-        },
-        {
-            name: "Иван Петров",
-            direction: "Клинический психолог",
-            city: "Санкт-Петербург",
-            experience: "12 лет",
-            description: "кризисные состояния, психосоматика",
-            img: "/images/spec3.png",
-        },
-        {
-            name: "Иван Петров",
-            direction: "Клинический психолог",
-            city: "Санкт-Петербург",
-            experience: "12 лет",
-            description: "кризисные состояния, психосоматика",
-            img: "/images/spec4.png",
-        },
-        {
-            name: "Иван Петров",
-            direction: "Клинический психолог",
-            city: "Санкт-Петербург",
-            experience: "12 лет",
-            description: "кризисные состояния, психосоматика",
-            img: "/images/spec5.png",
-        },
-        {
-            name: "Иван Петров",
-            direction: "Клинический психолог",
-            city: "Санкт-Петербург",
-            experience: "12 лет",
-            description: "кризисные состояния, психосоматика",
-            img: "/images/spec6.png",
-        },
-    ];
     const [query, setQuery] = useState("");
 
     const suggestions = [
@@ -106,25 +57,6 @@ export default function Home() {
                         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
                             Психологическая и психотерапевтическая помощь в Узбекистане
                         </h1>
-                        <p className="text-base md:text-lg">
-                            Psychotherapy.uz — это современная платформа для поиска психологов, психотерапевтов,
-                            сексологов и психиатров.
-                            Мы объединяем лучших специалистов страны и делаем помощь доступной: онлайн и офлайн, на
-                            русском и узбекском языках.
-                        </p>
-                        <p>
-                            • Сертифицированные специалисты
-                        </p>
-                        <p>
-
-                            • Онлайн и очные консультации
-                        </p>
-                        <p>
-                            • Поддержка взрослых, подростков и семей
-                        </p>
-                        <p className={"mb-6 text-base md:text-lg"}>
-                            • Конфиденциальность и безопасность
-                        </p>
                         <div className="flex gap-4">
                             <button
                                 onClick={() => setShowOverlay(true)}
@@ -155,7 +87,6 @@ export default function Home() {
                     <h2 className="text-center text-2xl md:text-3xl font-bold mb-4">Быстрый поиск</h2>
 
                     <div className="flex flex-wrap gap-3 justify-center mb-6">
-                        {/*{["город", "офлайн", "онлайн", "язык"].map((item, i) => (*/}
                         <button
                             className="px-6 md:px-14 py-3 rounded-2xl bg-[#d5beb0] text-white hover:bg-[#7A5240] transition"
                             onClick={() => setSearchText(searchText === "офлайн" ? "онлайн" : "офлайн")}
@@ -305,13 +236,12 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* CONTACT */}
             <section className="py-12 md:py-16">
                 <div className="max-w-6xl mx-auto px-4">
                     <h2 className="text-2xl md:text-4xl font-bold mb-6 text-center">контактная информация</h2>
                     <div className="flex flex-col gap-4 max-w-sm mx-auto">
                         <h2 className="text-xl md:text-2xl font-bold text-center">номер телефона</h2>
-                        <a href="tel:+998909689197"
+                        <a href="tel:+998773786367"
                            className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full block text-center">
                             Позвонить
                         </a>
@@ -327,7 +257,6 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* MAP */}
             <section className="h-64 md:h-96 flex justify-center my-14 px-4">
                 <div className="w-full md:w-2/3 h-full rounded-2xl overflow-hidden shadow-lg">
                     <iframe

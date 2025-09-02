@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import {specialists} from "../../pages/SpecialistsData.jsx";
+import {specialists} from "../../data/specialists.js";
 
 
 function TopSpecialists() {
@@ -66,7 +66,6 @@ function TopSpecialists() {
             </h1>
 
             <div className="bg-[#F6F3F0] rounded-3xl p-4 sm:p-6 flex flex-col md:flex-row items-center md:space-x-6 relative w-full shadow-sm">
-                {/* Navigation buttons */}
                 <button
                     onClick={handlePrev}
                     className="absolute left-2 md:left-[-20px] top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border flex items-center justify-center bg-white hover:bg-gray-200 transition focus:outline-none focus:ring-2 focus:ring-[#4B3A34]"
@@ -75,7 +74,6 @@ function TopSpecialists() {
                     ‹
                 </button>
 
-                {/* Image */}
                 <img
                     src={current.img}
                     alt={`Портрет ${current.name}`}
