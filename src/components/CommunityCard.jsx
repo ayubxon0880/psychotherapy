@@ -24,9 +24,9 @@ export default function CommunityCard({ com }) {
                         </ul>
                     </div>
                 </div>
-                <button className="mt-4 bg-[#d5beb0] text-white px-5 py-2 rounded-lg hover:bg-[#5A3620] transition self-start">
+                <a href={"/womantalk"} className="mt-4 bg-[#d5beb0] text-white px-5 py-2 rounded-lg hover:bg-[#5A3620] transition self-start">
                     Вступить
-                </button>
+                </a>
             </div>
         </div>
     );
