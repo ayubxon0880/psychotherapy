@@ -3,16 +3,12 @@ import {
     Search,
     ChevronRight,
     ChevronLeft,
-    Send,
-    Instagram,
-    Youtube,
-    Globe,
 } from "lucide-react";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import {topClinics, womenTalkCommunityClinic} from "../data/topClinics.js";
+import {topClinics} from "../data/topClinics.js";
 
 export default function Clinics() {
     const [search, setSearch] = useState("");
@@ -114,79 +110,79 @@ export default function Clinics() {
                 </div>
             </div>
 
-            <div className="mt-12 bg-white rounded-3xl p-6 border border-gray-200 shadow-sm">
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-                    <img
-                        src="/images/women-talk-1.png"
-                        alt={womenTalkCommunityClinic.community.name}
-                        className="w-40 h-40 object-contain rounded-xl"
-                    />
-                    <div className="flex-1">
-                        <a href={"/womantalk"}>
-                            <h2 className="text-2xl font-bold mb-3">
-                                {womenTalkCommunityClinic.community.name}
-                            </h2>
-                        </a>
-                        <ul className="space-y-2 text-gray-700">
-                            <li>
-                                <span className="font-semibold">Формат:</span>{" "}
-                                {womenTalkCommunityClinic.community.format}
-                            </li>
-                            <li>
-                                <span className="font-semibold">Город:</span>{" "}
-                                {womenTalkCommunityClinic.community.city}
-                            </li>
-                            <li>
-                                <span className="font-semibold">Миссия:</span>{" "}
-                                {womenTalkCommunityClinic.community.mission}
-                            </li>
-                            <li>
-                                <span className="font-semibold">Частота встреч:</span>{" "}
-                                {womenTalkCommunityClinic.community.meeting_frequency}
-                            </li>
-                        </ul>
+            {/*<div className="mt-12 bg-white rounded-3xl p-6 border border-gray-200 shadow-sm">*/}
+            {/*    <div className="flex flex-col md:flex-row items-center md:items-start gap-6">*/}
+            {/*        <img*/}
+            {/*            src="/images/women-talk-1.png"*/}
+            {/*            alt={womenTalkCommunityClinic.community.name}*/}
+            {/*            className="w-40 h-40 object-contain rounded-xl"*/}
+            {/*        />*/}
+            {/*        <div className="flex-1">*/}
+            {/*            <a href={"/womantalk"}>*/}
+            {/*                <h2 className="text-2xl font-bold mb-3">*/}
+            {/*                    {womenTalkCommunityClinic.community.name}*/}
+            {/*                </h2>*/}
+            {/*            </a>*/}
+            {/*            <ul className="space-y-2 text-gray-700">*/}
+            {/*                <li>*/}
+            {/*                    <span className="font-semibold">Формат:</span>{" "}*/}
+            {/*                    {womenTalkCommunityClinic.community.format}*/}
+            {/*                </li>*/}
+            {/*                <li>*/}
+            {/*                    <span className="font-semibold">Город:</span>{" "}*/}
+            {/*                    {womenTalkCommunityClinic.community.city}*/}
+            {/*                </li>*/}
+            {/*                <li>*/}
+            {/*                    <span className="font-semibold">Миссия:</span>{" "}*/}
+            {/*                    {womenTalkCommunityClinic.community.mission}*/}
+            {/*                </li>*/}
+            {/*                <li>*/}
+            {/*                    <span className="font-semibold">Частота встреч:</span>{" "}*/}
+            {/*                    {womenTalkCommunityClinic.community.meeting_frequency}*/}
+            {/*                </li>*/}
+            {/*            </ul>*/}
 
-                        <div className="flex gap-4 mt-4">
-                            <a
-                                href={womenTalkCommunityClinic.community.contacts.telegram}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-gray-600 hover:text-blue-500 transition"
-                            >
-                                <Send className="w-6 h-6"/>
-                            </a>
-                            <a
-                                href={womenTalkCommunityClinic.community.contacts.instagram}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-gray-600 hover:text-pink-500 transition"
-                            >
-                                <Instagram className="w-6 h-6"/>
-                            </a>
-                            <a
-                                href={womenTalkCommunityClinic.community.contacts.youtube}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-gray-600 hover:text-red-500 transition"
-                            >
-                                <Youtube className="w-6 h-6"/>
-                            </a>
-                            <a
-                                href={womenTalkCommunityClinic.community.contacts.website}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-gray-600 hover:text-green-600 transition"
-                            >
-                                <Globe className="w-6 h-6"/>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            {/*            <div className="flex gap-4 mt-4">*/}
+            {/*                <a*/}
+            {/*                    href={womenTalkCommunityClinic.community.contacts.telegram}*/}
+            {/*                    target="_blank"*/}
+            {/*                    rel="noreferrer"*/}
+            {/*                    className="text-gray-600 hover:text-blue-500 transition"*/}
+            {/*                >*/}
+            {/*                    <Send className="w-6 h-6"/>*/}
+            {/*                </a>*/}
+            {/*                <a*/}
+            {/*                    href={womenTalkCommunityClinic.community.contacts.instagram}*/}
+            {/*                    target="_blank"*/}
+            {/*                    rel="noreferrer"*/}
+            {/*                    className="text-gray-600 hover:text-pink-500 transition"*/}
+            {/*                >*/}
+            {/*                    <Instagram className="w-6 h-6"/>*/}
+            {/*                </a>*/}
+            {/*                <a*/}
+            {/*                    href={womenTalkCommunityClinic.community.contacts.youtube}*/}
+            {/*                    target="_blank"*/}
+            {/*                    rel="noreferrer"*/}
+            {/*                    className="text-gray-600 hover:text-red-500 transition"*/}
+            {/*                >*/}
+            {/*                    <Youtube className="w-6 h-6"/>*/}
+            {/*                </a>*/}
+            {/*                <a*/}
+            {/*                    href={womenTalkCommunityClinic.community.contacts.website}*/}
+            {/*                    target="_blank"*/}
+            {/*                    rel="noreferrer"*/}
+            {/*                    className="text-gray-600 hover:text-green-600 transition"*/}
+            {/*                >*/}
+            {/*                    <Globe className="w-6 h-6"/>*/}
+            {/*                </a>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
+            {/*https://docs.google.com/forms/d/e/1FAIpQLSeKO5WhYjwjGYy6TH3MwBE0Hiard_x5OceuBTHpv-Uajp-7gQ/viewform?usp=dialog*/}
             <div className="text-center mt-10">
                 <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSeGMB1RbJQ8p167GbciAGEfPm9IgeDKJQWgxuDSlddSNmzO8A/viewform?usp=dialog"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSe9iVzU6_Lt2hpoO5m2bFcToienSdbnsiWhlxI-1UFoZX6UrQ/viewform?usp=dialog"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-block px-6 py-3 bg-[#d5beb0] hover:bg-[#a8a89e] text-black rounded-lg font-medium"

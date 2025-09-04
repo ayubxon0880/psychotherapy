@@ -27,6 +27,18 @@ export default function Specialist() {
             </section>
 
             <section>
+                <div className="text-center mt-10">
+                    <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSeGMB1RbJQ8p167GbciAGEfPm9IgeDKJQWgxuDSlddSNmzO8A/viewform?usp=dialog"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-block px-6 py-3 bg-[#d5beb0] hover:bg-[#a8a89e] text-black rounded-lg font-medium"
+                    >
+                        Заполнить анкету
+                    </a>
+                </div>
+                <br/>
+                <br/>
                 <h2 className="font-semibold mb-4 text-center">Фильтр специалистов</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <select
@@ -64,7 +76,6 @@ export default function Specialist() {
                 </div>
             </section>
 
-            {/* RESULTS */}
             <section>
                 <h2 className="font-semibold mb-4">Результаты поиска</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
