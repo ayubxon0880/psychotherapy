@@ -1,0 +1,90 @@
+{
+  "navbar": {
+    "home": "Bosh sahifa",
+    "clinics": "Klinika",
+    "specialists": "Mutaxassislar",
+    "community": "Hamjamiyat",
+    "about": "Biz haqimizda"
+  },
+  "home-page": {
+    "home": "Bosh sahifa",
+    "clinics": "Klinika",
+    "specialists": "Mutaxassislar",
+    "community": "Hamjamiyat",
+    "about": "Biz haqimizda",
+    "hero": {
+      "title": "O‘zbekistonda psixologik va psixoterapevtik yordam",
+      "findSpecialist": "Mutaxassis topish",
+      "bookConsultation": "Konsultatsiyaga yozilish"
+    },
+    "search": {
+      "title": "Tezkor qidiruv",
+      "onlineOffline": "onlayn / oflayn",
+      "inputPlaceholder": "seksolog Evgeniy",
+      "describeState": "Holatingizni tasvirlab bering",
+      "describePlaceholder": "Munozaralar va munosabat muammolari",
+      "frequentRequests": "ko‘p uchraydigan so‘rovlar",
+      "bestSpecialists": "Haftaning eng yaxshi mutaxassislari"
+    },
+    "suggestions": [
+      "Tashvish",
+      "Depressiya",
+      "Panik hujumlar",
+      "Qo‘rquv va fobiyalar",
+      "Munosabat muammolari",
+      "Charchash (burnout)",
+      "O‘z-o‘zini baholash",
+      "Jinsiy hayot muammolari",
+      "Bolalikdagi travmalar",
+      "Haddan tashqari tajovuzkorlik va jahldorlik"
+    ],
+    "contact": {
+      "title": "Aloqa ma’lumotlari",
+      "phone": "telefon raqami",
+      "call": "Qo‘ng‘iroq qilish",
+      "email": "elektron pochta"
+    },
+    "map": "Biz xaritada"
+  },
+  "clinics": {
+    "searchPlaceholder": "Klinika qidirish...",
+    "top3": "Top 3 klinikalar",
+    "direction": "Yo‘nalishi",
+    "main": "Asosiy",
+    "address": "Manzil",
+    "phone": "Telefon",
+    "website": "Sayt",
+    "fillForm": "Anketani to‘ldirish"
+  },
+  "about-page": {
+    "title": "Psychotherapy.uz loyihasi haqida",
+    "description": "Biz ushbu platformani ruhiy salomatlik mutaxassislari va yordamga muhtoj odamlarni birlashtirish uchun yaratdik. Bizning maqsadimiz – psixoterapevtik yordamni O‘zbekistonda va undan tashqarida hamma uchun ochiq qilish.",
+    "valuesTitle": "Bizning qadriyatlarimiz",
+    "values": [
+      "Mutaxassislarning professionalligi",
+      "Maxfiylik va hurmat",
+      "Onlayn va oflayn mavjudlik",
+      "Hamjamiyat rivoji va ma’rifat"
+    ],
+    "articlesTitle": "📌 Maqolalar",
+    "articlesText": "Bu yerda siz loyihaning tarixini, asoschilar bilan intervyularni, shuningdek, bizning falsafamiz va missiyamizni topasiz: 'Nega biz Psychotherapy.uz ni yaratdik'.",
+    "cta": "Qabulga yozilish"
+  },
+  "footer": {
+    "brand": "Psixoterapiya",
+    "description": "Biz odamlarning ruhiy salomatligini asrashlariga va malakali mutaxassislarni topishlariga yordam beramiz.",
+    "navigation": "Navigatsiya",
+    "links": {
+      "home": "Bosh sahifa",
+      "clinics": "Klinikalar",
+      "specialists": "Mutaxassislar",
+      "community": "Jamiyat",
+      "about": "Biz haqimizda"
+    },
+    "contacts": "Aloqa",
+    "address": "Toshkent, O‘zbekiston",
+    "phone": "+998 77 378 63 67",
+    "email": "admin@psychotherapy.uz",
+    "rights": "Barcha huquqlar himoyalangan."
+  }
+}

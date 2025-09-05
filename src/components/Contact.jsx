@@ -13,7 +13,6 @@ export default function Contact() {
             </h2>
 
             <div className="flex flex-col md:flex-row gap-4">
-                {/* Textarea */}
                 <textarea
                     placeholder="О себе..."
                     value={about}
@@ -22,7 +21,6 @@ export default function Contact() {
                     rows={6}
                 />
 
-                {/* Inputs */}
                 <div className="flex flex-col gap-4 w-full md:w-1/2">
                     <input
                         type="text"

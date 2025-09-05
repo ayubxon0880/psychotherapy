@@ -1,0 +1,90 @@
+{
+  "navbar": {
+    "home": "Home",
+    "clinics": "Clinics",
+    "specialists": "Specialists",
+    "community": "Community",
+    "about": "About Us"
+  },
+  "home-page": {
+    "home": "Home",
+    "clinics": "Clinics",
+    "specialists": "Specialists",
+    "community": "Community",
+    "about": "About us",
+    "hero": {
+      "title": "Psychological and psychotherapeutic help in Uzbekistan",
+      "findSpecialist": "Find a specialist",
+      "bookConsultation": "Book a consultation"
+    },
+    "search": {
+      "title": "Quick search",
+      "onlineOffline": "online / offline",
+      "inputPlaceholder": "sexologist Eugene",
+      "describeState": "Describe your condition",
+      "describePlaceholder": "Relationship problems",
+      "frequentRequests": "frequent requests",
+      "bestSpecialists": "Best specialists of the week"
+    },
+    "suggestions": [
+      "Anxiety",
+      "Depression",
+      "Panic attacks",
+      "Fears and phobias",
+      "Relationship problems",
+      "Burnout",
+      "Self-esteem",
+      "Sexual life issues",
+      "Childhood trauma",
+      "Aggression and irritability"
+    ],
+    "contact": {
+      "title": "Contact information",
+      "phone": "phone number",
+      "call": "Call",
+      "email": "email"
+    },
+    "map": "We are on the map"
+  },
+  "clinics": {
+    "searchPlaceholder": "Search clinic...",
+    "top3": "Top 3 clinics",
+    "direction": "Direction",
+    "main": "Main",
+    "address": "Address",
+    "phone": "Phone",
+    "website": "Website",
+    "fillForm": "Fill out the form"
+  },
+  "about": {
+    "title": "About Psychotherapy.uz",
+    "description": "We created this platform to connect mental health professionals and people who need support. Our mission is to make psychotherapeutic help accessible in Uzbekistan and beyond.",
+    "valuesTitle": "Our values",
+    "values": [
+      "Professionalism of specialists",
+      "Confidentiality and respect",
+      "Accessibility online and offline",
+      "Community development and education"
+    ],
+    "articlesTitle": "📌 Articles",
+    "articlesText": "Here you will find the story of the project, interviews with the founders, as well as our philosophy and mission: 'Why we created Psychotherapy.uz'.",
+    "cta": "Book an appointment"
+  },
+  "footer": {
+    "brand": "Psychotherapy",
+    "description": "We help people take care of their mental health and find qualified specialists.",
+    "navigation": "Navigation",
+    "links": {
+      "home": "Home",
+      "clinics": "Clinics",
+      "specialists": "Specialists",
+      "community": "Community",
+      "about": "About us"
+    },
+    "contacts": "Contacts",
+    "address": "Tashkent, Uzbekistan",
+    "phone": "+998 77 378 63 67",
+    "email": "admin@psychotherapy.uz",
+    "rights": "All rights reserved."
+  }
+}

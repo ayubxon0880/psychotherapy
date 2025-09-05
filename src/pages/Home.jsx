@@ -1,35 +1,26 @@
-import {Search} from "lucide-react";
-import {useEffect, useState} from "react";
+import { Search } from "lucide-react";
+import { useState } from "react";
 import Select from "react-select";
 import TestOverlay from "../components/Home/TestOverlay.jsx";
 import { Analytics } from "@vercel/analytics/react";
-import {specialists} from "../data/specialists.js";
+import { specialists } from "../data/specialists.js";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+    const { t } = useTranslation();
+
     const [query, setQuery] = useState("");
 
-    const suggestions = [
-        "Тревога",
-        "Депрессия",
-        "Панические атаки",
-        "Страхи и фобии",
-        "Проблемы в отношениях",
-        "Выгорание",
-        "Самооценка",
-        "Проблемы с сексуальной жизнью",
-        "Детские травмы",
-        "Агрессия и раздражительность",
-    ];
-
+    const suggestions = t("home-page.suggestions", { returnObjects: true });
 
     const optionsLocation = [
-        {value: "tashkent", label: "Ташкент"},
+        { value: "tashkent", label: "Ташкент" },
     ];
 
     const optionsLanguage = [
-        {value: "uz", label: "O'zbek"},
-        {value: "ru", label: "Русский"},
-        {value: "en", label: "English"}
+        { value: "uz", label: "O'zbek" },
+        { value: "ru", label: "Русский" },
+        { value: "en", label: "English" },
     ];
 
     const [selectedOptionLocation, setSelectedOptionLocation] = useState(optionsLocation[0]);
@@ -38,169 +29,99 @@ export default function Home() {
     const [searchText, setSearchText] = useState("");
     const [showOverlay, setShowOverlay] = useState(false);
 
-    useEffect(() => {
-        console.log(selectedOptionLocation);
-        console.log(selectedOptionLanguage);
-    }, [selectedOptionLocation, selectedOptionLanguage]);
-
     return (
         <div className="w-full">
-            <Analytics/>
-            {showOverlay && <TestOverlay onClose={() => setShowOverlay(false)}/>}
+            <Analytics />
+            {showOverlay && <TestOverlay onClose={() => setShowOverlay(false)} />}
 
             <section
                 className="relative min-h-[70vh] md:min-h-screen bg-cover bg-center flex items-center px-4"
-                style={{backgroundImage: "url('/images/bg-hero.png')"}}
+                style={{ backgroundImage: "url('/images/bg-hero.png')" }}
             >
                 <div className="max-w-6xl mx-auto">
                     <div className="w-full md:w-2/3 text-white">
                         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
-                            Психологическая и психотерапевтическая помощь в Узбекистане
+                            {t("home-page.hero.title")}
                         </h1>
                         <div className="flex gap-4">
                             <button
                                 onClick={() => setShowOverlay(true)}
                                 className="px-6 py-3 bg-[#d5beb0] hover:bg-[#a8a89e] text-black rounded-lg font-medium"
                             >
-                                Найти специалиста
+                                {t("home-page.hero.findSpecialist")}
                             </button>
                             <button
                                 onClick={() => {
                                     document.getElementById("contact")?.scrollIntoView({
-                                        behavior: "smooth"
+                                        behavior: "smooth",
                                     });
                                 }}
                                 className="px-6 py-3 bg-[#d5beb0] hover:bg-[#a8a89e] text-black rounded-lg font-medium"
                             >
-                                Записаться на консультацию
+                                {t("home-page.hero.bookConsultation")}
                             </button>
-
                         </div>
-
-
                     </div>
                 </div>
             </section>
 
             <section className="py-12 md:py-16" id="search">
                 <div className="max-w-6xl mx-auto px-4">
-                    <h2 className="text-center text-2xl md:text-3xl font-bold mb-4">Быстрый поиск</h2>
+                    <h2 className="text-center text-2xl md:text-3xl font-bold mb-4">
+                        {t("home-page.search.title")}
+                    </h2>
 
                     <div className="flex flex-wrap gap-3 justify-center mb-6">
                         <button
                             className="px-6 md:px-14 py-3 rounded-2xl bg-[#d5beb0] text-white hover:bg-[#7A5240] transition"
                             onClick={() => setSearchText(searchText === "офлайн" ? "онлайн" : "офлайн")}
                         >
-                            {searchText === "офлайн" ? "онлайн" : "офлайн"}
+                            {t("home-page.search.onlineOffline")}
                         </button>
                         <Select
                             defaultValue={optionsLocation[0]}
                             onChange={(val) => setSelectedOptionLocation(val)}
                             options={optionsLocation}
-                            styles={{
-                                control: (provided, state) => ({
-                                    ...provided,
-                                    backgroundColor: "#d5beb0",
-                                    borderRadius: "1rem", // rounded-2xl
-                                    padding: "0.25rem 0.5rem", // py-3 px-6 ga moslashtirilgan
-                                    border: "none",
-                                    minHeight: "48px", // py-3'ga mos keladi
-                                    boxShadow: state.isFocused ? "0 0 0 2px #7A5240" : "none",
-                                    "&:hover": {
-                                        backgroundColor: "#7A5240",
-                                        color: "#fff",
-                                    },
-                                }),
-                                singleValue: (provided) => ({
-                                    ...provided,
-                                    color: "#fff",
-                                    fontWeight: "500",
-                                }),
-                                dropdownIndicator: (provided) => ({
-                                    ...provided,
-                                    color: "#7A5240",
-                                    "&:hover": {
-                                        color: "#7A5240",
-                                    },
-                                }),
-                                indicatorSeparator: () => ({display: "none"}),
-                                menu: (provided) => ({
-                                    ...provided,
-                                    borderRadius: "0.75rem",
-                                    overflow: "hidden",
-                                }),
-                            }}
                         />
                         <Select
                             defaultValue={optionsLanguage[0]}
                             onChange={(val) => setSelectedOptionLanguage(val)}
                             options={optionsLanguage}
-                            styles={{
-                                control: (provided, state) => ({
-                                    ...provided,
-                                    backgroundColor: "#d5beb0",
-                                    borderRadius: "1rem", // rounded-2xl
-                                    padding: "0.25rem 0.5rem", // py-3 px-6 ga moslashtirilgan
-                                    border: "none",
-                                    minHeight: "48px", // py-3'ga mos keladi
-                                    boxShadow: state.isFocused ? "0 0 0 2px #7A5240" : "none",
-                                    "&:hover": {
-                                        backgroundColor: "#7A5240",
-                                        color: "#fff",
-                                    },
-                                }),
-                                singleValue: (provided) => ({
-                                    ...provided,
-                                    color: "#fff",
-                                    fontWeight: "500",
-                                }),
-                                dropdownIndicator: (provided) => ({
-                                    ...provided,
-                                    color: "#7A5240",
-                                    "&:hover": {
-                                        color: "#7A5240",
-                                    },
-                                }),
-                                indicatorSeparator: () => ({display: "none"}),
-                                menu: (provided) => ({
-                                    ...provided,
-                                    borderRadius: "0.75rem",
-                                    overflow: "hidden",
-                                }),
-                            }}
                         />
                     </div>
 
                     <div className="flex items-center border rounded-lg overflow-hidden mb-8 mx-auto">
                         <input
                             type="text"
-                            placeholder="сексолог Евгений"
+                            placeholder={t("home-page.search.inputPlaceholder")}
                             className="flex-1 p-3 outline-none"
                             value={searchText}
                             onChange={(e) => setSearchText(e.target.value)}
                         />
                         <div className="p-3 text-gray-500">
-                            <Search size={20}/>
+                            <Search size={20} />
                         </div>
                     </div>
 
-                    <h3 className="text-center text-2xl md:text-3xl font-bold mb-4">Опишите ваше состояние</h3>
+                    <h3 className="text-center text-2xl md:text-3xl font-bold mb-4">
+                        {t("home-page.search.describeState")}
+                    </h3>
                     <div className="flex border rounded-lg overflow-hidden max-w-xl mx-auto">
                         <input
                             type="text"
-                            placeholder="Проблемы в отношениях"
+                            placeholder={t("home-page.search.describePlaceholder")}
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
                             className="flex-1 p-3 outline-none"
                         />
                         <div className="p-3 text-gray-500">
-                            <Search size={20}/>
+                            <Search size={20} />
                         </div>
                     </div>
 
-                    <h4 className="text-lg font-bold mt-8 mb-4">частые запросы</h4>
+                    <h4 className="text-lg font-bold mt-8 mb-4">{t("home-page.search.frequentRequests")}</h4>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mb-12">
-                        {suggestions.map((item, i) => (
+                        {suggestions && suggestions.map((item, i) => (
                             <li
                                 key={i}
                                 className="cursor-pointer px-3 py-2 border rounded-lg hover:bg-gray-100"
@@ -211,7 +132,9 @@ export default function Home() {
                         ))}
                     </ul>
 
-                    <h4 className="text-lg font-semibold mb-6 text-center">Лучшие специалисты недели</h4>
+                    <h4 className="text-lg font-semibold mb-6 text-center">
+                        {t("home-page.search.bestSpecialists")}
+                    </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {specialists.map((spec, i) => (
                             <div
@@ -223,8 +146,7 @@ export default function Home() {
                                     alt={spec.name}
                                     className="w-full h-72 md:h-96 object-cover"
                                 />
-                                <div
-                                    className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                                     <div className="text-white">
                                         <p className="text-lg font-bold">{spec.name}</p>
                                         <p className="text-sm">{spec.description}</p>
@@ -236,23 +158,27 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="py-12 md:py-16">
+            <section className="py-12 md:py-16" id="contact">
                 <div className="max-w-6xl mx-auto px-4">
-                    <h2 className="text-2xl md:text-4xl font-bold mb-6 text-center">контактная информация</h2>
+                    <h2 className="text-2xl md:text-4xl font-bold mb-6 text-center">
+                        {t("home-page.contact.title")}
+                    </h2>
                     <div className="flex flex-col gap-4 max-w-sm mx-auto">
-                        <h2 className="text-xl md:text-2xl font-bold text-center">номер телефона</h2>
-                        <a href="tel:+998773786367"
-                           className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full block text-center">
-                            Позвонить
+                        <h2 className="text-xl md:text-2xl font-bold text-center">{t("home-page.contact.phone")}</h2>
+                        <a
+                            href="tel:+998773786367"
+                            className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full block text-center"
+                        >
+                            {t("home-page.contact.call")}
                         </a>
 
-                        <h2 className="text-xl md:text-2xl font-bold text-center">эл. почта</h2>
-
-                        <a href="mailto:admin@psychotherapy.uz"
-                           className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full break-words block text-center">
+                        <h2 className="text-xl md:text-2xl font-bold text-center">{t("home-page.contact.email")}</h2>
+                        <a
+                            href="mailto:admin@psychotherapy.uz"
+                            className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full break-words block text-center"
+                        >
                             admin@psychotherapy.uz
                         </a>
-
                     </div>
                 </div>
             </section>
