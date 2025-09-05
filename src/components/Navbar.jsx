@@ -1,12 +1,13 @@
-import {Link, useLocation} from "react-router-dom";
-import {useState} from "react";
-import {Menu, X} from "lucide-react"; // hamburger va close icon
-import {useTranslation} from "react-i18next";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
     const location = useLocation();
+    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
-    const {t, i18n} = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const menuItems = [
         { key: "navbar.home", href: "/" },
@@ -21,6 +22,13 @@ export default function Navbar() {
         localStorage.setItem("i18nextLng", lng);
     };
 
+    const handleSelectNavigate = (e) => {
+        const value = e.target.value;
+        if (value) {
+            window.open(value, "_blank");
+        }
+    };
+
     return (
         <nav className="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
             <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
@@ -31,6 +39,17 @@ export default function Navbar() {
                         psycho <br/> therapy.uz
                     </span>
                 </Link>
+
+                <select
+                    onChange={handleSelectNavigate}
+                    className="ml-4 px-2 py-1 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#d5beb0]"
+                    defaultValue=""
+                >
+                    <option value="" disabled>{t("navbar.join")}</option>
+                    <option value="https://docs.google.com/forms/d/e/1FAIpQLSe9iVzU6_Lt2hpoO5m2bFcToienSdbnsiWhlxI-1UFoZX6UrQ/viewform?usp=dialog">{t("navbar.join-clinic")}</option>
+                    <option value="https://docs.google.com/forms/d/e/1FAIpQLSeKO5WhYjwjGYy6TH3MwBE0Hiard_x5OceuBTHpv-Uajp-7gQ/viewform?usp=dialog">{t("navbar.join-specialist")}</option>
+                    <option value="https://docs.google.com/forms/d/e/1FAIpQLSeGMB1RbJQ8p167GbciAGEfPm9IgeDKJQWgxuDSlddSNmzO8A/viewform?usp=dialog">{t("navbar.join-community")}</option>
+                </select>
 
                 {/* Desktop menu */}
                 <div className="hidden md:flex items-center space-x-4">
@@ -48,19 +67,19 @@ export default function Navbar() {
                         </Link>
                     ))}
 
-                    {/* Language Switcher (select) */}
+                    {/* Language Switcher */}
                     <select
                         onChange={(e) => changeLanguage(e.target.value)}
                         value={i18n.language}
                         className="ml-4 px-2 py-1 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#d5beb0]"
                     >
-                        <option value="uz">🇺🇿 Uzbek</option>
-                        <option value="en">🇬🇧 English</option>
-                        <option value="ru">🇷🇺 Русский</option>
+                        <option value="uz">Uzbek</option>
+                        <option value="en">English</option>
+                        <option value="ru">Русский</option>
                     </select>
                 </div>
 
-                {/* Mobile toggle button */}
+                {/* Mobile button */}
                 <button
                     onClick={() => setIsOpen(!isOpen)}
                     className="md:hidden focus:outline-none"
@@ -87,7 +106,7 @@ export default function Navbar() {
                         </Link>
                     ))}
 
-                    {/* Language Switcher (mobile select) */}
+                    {/* Language Switcher (mobile) */}
                     <select
                         onChange={(e) => {
                             changeLanguage(e.target.value);

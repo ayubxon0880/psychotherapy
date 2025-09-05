@@ -4,7 +4,11 @@
     "clinics": "Klinika",
     "specialists": "Mutaxassislar",
     "community": "Hamjamiyat",
-    "about": "Biz haqimizda"
+    "about": "Biz haqimizda",
+    "join": "Bizga qo'shiling",
+    "join-clinic": "Klinika",
+    "join-specialist": "Mutaxassis",
+    "join-community": "Hamjamiyat"
   },
   "home-page": {
     "home": "Bosh sahifa",
@@ -65,7 +69,7 @@
     "readMore": "Davomini o‘qish →"
   },
   "specialist": {
-    "fillForm": "Anketani to‘ldirish",
+    "fillForm": "Bizga qo'shiling",
     "filterTitle": "Mutaxassislarni filtrlash",
     "city": "Shahar",
     "format": "Format",
@@ -99,7 +103,6 @@
     "main": "Asosiy yo‘nalishlar",
     "join": "Qo‘shilish"
   },
-
   "about-page": {
     "title": "Psychotherapy.uz loyihasi haqida",
     "description": "Biz ushbu platformani ruhiy salomatlik mutaxassislari va yordamga muhtoj odamlarni birlashtirish uchun yaratdik. Bizning maqsadimiz – psixoterapevtik yordamni O‘zbekistonda va undan tashqarida hamma uchun ochiq qilish.",

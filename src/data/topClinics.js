@@ -13,7 +13,7 @@ export const topClinics = [
             phone: "+998 90 123 45 67",
             website: "https://balance.uz",
         },
-        image: "/images/doctor.png",
+        image: "/images/clinic.png",
     },
     {
         id: 2,

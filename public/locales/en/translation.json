@@ -4,7 +4,11 @@
     "clinics": "Clinics",
     "specialists": "Specialists",
     "community": "Community",
-    "about": "About Us"
+    "about": "About Us",
+    "join": "Join us",
+    "join-clinic": "Clinic",
+    "join-specialist": "Specialist",
+    "join-community": "Community"
   },
   "home-page": {
     "home": "Home",
@@ -65,7 +69,7 @@
     "readMore": "Read more →"
   },
   "specialist": {
-    "fillForm": "Fill out the form",
+    "fillForm": "Join us",
     "filterTitle": "Specialist filter",
     "city": "City",
     "format": "Format",
@@ -99,7 +103,6 @@
     "main": "Main focus",
     "join": "Join"
   },
-
   "about-page": {
     "title": "About Psychotherapy.uz",
     "description": "We created this platform to connect mental health professionals and people who need support. Our mission is to make psychotherapeutic help accessible in Uzbekistan and beyond.",
