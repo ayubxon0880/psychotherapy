@@ -7,7 +7,6 @@ import Community from "./pages/Community.jsx";
 import Specialist from "./pages/Specialist.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Contact from "./components/Contact.jsx";
-import WomanTalk from "./pages/WomanTalk.jsx";
 
 export default function App() {
     return (
@@ -20,7 +19,6 @@ export default function App() {
                     <Route path="/clinics" element={<Clinics/>}/>
                     <Route path="/community" element={<Community/>}/>
                     <Route path="/specialists" element={<Specialist/>}/>
-                    <Route path="/womantalk" element={<WomanTalk/>}/>
                 </Routes>
             </div>
 

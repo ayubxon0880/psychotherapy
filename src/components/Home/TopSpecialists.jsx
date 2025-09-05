@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import {specialists} from "../../data/specialists.js";
-
+import { specialists } from "../../data/specialists.js";
+import { useTranslation } from "react-i18next";
 
 function TopSpecialists() {
+    const { t } = useTranslation();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const [touchStart, setTouchStart] = useState(null);
@@ -62,21 +63,21 @@ function TopSpecialists() {
             onTouchMove={handleTouchMove}
         >
             <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-center">
-                Топ 3 <span className="font-normal">специалиста недели</span>
+                {t("topSpecialists.title")}
             </h1>
 
             <div className="bg-[#F6F3F0] rounded-3xl p-4 sm:p-6 flex flex-col md:flex-row items-center md:space-x-6 relative w-full shadow-sm">
                 <button
                     onClick={handlePrev}
                     className="absolute left-2 md:left-[-20px] top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border flex items-center justify-center bg-white hover:bg-gray-200 transition focus:outline-none focus:ring-2 focus:ring-[#4B3A34]"
-                    aria-label="Предыдущий специалист"
+                    aria-label={t("topSpecialists.prev")}
                 >
                     ‹
                 </button>
 
                 <img
                     src={current.img}
-                    alt={`Портрет ${current.name}`}
+                    alt={current.name}
                     className="w-full md:w-1/2 max-h-[600px] object-cover rounded-2xl select-none"
                     onError={(e) => (e.currentTarget.src = "/images/fallback.png")}
                 />
@@ -87,20 +88,20 @@ function TopSpecialists() {
 
                     <div className="space-y-2 text-sm sm:text-base">
                         <div>
-                            <p className="text-gray-400">Направление</p>
+                            <p className="text-gray-400">{t("topSpecialists.direction")}</p>
                             <p className="text-gray-900 font-medium">{current.direction}</p>
                         </div>
                         <div>
-                            <p className="text-gray-400 mt-2">Город</p>
+                            <p className="text-gray-400 mt-2">{t("topSpecialists.city")}</p>
                             <p className="text-gray-900 font-medium">{current.city}</p>
                         </div>
                         <div>
-                            <p className="text-gray-400 mt-2">Опыт</p>
+                            <p className="text-gray-400 mt-2">{t("topSpecialists.experience")}</p>
                             <p className="text-gray-900 font-medium">{current.experience}</p>
                         </div>
                         <div>
                             <p className="mt-3 text-gray-900 leading-snug">
-                                Специализация: {current.specialization}
+                                {t("topSpecialists.specialization")}: {current.specialization}
                             </p>
                         </div>
                     </div>
@@ -109,7 +110,7 @@ function TopSpecialists() {
                     <button
                         onClick={handleNext}
                         className="absolute right-2 md:right-[-20px] top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border flex items-center justify-center bg-white hover:bg-gray-200 transition focus:outline-none focus:ring-2 focus:ring-[#4B3A34]"
-                        aria-label="Следующий специалист"
+                        aria-label={t("topSpecialists.next")}
                     >
                         ›
                     </button>
@@ -117,11 +118,10 @@ function TopSpecialists() {
                     <a
                         href={`https://t.me/psychotherapy_consultant_bot?start=${current.telegram_id}`}
                         className="mt-5 bg-[#d5beb0] text-white px-6 py-2 rounded-lg hover:bg-[#3c2d28] transition w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-[#4B3A34] text-center inline-block"
-                        aria-label={`Записаться к ${current.name}`}
+                        aria-label={`${t("topSpecialists.book")} ${current.name}`}
                     >
-                        Записаться
+                        {t("topSpecialists.book")}
                     </a>
-
                 </div>
             </div>
 
@@ -134,7 +134,7 @@ function TopSpecialists() {
                         className={`w-2 h-2 rounded-full ${
                             index === currentIndex ? "bg-[#4B3A34]" : "bg-gray-300"
                         } hover:bg-[#4B3A34]/70 transition focus:outline-none focus:ring-2 focus:ring-[#4B3A34]`}
-                        aria-label={`Перейти к специалисту ${index + 1}`}
+                        aria-label={`Go to specialist ${index + 1}`}
                     />
                 ))}
             </div>

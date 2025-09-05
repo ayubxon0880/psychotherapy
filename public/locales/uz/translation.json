@@ -54,8 +54,52 @@
     "address": "Manzil",
     "phone": "Telefon",
     "website": "Sayt",
-    "fillForm": "Anketani to‘ldirish"
+    "fillForm": "Bizga qo'shiling"
   },
+  "community": {
+    "addCommunity": "Qo‘shilish",
+    "searchPlaceholder": "Hamjamiyat qidirish...",
+    "ourCommunities": "Bizning hamjamiyatlarimiz",
+    "notFound": "Hamjamiyatlar topilmadi",
+    "articlesNews": "Maqolalar va yangiliklar",
+    "readMore": "Davomini o‘qish →"
+  },
+  "specialist": {
+    "fillForm": "Anketani to‘ldirish",
+    "filterTitle": "Mutaxassislarni filtrlash",
+    "city": "Shahar",
+    "format": "Format",
+    "direction": "Yo‘nalish",
+    "searchResults": "Qidiruv natijalari",
+    "notFound": "Hech narsa topilmadi 😔",
+    "inviteText1": "Psixologlar, psixoterapevtlar, psixiatrlar va tashkilotlarni hamkorlikka taklif qilamiz. Ishlash uchun qulay platforma, targ‘ibot va qo‘llab-quvvatlashni taklif etamiz.",
+    "inviteText2": "Bizga yozing — tafsilotlarni muhokama qilamiz!"
+  },
+  "topSpecialists": {
+    "title": "Haftaning Top 3 mutaxassisi",
+    "direction": "Yo‘nalish",
+    "city": "Shahar",
+    "experience": "Tajriba",
+    "specialization": "Mutaxassislik",
+    "prev": "Oldingi mutaxassis",
+    "next": "Keyingi mutaxassis",
+    "book": "Qabulga yozilish"
+  },
+  "contact": {
+    "title": "O‘zingizni qo‘shing yoki hamkor bo‘ling",
+    "aboutPlaceholder": "O‘zingiz haqingizda...",
+    "fioPlaceholder": "F.I.O",
+    "phonePlaceholder": "Telefon raqami",
+    "send": "Yuborish",
+    "sending": "Yuborilmoqda..."
+  },
+  "communityCard": {
+    "city": "Shahar",
+    "format": "Format",
+    "main": "Asosiy yo‘nalishlar",
+    "join": "Qo‘shilish"
+  },
+
   "about-page": {
     "title": "Psychotherapy.uz loyihasi haqida",
     "description": "Biz ushbu platformani ruhiy salomatlik mutaxassislari va yordamga muhtoj odamlarni birlashtirish uchun yaratdik. Bizning maqsadimiz – psixoterapevtik yordamni O‘zbekistonda va undan tashqarida hamma uchun ochiq qilish.",

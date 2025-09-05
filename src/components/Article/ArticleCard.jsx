@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export default function ArticleCard({ article }) {
+    const { t } = useTranslation();
+
     return (
         <div className="bg-white rounded-xl shadow-md border p-5 hover:shadow-lg transition">
             <h3 className="text-lg font-semibold mb-2">{article.title}</h3>
@@ -7,7 +11,7 @@ export default function ArticleCard({ article }) {
                 href={article.link}
                 className="text-[#5A3620] text-sm font-medium hover:underline"
             >
-                Читать →
+                {t("community.readMore")}
             </a>
         </div>
     );

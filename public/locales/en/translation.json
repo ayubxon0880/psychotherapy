@@ -54,9 +54,53 @@
     "address": "Address",
     "phone": "Phone",
     "website": "Website",
-    "fillForm": "Fill out the form"
+    "fillForm": "Join us"
   },
-  "about": {
+  "community": {
+    "addCommunity": "Join",
+    "searchPlaceholder": "Search community...",
+    "ourCommunities": "Our communities",
+    "notFound": "No communities found",
+    "articlesNews": "Articles & News",
+    "readMore": "Read more →"
+  },
+  "specialist": {
+    "fillForm": "Fill out the form",
+    "filterTitle": "Specialist filter",
+    "city": "City",
+    "format": "Format",
+    "direction": "Direction",
+    "searchResults": "Search results",
+    "notFound": "Nothing found 😔",
+    "inviteText1": "We invite psychologists, psychotherapists, psychiatrists, and organizations to collaborate. We offer a convenient platform for work, promotion, and support.",
+    "inviteText2": "Write to us — let's discuss the details!"
+  },
+  "topSpecialists": {
+    "title": "Top 3 specialists of the week",
+    "direction": "Direction",
+    "city": "City",
+    "experience": "Experience",
+    "specialization": "Specialization",
+    "prev": "Previous specialist",
+    "next": "Next specialist",
+    "book": "Book an appointment"
+  },
+  "contact": {
+    "title": "Add yourself or become a partner",
+    "aboutPlaceholder": "About yourself...",
+    "fioPlaceholder": "Full name",
+    "phonePlaceholder": "Phone number",
+    "send": "Send",
+    "sending": "Sending..."
+  },
+  "communityCard": {
+    "city": "City",
+    "format": "Format",
+    "main": "Main focus",
+    "join": "Join"
+  },
+
+  "about-page": {
     "title": "About Psychotherapy.uz",
     "description": "We created this platform to connect mental health professionals and people who need support. Our mission is to make psychotherapeutic help accessible in Uzbekistan and beyond.",
     "valuesTitle": "Our values",

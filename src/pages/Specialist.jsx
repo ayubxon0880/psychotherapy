@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { specialists } from "../data/specialists.js";
 import TopSpecialists from "../components/Home/TopSpecialists.jsx";
+import { useTranslation } from "react-i18next";
 
 export default function Specialist() {
+    const { t } = useTranslation();
     const [filters, setFilters] = useState({
         city: "",
         workFormat: "",
@@ -34,19 +36,19 @@ export default function Specialist() {
                         rel="noreferrer"
                         className="inline-block px-6 py-3 bg-[#d5beb0] hover:bg-[#a8a89e] text-black rounded-lg font-medium"
                     >
-                        Заполнить анкету
+                        {t("specialist.fillForm")}
                     </a>
                 </div>
-                <br/>
-                <br/>
-                <h2 className="font-semibold mb-4 text-center">Фильтр специалистов</h2>
+                <br />
+                <br />
+                <h2 className="font-semibold mb-4 text-center">{t("specialist.filterTitle")}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <select
                         className="border p-2 rounded"
                         value={filters.city}
                         onChange={(e) => setFilters({ ...filters, city: e.target.value })}
                     >
-                        <option value="">Город</option>
+                        <option value="">{t("specialist.city")}</option>
                         {uniqueCities.map((city) => (
                             <option key={city} value={city}>{city}</option>
                         ))}
@@ -57,7 +59,7 @@ export default function Specialist() {
                         value={filters.workFormat}
                         onChange={(e) => setFilters({ ...filters, workFormat: e.target.value })}
                     >
-                        <option value="">Формат</option>
+                        <option value="">{t("specialist.format")}</option>
                         {uniqueFormats.map((f) => (
                             <option key={f} value={f}>{f}</option>
                         ))}
@@ -68,7 +70,7 @@ export default function Specialist() {
                         value={filters.direction}
                         onChange={(e) => setFilters({ ...filters, direction: e.target.value })}
                     >
-                        <option value="">Направление</option>
+                        <option value="">{t("specialist.direction")}</option>
                         {uniqueDirections.map((d) => (
                             <option key={d} value={d}>{d}</option>
                         ))}
@@ -77,7 +79,7 @@ export default function Specialist() {
             </section>
 
             <section>
-                <h2 className="font-semibold mb-4">Результаты поиска</h2>
+                <h2 className="font-semibold mb-4">{t("specialist.searchResults")}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredSpecialists.map((spec, i) => (
                         <div
@@ -100,15 +102,15 @@ export default function Specialist() {
                 </div>
 
                 {filteredSpecialists.length === 0 && (
-                    <p className="text-center text-gray-500 mt-6">Ничего не найдено 😔</p>
+                    <p className="text-center text-gray-500 mt-6">{t("specialist.notFound")}</p>
                 )}
 
                 <div className="p-4">
                     <p className="text-gray-700 text-lg sm:text-xl">
-                        Приглашаем к сотрудничеству психологов, психотерапевтов, психиатров и организации. Предлагаем удобную платформу для работы, продвижение и поддержку.
+                        {t("specialist.inviteText1")}
                     </p>
                     <p className="text-gray-700 text-lg sm:text-xl mt-4">
-                        Напишите нам — обсудим детали!
+                        {t("specialist.inviteText2")}
                     </p>
                 </div>
             </section>
