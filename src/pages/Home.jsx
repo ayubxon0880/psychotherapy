@@ -1,5 +1,5 @@
 import {Search} from "lucide-react";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import Select from "react-select";
 import TestOverlay from "../components/Home/TestOverlay.jsx";
 import {Analytics} from "@vercel/analytics/react";
