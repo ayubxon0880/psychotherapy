@@ -24,10 +24,11 @@
     "search": {
       "title": "Quick search",
       "onlineOffline": "online / offline",
+      "optionsLocation": "Tashkent",
       "inputPlaceholder": "sexologist Eugene",
       "describeState": "Describe your condition",
       "describePlaceholder": "Relationship problems",
-      "frequentRequests": "frequent requests",
+      "frequentRequests": "Frequent requests",
       "bestSpecialists": "Best specialists of the week"
     },
     "suggestions": [

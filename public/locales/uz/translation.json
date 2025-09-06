@@ -24,10 +24,11 @@
     "search": {
       "title": "Tezkor qidiruv",
       "onlineOffline": "onlayn / oflayn",
+      "optionsLocation": "Toshkent",
       "inputPlaceholder": "seksolog Evgeniy",
       "describeState": "Holatingizni tasvirlab bering",
       "describePlaceholder": "Munozaralar va munosabat muammolari",
-      "frequentRequests": "ko‘p uchraydigan so‘rovlar",
+      "frequentRequests": "Ko‘p uchraydigan so‘rovlar",
       "bestSpecialists": "Haftaning eng yaxshi mutaxassislari"
     },
     "suggestions": [

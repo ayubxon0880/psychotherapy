@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -34,50 +34,59 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
                 {/* Logo */}
                 <Link to="/" className="flex items-center space-x-2">
-                    <img src="/logo.png" alt="Logo" className="w-8 h-8"/>
+                    <img src="/logo.png" alt="Logo" className="w-8 h-8" />
                     <span className="text-sm font-medium leading-tight">
-                        psycho <br/> therapy.uz
-                    </span>
+            psycho <br /> therapy.uz
+          </span>
                 </Link>
 
-                {/* Desktop menu */}
-                <div className="hidden md:flex items-center space-x-4">
-                    {menuItems.map((item) => (
-                        <Link
-                            key={item.key}
-                            to={item.href}
-                            className={`px-3 py-2 rounded-md text-sm transition ${
-                                location.pathname === item.href
-                                    ? "bg-[#d5beb0] text-black"
-                                    : "text-gray-800 hover:bg-gray-100 hover:text-gray-600"
-                            }`}
+                {/* Right side: desktop menu, language selector (always visible), and mobile menu button */}
+                <div className="flex items-center space-x-3">
+                    {/* Desktop menu */}
+                    <div className="hidden md:flex items-center space-x-4">
+                        {menuItems.map((item) => (
+                            <Link
+                                key={item.key}
+                                to={item.href}
+                                className={`px-3 py-2 rounded-md text-sm transition ${
+                                    location.pathname === item.href
+                                        ? "bg-[#d5beb0] text-black"
+                                        : "text-gray-800 hover:bg-gray-100 hover:text-gray-600"
+                                }`}
+                            >
+                                {t(item.key)}
+                            </Link>
+                        ))}
+                    </div>
+
+                    <div className="flex items-center">
+                        <label htmlFor="language-select" className="sr-only">
+                            {t("navbar.change_language") || "Change language"}
+                        </label>
+                        <select
+                            id="language-select"
+                            onChange={(e) => changeLanguage(e.target.value)}
+                            value={i18n.language}
+                            className="px-2 py-1 border rounded text-xs md:text-sm focus:outline-none focus:ring-2 focus:ring-[#d5beb0] appearance-none"
                         >
-                            {t(item.key)}
-                        </Link>
-                    ))}
+                            <option value="uz">Uzbek</option>
+                            <option value="en">English</option>
+                            <option value="ru">Russian</option>
+                        </select>
+                    </div>
 
-                    {/* Language Switcher */}
-                    <select
-                        onChange={(e) => changeLanguage(e.target.value)}
-                        value={i18n.language}
-                        className="ml-4 px-2 py-1 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#d5beb0]"
+                    {/* Mobile menu button */}
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="md:hidden focus:outline-none"
+                        aria-label={isOpen ? "Close menu" : "Open menu"}
                     >
-                        <option value="uz">Uzbek</option>
-                        <option value="en">English</option>
-                        <option value="ru">Русский</option>
-                    </select>
+                        {isOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
                 </div>
-
-                {/* Mobile button */}
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="md:hidden focus:outline-none"
-                >
-                    {isOpen ? <X size={24}/> : <Menu size={24}/>}
-                </button>
             </div>
 
-            {/* Mobile menu */}
+            {/* Mobile dropdown menu — note: language selector is intentionally NOT duplicated here, because it's already visible in the top bar */}
             {isOpen && (
                 <div className="md:hidden bg-white shadow-md px-6 pb-4 space-y-2">
                     {menuItems.map((item) => (
@@ -94,20 +103,6 @@ export default function Navbar() {
                             {t(item.key)}
                         </Link>
                     ))}
-
-                    {/* Language Switcher (mobile) */}
-                    <select
-                        onChange={(e) => {
-                            changeLanguage(e.target.value);
-                            setIsOpen(false);
-                        }}
-                        value={i18n.language}
-                        className="w-full mt-4 px-2 py-2 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#d5beb0]"
-                    >
-                        <option value="uz">Uz</option>
-                        <option value="en">En</option>
-                        <option value="ru">Ru</option>
-                    </select>
                 </div>
             )}
         </nav>

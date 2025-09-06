@@ -1,42 +1,46 @@
-import { Search } from "lucide-react";
-import { useState } from "react";
+import {Search} from "lucide-react";
+import {useEffect, useState} from "react";
 import Select from "react-select";
 import TestOverlay from "../components/Home/TestOverlay.jsx";
-import { Analytics } from "@vercel/analytics/react";
-import { specialists } from "../data/specialists.js";
-import { useTranslation } from "react-i18next";
+import {Analytics} from "@vercel/analytics/react";
+import {specialists} from "../data/specialists.js";
+import {useTranslation} from "react-i18next";
 
 export default function Home() {
-    const { t } = useTranslation();
+    const {t, i18n} = useTranslation();
 
     const [query, setQuery] = useState("");
+    const [onlineOffline, setOnlineOffline] = useState(0);
 
-    const suggestions = t("home-page.suggestions", { returnObjects: true });
+    const suggestions = t("home-page.suggestions", {returnObjects: true});
 
     const optionsLocation = [
-        { value: "tashkent", label: "Ташкент" },
+        {value: "tashkent", label: t("home-page.search.optionsLocation")},
     ];
 
     const optionsLanguage = [
-        { value: "uz", label: "O'zbek" },
-        { value: "ru", label: "Русский" },
-        { value: "en", label: "English" },
+        {value: "uz", label: "O'zbek"},
+        {value: "ru", label: "Русский"},
+        {value: "en", label: "English"},
     ];
 
     const [selectedOptionLocation, setSelectedOptionLocation] = useState(optionsLocation[0]);
     const [selectedOptionLanguage, setSelectedOptionLanguage] = useState(optionsLanguage[0]);
 
     const [searchText, setSearchText] = useState("");
+
     const [showOverlay, setShowOverlay] = useState(false);
+
+    const [showRequests, setShowRequests] = useState(false);
 
     return (
         <div className="w-full">
-            <Analytics />
-            {showOverlay && <TestOverlay onClose={() => setShowOverlay(false)} />}
+            <Analytics/>
+            {showOverlay && <TestOverlay onClose={() => setShowOverlay(false)}/>}
 
             <section
                 className="relative min-h-[70vh] md:min-h-screen bg-cover bg-center flex items-center px-4"
-                style={{ backgroundImage: "url('/images/bg-hero.png')" }}
+                style={{backgroundImage: "url('/images/bg-hero.png')"}}
             >
                 <div className="max-w-6xl mx-auto">
                     <div className="w-full md:w-2/3 text-white">
@@ -73,10 +77,13 @@ export default function Home() {
 
                     <div className="flex flex-wrap gap-3 justify-center mb-6">
                         <button
-                            className="px-6 md:px-14 py-3 rounded-2xl bg-[#d5beb0] text-white hover:bg-[#7A5240] transition"
-                            onClick={() => setSearchText(searchText === "офлайн" ? "онлайн" : "офлайн")}
+                            className="px-6 md:px-12 py-2 rounded-2xl bg-[#d5beb0] text-white hover:bg-[#7A5240] transition"
+                            onClick={() => {
+                                setSearchText(t("home-page.search.onlineOffline").split(" / ")[onlineOffline]);
+                                setOnlineOffline(onlineOffline === 0 ? 1 : 0);
+                            }}
                         >
-                            {t("home-page.search.onlineOffline")}
+                            {t("home-page.search.onlineOffline").split(" / ")[onlineOffline]}
                         </button>
                         <Select
                             defaultValue={optionsLocation[0]}
@@ -99,7 +106,7 @@ export default function Home() {
                             onChange={(e) => setSearchText(e.target.value)}
                         />
                         <div className="p-3 text-gray-500">
-                            <Search size={20} />
+                            <Search size={20}/>
                         </div>
                     </div>
 
@@ -115,22 +122,38 @@ export default function Home() {
                             className="flex-1 p-3 outline-none"
                         />
                         <div className="p-3 text-gray-500">
-                            <Search size={20} />
+                            <Search size={20}/>
                         </div>
                     </div>
 
-                    <h4 className="text-lg font-bold mt-8 mb-4">{t("home-page.search.frequentRequests")}</h4>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mb-12">
-                        {suggestions && suggestions.map((item, i) => (
-                            <li
-                                key={i}
-                                className="cursor-pointer px-3 py-2 border rounded-lg hover:bg-gray-100"
-                                onClick={() => setQuery(item)}
-                            >
-                                {item}
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="text-center mt-8">
+                        <button
+                            className="px-6 py-3 bg-[#d5beb0] hover:bg-[#7A5240] text-white rounded-lg font-medium"
+                            onClick={() => setShowRequests(!showRequests)}
+                        >
+                            {t("home-page.search.frequentRequests")}
+                        </button>
+                    </div>
+
+                    {showRequests && (
+                        <>
+                            <h4 className="text-lg font-bold mt-8 mb-4">
+                                {t("home-page.search.frequentRequests")}
+                            </h4>
+                            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mb-12">
+                                {suggestions &&
+                                    suggestions.map((item, i) => (
+                                        <li
+                                            key={i}
+                                            className="cursor-pointer px-3 py-2 border rounded-lg hover:bg-gray-100"
+                                            onClick={() => setQuery(item)}
+                                        >
+                                            {item}
+                                        </li>
+                                    ))}
+                            </ul>
+                        </>
+                    )}
 
                     <h4 className="text-lg font-semibold mb-6 text-center">
                         {t("home-page.search.bestSpecialists")}
@@ -146,7 +169,8 @@ export default function Home() {
                                     alt={spec.name}
                                     className="w-full h-72 md:h-96 object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                                <div
+                                    className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                                     <div className="text-white">
                                         <p className="text-lg font-bold">{spec.name}</p>
                                         <p className="text-sm">{spec.description}</p>
@@ -157,32 +181,6 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
-            <section className="py-12 md:py-16" id="contact">
-                <div className="max-w-6xl mx-auto px-4">
-                    <h2 className="text-2xl md:text-4xl font-bold mb-6 text-center">
-                        {t("home-page.contact.title")}
-                    </h2>
-                    <div className="flex flex-col gap-4 max-w-sm mx-auto">
-                        <h2 className="text-xl md:text-2xl font-bold text-center">{t("home-page.contact.phone")}</h2>
-                        <a
-                            href="tel:+998773786367"
-                            className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full block text-center"
-                        >
-                            {t("home-page.contact.call")}
-                        </a>
-
-                        <h2 className="text-xl md:text-2xl font-bold text-center">{t("home-page.contact.email")}</h2>
-                        <a
-                            href="mailto:admin@psychotherapy.uz"
-                            className="px-6 py-4 bg-[#d5beb0] text-white rounded-lg font-medium w-full break-words block text-center"
-                        >
-                            admin@psychotherapy.uz
-                        </a>
-                    </div>
-                </div>
-            </section>
-
             <section className="h-64 md:h-96 flex justify-center my-14 px-4">
                 <div className="w-full md:w-2/3 h-full rounded-2xl overflow-hidden shadow-lg">
                     <iframe

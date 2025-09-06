@@ -24,6 +24,7 @@
     "search": {
       "title": "Быстрый поиск",
       "onlineOffline": "онлайн / офлайн",
+      "optionsLocation": "Ташкент",
       "inputPlaceholder": "сексолог Евгений",
       "describeState": "Опишите ваше состояние",
       "describePlaceholder": "Проблемы в отношениях",
