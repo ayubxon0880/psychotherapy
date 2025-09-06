@@ -1,48 +1,51 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function TestOverlay({ onClose }) {
+    const { t } = useTranslation();
+
     const tests = [
         {
-            title: "Мини-тест «К какому специалисту обратиться?»",
+            title: t("test-overlay.title"),
             questions: [
                 {
-                    question: "Что для вас сейчас важнее всего?",
+                    question: t("test-overlay.q1.question"),
                     answers: [
-                        { text: "Чувства, стресс, отношения", code: "PSY" },
-                        { text: "Хочу практические советы и техники", code: "PTH" },
-                        { text: "Может понадобиться медицинская помощь или лекарства", code: "PSYCH" },
-                        { text: "Вопросы интимной жизни", code: "SEX" },
-                        { text: "Вопросы, связанные с употреблением веществ", code: "NAR" },
+                        { text: t("test-overlay.q1.a1"), code: "PSY" },
+                        { text: t("test-overlay.q1.a2"), code: "PTH" },
+                        { text: t("test-overlay.q1.a3"), code: "PSYCH" },
+                        { text: t("test-overlay.q1.a4"), code: "SEX" },
+                        { text: t("test-overlay.q1.a5"), code: "NAR" },
                     ],
                 },
                 {
-                    question: "Насколько это мешает в жизни?",
+                    question: t("test-overlay.q2.question"),
                     answers: [
-                        { text: "Немного мешает", code: "PSY" },
-                        { text: "Мешает в работе/доме", code: "PTH" },
-                        { text: "Очень мешает, тяжело справляться", code: "PSYCH" },
-                        { text: "Не знаю", code: "PSY" },
-                        { text: "Есть трудности с контролем употребления", code: "NAR" },
+                        { text: t("test-overlay.q2.a1"), code: "PSY" },
+                        { text: t("test-overlay.q2.a2"), code: "PTH" },
+                        { text: t("test-overlay.q2.a3"), code: "PSYCH" },
+                        { text: t("test-overlay.q2.a4"), code: "PSY" },
+                        { text: t("test-overlay.q2.a5"), code: "NAR" },
                     ],
                 },
                 {
-                    question: "Чего вы ждёте от специалиста?",
+                    question: t("test-overlay.q3.question"),
                     answers: [
-                        { text: "Поговорить и лучше понять себя", code: "PSY" },
-                        { text: "Получить конкретные методы и упражнения", code: "PTH" },
-                        { text: "Проверить, нужна ли медицинская помощь или лекарства", code: "PSYCH" },
-                        { text: "Разобраться в интимной сфере", code: "SEX" },
-                        { text: "Помощь в снижении или прекращении употребления веществ", code: "NAR" },
+                        { text: t("test-overlay.q3.a1"), code: "PSY" },
+                        { text: t("test-overlay.q3.a2"), code: "PTH" },
+                        { text: t("test-overlay.q3.a3"), code: "PSYCH" },
+                        { text: t("test-overlay.q3.a4"), code: "SEX" },
+                        { text: t("test-overlay.q3.a5"), code: "NAR" },
                     ],
                 },
                 {
-                    question: "Что ещё вы замечаете у себя?",
+                    question: t("test-overlay.q4.question"),
                     answers: [
-                        { text: "Плохой сон, тревога, паника", code: "PSY" },
-                        { text: "Конфликты, выгорание, прокрастинация", code: "PTH" },
-                        { text: "Подозрение на психическое расстройство или опыт приёма препаратов", code: "PSYCH" },
-                        { text: "Трудности с либидо, эрекцией, оргазмом", code: "SEX" },
-                        { text: "Употребление мешает жить", code: "NAR" },
+                        { text: t("test-overlay.q4.a1"), code: "PSY" },
+                        { text: t("test-overlay.q4.a2"), code: "PTH" },
+                        { text: t("test-overlay.q4.a3"), code: "PSYCH" },
+                        { text: t("test-overlay.q4.a4"), code: "SEX" },
+                        { text: t("test-overlay.q4.a5"), code: "NAR" },
                     ],
                 },
             ],
@@ -72,10 +75,13 @@ export default function TestOverlay({ onClose }) {
             counts[code] += 1;
         });
 
-        let res = Object.keys(counts).reduce((a, b) => (counts[a] >= counts[b] ? a : b));
+        let res = Object.keys(counts).reduce((a, b) =>
+            counts[a] >= counts[b] ? a : b
+        );
 
         if (Object.values(answers).includes("NAR")) res = "NAR";
-        else if (Object.values(answers).includes("PSYCH") && answers[1] === "PSYCH") res = "PSYCH";
+        else if (Object.values(answers).includes("PSYCH") && answers[1] === "PSYCH")
+            res = "PSYCH";
         else if (Object.values(answers).includes("SEX")) res = "SEX";
         else if (Object.values(answers).includes("PTH")) res = "PTH";
         else res = "PSY";
@@ -84,11 +90,11 @@ export default function TestOverlay({ onClose }) {
     };
 
     const mapping = {
-        PSY: "Психолог 💬",
-        PTH: "Психотерапевт 🛠️",
-        PSYCH: "Психиатр 💊",
-        SEX: "Сексолог ❤️",
-        NAR: "Нарколог 🚭",
+        PSY: t("test-overlay.results.psy"),
+        PTH: t("test-overlay.results.pth"),
+        PSYCH: t("test-overlay.results.psychiatrist"),
+        SEX: t("test-overlay.results.sex"),
+        NAR: t("test-overlay.results.nar"),
     };
 
     return (
@@ -124,19 +130,21 @@ export default function TestOverlay({ onClose }) {
                                 className="px-6 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 transition"
                                 onClick={onClose}
                             >
-                                Закрыть
+                                {t("common.close")}
                             </button>
                         </div>
                     </>
                 ) : (
                     <div className="flex flex-col items-center justify-center h-full">
-                        <h2 className="text-2xl font-bold mb-4">Ваш результат</h2>
-                        <p className="text-xl mb-6">Рекомендуемый специалист: {mapping[result]}</p>
+                        <h2 className="text-2xl font-bold mb-4">{t("test-overlay.resultTitle")}</h2>
+                        <p className="text-xl mb-6">
+                            {t("test-overlay.recommended")}: {mapping[result]}
+                        </p>
                         <button
                             className="px-6 py-2 bg-[#d5beb0] text-white rounded-lg hover:bg-[#7A5240] transition"
                             onClick={onClose}
                         >
-                            Закрыть
+                            {t("common.close")}
                         </button>
                     </div>
                 )}

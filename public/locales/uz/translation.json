@@ -118,6 +118,53 @@
     "articlesText": "Bu yerda siz loyihaning tarixini, asoschilar bilan intervyularni, shuningdek, bizning falsafamiz va missiyamizni topasiz: 'Nega biz Psychotherapy.uz ni yaratdik'.",
     "cta": "Qabulga yozilish"
   },
+  "common": {
+    "close": "Yopish"
+  },
+  "test-overlay": {
+    "title": "Mini-test: Qaysi mutaxassisga murojaat qilish kerak?",
+    "resultTitle": "Sizning natijangiz",
+    "recommended": "Tavsiya etilgan mutaxassis",
+    "results": {
+      "psy": "Psixolog 💬",
+      "pth": "Psixoterapevt 🛠️",
+      "psychiatrist": "Psixiatr 💊",
+      "sex": "Seksolog ❤️",
+      "nar": "Narkolog 🚭"
+    },
+    "q1": {
+      "question": "Siz uchun hozir eng muhimi nima?",
+      "a1": "His-tuyg‘ular, stress, munosabatlar",
+      "a2": "Amaliy maslahat va texnikalar olish",
+      "a3": "Tibbiy yordam yoki dori kerak bo‘lishi mumkin",
+      "a4": "Jinsiy hayot bilan bog‘liq savollar",
+      "a5": "Modda iste’moli bilan bog‘liq masalalar"
+    },
+    "q2": {
+      "question": "Bu sizga hayotda qanchalik xalaqit bermoqda?",
+      "a1": "Unchalik xalaqit bermaydi",
+      "a2": "Ishda yoki uyda muammo tug‘diradi",
+      "a3": "Juda qiyin, uddalash og‘ir",
+      "a4": "Bilmayman",
+      "a5": "Moddadan foydalanishni nazorat qilishda qiynalaman"
+    },
+    "q3": {
+      "question": "Mutaxassisdan nimani kutyapsiz?",
+      "a1": "Suhbatlashib o‘zimni yaxshiroq tushunishni",
+      "a2": "Aniq metod va mashqlar olishni",
+      "a3": "Tibbiy yordam yoki dorilar kerakligini tekshirishni",
+      "a4": "Jinsiy hayotni tushunishni",
+      "a5": "Moddani kamaytirish yoki to‘xtatishda yordam"
+    },
+    "q4": {
+      "question": "Yana nimalarni o‘zingizda sezyapsiz?",
+      "a1": "Yomon uyqu, xavotir, vahima",
+      "a2": "Nizo, kuyish, prokrastinatsiya",
+      "a3": "Psixik kasallikka gumon yoki dorilarni qabul qilish tajribasi",
+      "a4": "Libido, ereksiya yoki orgazm bilan qiyinchilik",
+      "a5": "Moddadan foydalanish hayotga halaqit bermoqda"
+    }
+  },
   "footer": {
     "brand": "Psixoterapiya",
     "description": "Biz odamlarning ruhiy salomatligini asrashlariga va malakali mutaxassislarni topishlariga yordam beramiz.",

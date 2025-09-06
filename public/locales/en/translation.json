@@ -118,6 +118,53 @@
     "articlesText": "Here you will find the story of the project, interviews with the founders, as well as our philosophy and mission: 'Why we created Psychotherapy.uz'.",
     "cta": "Book an appointment"
   },
+  "common": {
+    "close": "Close"
+  },
+  "test-overlay": {
+    "title": "Mini-test: Which specialist should you see?",
+    "resultTitle": "Your result",
+    "recommended": "Recommended specialist",
+    "results": {
+      "psy": "Psychologist 💬",
+      "pth": "Psychotherapist 🛠️",
+      "psychiatrist": "Psychiatrist 💊",
+      "sex": "Sexologist ❤️",
+      "nar": "Narcologist 🚭"
+    },
+    "q1": {
+      "question": "What is most important to you right now?",
+      "a1": "Feelings, stress, relationships",
+      "a2": "I want practical advice and techniques",
+      "a3": "Medical help or medication may be needed",
+      "a4": "Questions about intimate life",
+      "a5": "Issues related to substance use"
+    },
+    "q2": {
+      "question": "How much does this interfere with your life?",
+      "a1": "It bothers me a little",
+      "a2": "It interferes with work/home",
+      "a3": "It’s very difficult, hard to cope",
+      "a4": "I don’t know",
+      "a5": "I struggle with controlling substance use"
+    },
+    "q3": {
+      "question": "What do you expect from a specialist?",
+      "a1": "To talk and better understand myself",
+      "a2": "Get specific methods and exercises",
+      "a3": "Check if medical help or medication is needed",
+      "a4": "Understand intimate life",
+      "a5": "Help with reducing or stopping substance use"
+    },
+    "q4": {
+      "question": "What else do you notice in yourself?",
+      "a1": "Poor sleep, anxiety, panic",
+      "a2": "Conflicts, burnout, procrastination",
+      "a3": "Suspected mental disorder or medication experience",
+      "a4": "Difficulties with libido, erection, orgasm",
+      "a5": "Substance use interferes with life"
+    }
+  },
   "footer": {
     "brand": "Psychotherapy",
     "description": "We help people take care of their mental health and find qualified specialists.",
