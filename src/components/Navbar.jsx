@@ -40,17 +40,6 @@ export default function Navbar() {
                     </span>
                 </Link>
 
-                <select
-                    onChange={handleSelectNavigate}
-                    className="ml-4 px-2 py-1 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#d5beb0]"
-                    defaultValue=""
-                >
-                    <option value="" disabled>{t("navbar.join")}</option>
-                    <option value="https://docs.google.com/forms/d/e/1FAIpQLSe9iVzU6_Lt2hpoO5m2bFcToienSdbnsiWhlxI-1UFoZX6UrQ/viewform?usp=dialog">{t("navbar.join-clinic")}</option>
-                    <option value="https://docs.google.com/forms/d/e/1FAIpQLSeKO5WhYjwjGYy6TH3MwBE0Hiard_x5OceuBTHpv-Uajp-7gQ/viewform?usp=dialog">{t("navbar.join-specialist")}</option>
-                    <option value="https://docs.google.com/forms/d/e/1FAIpQLSeGMB1RbJQ8p167GbciAGEfPm9IgeDKJQWgxuDSlddSNmzO8A/viewform?usp=dialog">{t("navbar.join-community")}</option>
-                </select>
-
                 {/* Desktop menu */}
                 <div className="hidden md:flex items-center space-x-4">
                     {menuItems.map((item) => (
