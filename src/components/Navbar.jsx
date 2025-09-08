@@ -75,7 +75,6 @@ export default function Navbar() {
                         </select>
                     </div>
 
-                    {/* Mobile menu button */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
                         className="md:hidden focus:outline-none"
@@ -86,7 +85,6 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Mobile dropdown menu — note: language selector is intentionally NOT duplicated here, because it's already visible in the top bar */}
             {isOpen && (
                 <div className="md:hidden bg-white shadow-md px-6 pb-4 space-y-2">
                     {menuItems.map((item) => (
