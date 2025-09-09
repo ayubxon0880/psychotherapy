@@ -5,6 +5,7 @@
     "specialists": "Specialists",
     "community": "Community",
     "about": "About Us",
+    "test": "Tests",
     "join": "Join us",
     "join-clinic": "Clinic",
     "join-specialist": "Specialist",
@@ -165,6 +166,46 @@
       "a5": "Substance use interferes with life"
     }
   },
+  "test-page": {
+    "pageTitle": "Psychological tests online",
+    "pageSubtitle": "Clinically validated questionnaires. Free and anonymous. Complete in 2–5 minutes and get an interpretation of the result.",
+    "buttons": {
+      "start": "Start test",
+      "finish": "Finish and get result",
+      "download": "Download PDF test",
+      "book": "Book an appointment",
+      "sendEmail": "Send result to email",
+      "close": "Close"
+    },
+    "disclaimer": "Online tests are not diagnostic and do not replace consultation with a doctor or psychologist.",
+    "questionsCount": "Questions: {{count}}",
+    "questionLabel": "Question {{number}}",
+    "options": {
+      "0": "0 — Not at all",
+      "1": "1 — Several days",
+      "2": "2 — More than half the days",
+      "3": "3 — Nearly every day"
+    },
+    "result": {
+      "title": "Result",
+      "score": "Score",
+      "interpretationPrefix": "Range",
+      "noInterpretation": "No interpretation",
+      "readyDiscuss": "Ready to discuss your result?",
+      "helpText": "Specialists at psychotherapy.uz will help you and create a support plan."
+    },
+    "tests": {
+      "phq9": {
+        "title": "PHQ-9 – Depression Test",
+        "description": "A validated 9-question tool to assess symptoms of depression."
+      },
+      "gad7": {
+        "title": "GAD-7 – Anxiety Test",
+        "description": "7 questions to assess anxiety levels over the past 2 weeks."
+      }
+    }
+  },
+
   "footer": {
     "brand": "Psychotherapy",
     "description": "We help people take care of their mental health and find qualified specialists.",

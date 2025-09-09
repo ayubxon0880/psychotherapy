@@ -5,6 +5,7 @@
     "specialists": "Mutaxassislar",
     "community": "Hamjamiyat",
     "about": "Biz haqimizda",
+    "test": "Testlar",
     "join": "Bizga qo'shiling",
     "join-clinic": "Klinika",
     "join-specialist": "Mutaxassis",
@@ -163,6 +164,45 @@
       "a3": "Psixik kasallikka gumon yoki dorilarni qabul qilish tajribasi",
       "a4": "Libido, ereksiya yoki orgazm bilan qiyinchilik",
       "a5": "Moddadan foydalanish hayotga halaqit bermoqda"
+    }
+  },
+  "test-page": {
+    "pageTitle": "Psixologik testlar onlayn",
+    "pageSubtitle": "Klinik jihatdan tekshirilgan so‘rovnomalar. Bepul va anonim. 2–5 daqiqada o‘ting va natijani talqin qilib oling.",
+    "buttons": {
+      "start": "Testni boshlash",
+      "finish": "Yakunlash va natijani olish",
+      "download": "PDF testni yuklab olish",
+      "book": "Mutaxassisga yozilish",
+      "sendEmail": "Natijani emailga yuborish",
+      "close": "Yopish"
+    },
+    "disclaimer": "Onlayn testlar diagnostika emas va shifokor/psixolog konsultatsiyasini almashtirmaydi.",
+    "questionsCount": "Savollar: {{count}}",
+    "questionLabel": "Savol {{number}}",
+    "options": {
+      "0": "0 — Belgilanmadi",
+      "1": "1 — Bir necha kun",
+      "2": "2 — Ko‘p kunlarda",
+      "3": "3 — Deyarli har kuni"
+    },
+    "result": {
+      "title": "Natija",
+      "score": "Ballar",
+      "interpretationPrefix": "Diapazon",
+      "noInterpretation": "Talqin yo‘q",
+      "readyDiscuss": "Natijani muhokama qilishga tayyormisiz?",
+      "helpText": "Psychotherapy.uz mutaxassislari sizga yordam beradi va yordam rejasini tuzadi."
+    },
+    "tests": {
+      "phq9": {
+        "title": "PHQ-9 – Depressiya testi",
+        "description": "Depressiya simptomlarini baholash uchun 9 ta savoldan iborat test."
+      },
+      "gad7": {
+        "title": "GAD-7 – Tashvish testi",
+        "description": "So‘nggi 2 hafta davomida tashvish darajasini baholash uchun 7 savol."
+      }
     }
   },
   "footer": {
