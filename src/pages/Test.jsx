@@ -1,35 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-
-const TESTS = [
-    {
-        id: "phq9",
-        i18nKey: "test-page.tests.phq9", // translation key
-        questionsCount: 9,
-        pdf: "/pdfs/phq9.pdf",
-        scoring: "sum",
-        ranges: [
-            { id: "minimal", labelKey: "test-page.ranges.minimal", min: 0, max: 4 },
-            { id: "mild", labelKey: "test-page.ranges.mild", min: 5, max: 9 },
-            { id: "moderate", labelKey: "test-page.ranges.moderate", min: 10, max: 14 },
-            { id: "moderately_severe", labelKey: "test-page.ranges.moderately_severe", min: 15, max: 19 },
-            { id: "severe", labelKey: "test-page.ranges.severe", min: 20, max: 27 }
-        ]
-    },
-    {
-        id: "gad7",
-        i18nKey: "test-page.tests.gad7",
-        questionsCount: 7,
-        pdf: "/pdfs/gad7.pdf",
-        scoring: "sum",
-        ranges: [
-            { id: "minimal", labelKey: "test-page.ranges.minimal", min: 0, max: 4 },
-            { id: "mild", labelKey: "test-page.ranges.mild", min: 5, max: 9 },
-            { id: "moderate", labelKey: "test-page.ranges.moderate", min: 10, max: 14 },
-            { id: "severe", labelKey: "test-page.ranges.severe", min: 15, max: 21 }
-        ]
-    }
-];
+import { TESTS, QUESTIONS } from "../data/data";
 
 function getRangeForScore(ranges, score) {
     return ranges.find((r) => score >= r.min && score <= r.max) || null;
@@ -42,7 +13,7 @@ function suggestReferral(rangeId) {
 }
 
 export default function TestsPage() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [selectedTest, setSelectedTest] = useState(TESTS[0]);
     const [answers, setAnswers] = useState({});
     const [result, setResult] = useState(null);
@@ -80,35 +51,51 @@ export default function TestsPage() {
         setShowResultModal(true);
     }
 
-    function sendEmailReport() {
+    // 🔹 Savollarni olish
+    const localizedQuestions = QUESTIONS[selectedTest.category]?.[selectedTest.id] || [];
+
+    function connectWithSpecialist(result) {
         if (!result) return;
-        const subject = encodeURIComponent(`${t("test-page.result.title")}: ${t(selectedTest.i18nKey + ".title")}`);
+
+        // Natijaga qarab qaysi mutaxassisga yo‘naltirish
+        if (result.referral === "psychiatrist_or_narcologist") {
+            window.location.href = "/specialists?type=psychiatrist";
+        } else {
+            window.location.href = "/specialists?type=psychologist";
+        }
+    }
+
+    function sendEmailReport(result, selectedTest, t) {
+        if (!result) return;
+
+        const subject = encodeURIComponent(
+            `${t("test-page.result.title")}: ${t(selectedTest.i18nKey + ".title")}`
+        );
+
         const body = encodeURIComponent(
             `${t("test-page.result.title")}: ${t(selectedTest.i18nKey + ".title")}\n` +
             `${t("test-page.result.score")}: ${result.score}\n` +
             `${result.interpretation}\n` +
             `${t("test-page.referral." + result.referral)}\n\nPsychotherapy.uz`
         );
+
         window.location.href = `mailto:?subject=${subject}&body=${body}`;
     }
+
 
     return (
         <div className="bg-gray-100 min-h-screen py-12">
             <div className="max-w-6xl mx-auto px-4">
-                <div className="w-full md:w-2/3 text-black">
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 text-[#7A5240]">
-                        {t("test-page.pageTitle")}
-                    </h1>
-                    <p className="text-sm text-gray-700 mb-6">{t("test-page.pageSubtitle")}</p>
-                </div>
+                {/* Header */}
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 text-[#7A5240]">
+                    {t("test-page.pageTitle")}
+                </h1>
+                <p className="text-sm text-gray-700 mb-6">{t("test-page.pageSubtitle")}</p>
 
                 {/* Cards */}
                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {TESTS.map((tst) => (
-                        <div
-                            key={tst.id}
-                            className="bg-[#d5beb0] rounded-2xl p-6 shadow-md transition-colors"
-                        >
+                        <div key={tst.id} className="bg-[#d5beb0] rounded-2xl p-6 shadow-md">
                             <h3 className="text-xl font-semibold">{t(tst.i18nKey + ".title")}</h3>
                             <p className="text-sm mt-2">{t(tst.i18nKey + ".description")}</p>
                             <div className="mt-4 flex items-center gap-3">
@@ -118,75 +105,50 @@ export default function TestsPage() {
                                 >
                                     {t("test-page.buttons.start")}
                                 </button>
-                                <a href={tst.pdf} className="text-sm underline" download>
-                                    {t("test-page.buttons.download")}
-                                </a>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                {/* Disclaimer */}
-                <div className="mt-8 text-gray-600 text-sm">
-                    <strong>{t("test-page.disclaimer")}</strong>
-                </div>
-
                 {/* Test Area */}
                 <div id="test-area" className="mt-10">
-                    <div className="bg-white rounded-2xl p-6 border border-gray-300">
-                        <div className="flex items-start justify-between">
-                            <div>
-                                <h2 className="text-2xl font-semibold text-[#7A5240]">
-                                    {t(selectedTest.i18nKey + ".title")}
-                                </h2>
-                                <p className="text-sm text-gray-600 mt-1">
-                                    {t(selectedTest.i18nKey + ".description")}
-                                </p>
-                            </div>
-                            <div className="text-sm text-gray-600">
-                                {t("test-page.questionsCount", { count: selectedTest.questionsCount })}
-                            </div>
-                        </div>
+                    {selectedTest && (
+                        <div className="bg-white rounded-2xl p-6 border border-gray-300">
+                            <h2 className="text-2xl font-semibold text-[#7A5240]">
+                                {t(selectedTest.i18nKey + ".title")}
+                            </h2>
 
-                        <div className="mt-6 space-y-4">
-                            {Array.from({ length: selectedTest.questionsCount }).map((_, i) => (
-                                <div
-                                    key={i}
-                                    className="flex items-center justify-between bg-gray-100 rounded-lg p-3"
+                            <div className="mt-6 space-y-4">
+                                {localizedQuestions.map((q, i) => (
+                                    <div key={i} className="flex items-center justify-between bg-gray-100 rounded-lg p-3">
+                                        <div className="text-sm">{q[i18n.language]}</div>
+                                        <select
+                                            className="bg-white text-black px-3 py-1 rounded-md border border-gray-300 hover:bg-gray-200"
+                                            value={answers[`q${i}`] ?? 0}
+                                            onChange={(e) => setAnswer(i, e.target.value)}
+                                        >
+                                            <option value={0}>{t("test-page.options.0")}</option>
+                                            <option value={1}>{t("test-page.options.1")}</option>
+                                            <option value={2}>{t("test-page.options.2")}</option>
+                                            <option value={3}>{t("test-page.options.3")}</option>
+                                        </select>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="mt-6 flex items-center gap-3">
+                                <button
+                                    onClick={submitTest}
+                                    className="px-5 py-2 bg-black text-white rounded-lg font-semibold hover:bg-gray-400"
                                 >
-                                    <div className="text-sm">{t("test-page.questionLabel", { number: i + 1 })}</div>
-                                    <select
-                                        className="bg-white text-black px-3 py-1 rounded-md border border-gray-300 hover:bg-gray-200"
-                                        value={answers[`q${i}`] ?? 0}
-                                        onChange={(e) => setAnswer(i, e.target.value)}
-                                    >
-                                        <option value={0}>{t("test-page.options.0")}</option>
-                                        <option value={1}>{t("test-page.options.1")}</option>
-                                        <option value={2}>{t("test-page.options.2")}</option>
-                                        <option value={3}>{t("test-page.options.3")}</option>
-                                    </select>
-                                </div>
-                            ))}
+                                    {t("test-page.buttons.finish")}
+                                </button>
+                            </div>
                         </div>
-
-                        <div className="mt-6 flex items-center gap-3">
-                            <button
-                                onClick={submitTest}
-                                className="px-5 py-2 bg-black text-white rounded-lg font-semibold hover:bg-gray-400"
-                            >
-                                {t("test-page.buttons.finish")}
-                            </button>
-
-                            <a
-                                href={selectedTest.pdf}
-                                className="px-4 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-200"
-                            >
-                                {t("test-page.buttons.download")}
-                            </a>
-                        </div>
-                    </div>
+                    )}
                 </div>
 
+                {/* Result Modal */}
                 {showResultModal && result && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
                         <div
@@ -204,38 +166,40 @@ export default function TestsPage() {
 
                             <div className="mt-4 bg-gray-100 rounded-md p-3 border border-gray-300">
                                 <div className="text-sm">{t("test-page.result.readyDiscuss")}</div>
-                                <div className="text-xs text-gray-600 mt-1">{t("test-page.result.helpText")}</div>
+                                <div className="text-xs text-gray-600 mt-1">
+                                    {t("test-page.result.helpText")}
+                                </div>
+
+                                {/* Yangi tugmalar */}
                                 <div className="mt-3 flex gap-3">
                                     <a
-                                        href={
-                                            result.referral === "psychiatrist_or_narcologist"
-                                                ? "/specialists"
-                                                : "/specialists"
-                                        }
-                                        className="px-4 py-2 bg-[#d5beb0] text-black rounded-md hover:bg-[#7A5240] hover:text-white"
+                                        onClick={() => connectWithSpecialist(result)}
+                                        className="px-4 py-2 bg-[#d5beb0] text-black rounded-md hover:bg-[#7A5240] hover:text-white cursor-pointer"
                                     >
                                         {t("test-page.buttons.book")}
                                     </a>
+
                                     <button
-                                        onClick={sendEmailReport}
+                                        onClick={() => sendEmailReport(result, selectedTest, t)}
                                         className="px-4 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-200"
                                     >
                                         {t("test-page.buttons.sendEmail")}
                                     </button>
+
                                 </div>
                             </div>
 
                             <div className="mt-4 flex justify-end">
                                 <button
                                     onClick={() => setShowResultModal(false)}
-                                    className="text-sm text-gray-500 hover:text-[#7A5240]"
-                                >
+                                    className="text-sm text-gray-500 hover:text-[#7A5240]">
                                     {t("test-page.buttons.close")}
                                 </button>
                             </div>
                         </div>
                     </div>
                 )}
+
             </div>
         </div>
     );

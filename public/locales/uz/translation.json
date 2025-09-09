@@ -203,6 +203,13 @@
         "title": "GAD-7 – Tashvish testi",
         "description": "So‘nggi 2 hafta davomida tashvish darajasini baholash uchun 7 savol."
       }
+    },
+    "ranges": {
+      "minimal": "Minimal",
+      "mild": "Yengil",
+      "moderate": "O‘rtacha",
+      "moderately_severe": "O‘rtacha og‘ir",
+      "severe": "Og‘ir"
     }
   },
   "footer": {

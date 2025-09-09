@@ -203,6 +203,13 @@
         "title": "GAD-7 – Anxiety Test",
         "description": "7 questions to assess anxiety levels over the past 2 weeks."
       }
+    },
+    "ranges": {
+      "minimal": "Minimal",
+      "mild": "Mild",
+      "moderate": "Moderate",
+      "moderately_severe": "Moderately severe",
+      "severe": "Severe"
     }
   },
 
