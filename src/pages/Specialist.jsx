@@ -109,8 +109,7 @@ export default function Specialist() {
                     <p className="text-gray-700 text-lg sm:text-xl">
                         {t("specialist.inviteText1")}
                     </p>
-                    <p className="text-gray-700 text-lg sm:text-xl mt-4">
-                        {t("specialist.inviteText2")}
+                    <p className="text-gray-700 text-lg sm:text-xl mt-4">{t("specialist.inviteText2")}
                     </p>
                 </div>
             </section>
