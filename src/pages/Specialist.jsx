@@ -123,8 +123,8 @@ export default function Specialist() {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                                     <div className="text-white">
-                                        <p className="text-lg font-bold">{spec.FIO}</p>
-                                        <p className="text-sm">{spec.category}</p>
+                                        <p className="text-lg font-bold">{spec.fio}</p>
+                                        <p className="text-sm">{spec.workSkills}</p>
                                     </div>
                                 </div>
                             </div>
