@@ -50,11 +50,21 @@
       "call": "Qo‘ng‘iroq qilish",
       "email": "elektron pochta"
     },
+    "specialist-section": {
+      "filter": "Filter",
+      "direction": "Yo'nalish",
+      "all": "Barchasi",
+      "work-format": "Ishlash formati",
+      "online": "Onlayn",
+      "offline": "Offlayn",
+      "language": "Til"
+    },
     "map": "Biz xaritada"
   },
   "clinics": {
     "searchPlaceholder": "Klinika qidirish...",
     "top3": "Top 3 klinikalar",
+    "all": "Barchasi",
     "direction": "Yo‘nalishi",
     "main": "Asosiy",
     "address": "Manzil",

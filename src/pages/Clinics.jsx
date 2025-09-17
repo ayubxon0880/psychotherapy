@@ -1,23 +1,45 @@
-import { useState, useMemo } from "react";
+import {useState, useEffect} from "react";
 import { Search, ChevronRight, ChevronLeft } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { topClinics } from "../data/topClinics.js";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
+import {API} from "../service/api.jsx";
 
 export default function Clinics() {
     const { t } = useTranslation();
     const [search, setSearch] = useState("");
+    const [topClinics, setTopClinics] = useState([]);
+    const [allClinics, setAllClinics] = useState([]);
 
-    const filteredClinics = useMemo(
-        () =>
-            topClinics.filter((c) =>
-                c.name.toLowerCase().includes(search.toLowerCase())
-            ),
-        [search]
-    );
+    const fetchTopClinics = async () => {
+        try {
+            const res = await axios.get(`${API}/clinic/filter`, {
+                params: { page: 0, size: 3, sort: 'id', name: search, direction:"asc" },
+            });
+            setTopClinics(res.data.content);
+        } catch (err) {
+            console.error("Error fetching top clinics", err);
+        }
+    };
+
+    const fetchAllClinics = async () => {
+        try {
+            const res = await axios.get(`${API}/clinic/filter`, {
+                params: { page: 0, size: 20, sort: 'id', name: search, direction:"asc" },
+            });
+            setAllClinics(res.data.content);
+        } catch (err) {
+            console.error("Error fetching all clinics", err);
+        }
+    };
+
+    useEffect(() => {
+        fetchTopClinics();
+        fetchAllClinics();
+    }, [search]);
 
     return (
         <div className="max-w-6xl mx-auto p-4">
@@ -33,7 +55,7 @@ export default function Clinics() {
             </div>
 
             <h2 className="text-lg font-semibold mb-4">{t("clinics.top3")}</h2>
-            <div className="relative px-10 rounded-3xl">
+            <div className="relative px-4 sm:px-6 lg:px-10 rounded-3xl">
                 <Swiper
                     modules={[Navigation]}
                     navigation={{
@@ -42,57 +64,16 @@ export default function Clinics() {
                     }}
                     spaceBetween={20}
                     slidesPerView={1}
+                    breakpoints={{
+                        640: { slidesPerView: 1 }, // 📱 mobil
+                        768: { slidesPerView: 2 }, // 📲 tablet
+                        // 1024: { slidesPerView: 3 }, // 💻 laptop
+                    }}
                     className="mb-8"
                 >
-                    {filteredClinics.map((clinic) => (
+                    {topClinics.map((clinic) => (
                         <SwiperSlide key={clinic.id}>
-                            <div className="bg-white rounded-3xl p-6 flex flex-col md:flex-row items-center md:items-start gap-6 border border-gray-200">
-                                <img
-                                    src={clinic.image}
-                                    alt={clinic.name}
-                                    className="w-full max-w-96 object-cover rounded-2xl"
-                                />
-
-                                <div className="flex flex-col justify-between flex-1">
-                                    <h3 className="text-xl font-semibold">{clinic.name}</h3>
-                                    <p className="text-sm text-gray-600 mt-1 mb-4">
-                                        <span className="font-semibold">{t("clinics.direction")}:</span>
-                                        <br/>
-                                        {clinic.direction}
-                                    </p>
-
-                                    <div className="border-t border-gray-200 pt-4">
-                                        <h4 className="font-semibold mb-2">{t("clinics.main")}:</h4>
-                                        <ul className="text-sm text-gray-700 space-y-1">
-                                            {clinic.description.map((item, index) => (
-                                                <li key={index}>• {item}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    <div className="mt-4 text-sm text-gray-700 space-y-1">
-                                        <p>
-                                            <span className="font-semibold">{t("clinics.address")}:</span>{" "}
-                                            {clinic.contacts.address}
-                                        </p>
-                                        <p>
-                                            <span className="font-semibold">{t("clinics.phone")}:</span>{" "}
-                                            {clinic.contacts.phone}
-                                        </p>
-                                        <p>
-                                            <span className="font-semibold">{t("clinics.website")}:</span>{" "}
-                                            <a
-                                                href={clinic.contacts.website}
-                                                className="text-blue-600 hover:underline"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                            >
-                                                {clinic.contacts.website}
-                                            </a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            <ClinicCard clinic={clinic}/>
                         </SwiperSlide>
                     ))}
                 </Swiper>
@@ -105,6 +86,20 @@ export default function Clinics() {
                 </div>
             </div>
 
+
+            {/* 🔹 All Clinics */}
+            <h2 className="text-lg font-semibold mt-10 mb-4">{t("clinics.all")}</h2>
+            {allClinics.length === 0 ? (
+                <p className="text-center text-gray-500">{t("clinics.noData")}</p>
+            ) : (
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {allClinics.map((clinic) => (
+                        <ClinicCard key={clinic.id} clinic={clinic}/>
+                    ))}
+                </div>
+            )}
+
+            {/* 🔹 Form Button */}
             <div className="text-center mt-10">
                 <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLSe9iVzU6_Lt2hpoO5m2bFcToienSdbnsiWhlxI-1UFoZX6UrQ/viewform?usp=dialog"
@@ -114,6 +109,46 @@ export default function Clinics() {
                 >
                     {t("clinics.fillForm")}
                 </a>
+            </div>
+        </div>
+    );
+}
+
+// 🔹 Reusable Clinic Card Component
+function ClinicCard({ clinic }) {
+    const { t } = useTranslation();
+    return (
+        <div className="bg-white rounded-3xl p-6 flex flex-col gap-4 border border-gray-200 shadow-sm">
+            <img
+                src={clinic.imageUrl?.startsWith("http") ? clinic.imageUrl : "/images/clinic.png"}
+                alt={clinic.name}
+                className="w-full h-96 object-cover rounded-2xl"
+            />
+
+            <div className="flex flex-col flex-1">
+                <h3 className="text-xl font-semibold">{clinic.name}</h3>
+                <p className="text-sm text-gray-600 mt-1 mb-2">
+                    <span className="font-semibold">{t("clinics.direction")}:</span>{" "}
+                    {clinic.directions?.map((d) => d.direction).join(", ")}
+                </p>
+
+                <p className="text-sm text-gray-700">
+                    <span className="font-semibold">{t("clinics.address")}:</span> {clinic.address}
+                </p>
+                <p className="text-sm text-gray-700">
+                    <span className="font-semibold">{t("clinics.phone")}:</span> {clinic.phoneNumber}
+                </p>
+                <p className="text-sm text-gray-700">
+                    <span className="font-semibold">{t("clinics.website")}:</span>{" "}
+                    <a
+                        href={clinic.website}
+                        className="text-blue-600 hover:underline"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        {clinic.website}
+                    </a>
+                </p>
             </div>
         </div>
     );

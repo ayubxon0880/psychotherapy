@@ -50,11 +50,21 @@
       "call": "Позвонить",
       "email": "эл. почта"
     },
+    "specialist-section": {
+      "filter": "Фильтр",
+      "direction": "Направление",
+      "all": "Все",
+      "work-format": "Формат работы",
+      "online": "Онлайн",
+      "offline": "Оффлайн",
+      "language": "Язык"
+    },
     "map": "Мы на карте"
   },
   "clinics": {
     "searchPlaceholder": "Поиск клиники...",
     "top3": "Топ 3 клиники",
+    "all": "Все",
     "direction": "Направление",
     "main": "Главное",
     "address": "Адрес",

@@ -50,11 +50,21 @@
       "call": "Call",
       "email": "email"
     },
+    "specialist-section": {
+      "filter": "Filter",
+      "direction": "Direction",
+      "all": "All",
+      "work-format": "Work Format",
+      "online": "Online",
+      "offline": "Offline",
+      "language": "Language"
+    },
     "map": "We are on the map"
   },
   "clinics": {
     "searchPlaceholder": "Search clinic...",
     "top3": "Top 3 clinics",
+    "all": "All",
     "direction": "Direction",
     "main": "Main",
     "address": "Address",
@@ -212,7 +222,6 @@
       "severe": "Severe"
     }
   },
-
   "footer": {
     "brand": "Psychotherapy",
     "description": "We help people take care of their mental health and find qualified specialists.",
