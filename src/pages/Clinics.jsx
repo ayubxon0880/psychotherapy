@@ -120,7 +120,7 @@ function ClinicCard({ clinic }) {
     return (
         <div className="bg-white rounded-3xl p-6 flex flex-col gap-4 border border-gray-200 shadow-sm">
             <img
-                src={clinic.imageUrl?.startsWith("http") ? clinic.imageUrl : "/images/clinic.png"}
+                src={clinic.imageUrl !== null ? API+"/file/files/"+clinic.imageUrl : "/images/clinic.png"}
                 alt={clinic.name}
                 className="w-full h-96 object-cover rounded-2xl"
             />
