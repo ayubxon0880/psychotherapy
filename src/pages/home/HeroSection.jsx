@@ -17,37 +17,49 @@ export const HeroSection = ({ setOverlay }) => {
                         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 max-w-md">
                             {t("home-page.hero.title")}
                         </h1>
-                        <h3 className="text-xl sm:text-2xl md:text-3xl mb-4 w-[28rem]">
+                        <h3 className="text-xl sm:text-2xl md:text-3xl mb-4 max-w-[28rem]">
                             {t("home-page.hero.title2")}
                         </h3>
 
-                        <div
-                            className="flex bg-gray-300 w-64 relative h-14 rounded-xl mb-2 mt-6 cursor-pointer"
-                            onClick={() => setMoved(prev => !prev)}
-                        >
-                            <div className="absolute left-1/4 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20 text-lg">
-                                {t("home-page.hero.count")}
-                            </div>
-                            <div className="absolute right-1/4 translate-x-1/2 top-1/2 -translate-y-1/2 z-20 text-lg">
-                                {t("home-page.hero.count2")}
-                            </div>
-
+                        <div className="flex flex-col items-center md:items-start gap-4">
+                            {/* Toggle Switch */}
                             <div
-                                className={`bg-white absolute top-1/2 -translate-y-1/2 w-1/2 h-full border-4 rounded-xl border-gray-300 transition-all duration-500 ease-in-out`}
-                                style={{
-                                    left: moved ? "50%" : "0",
-                                }}
-                            />
+                                className="flex bg-gray-300 w-64 relative h-14 rounded-xl cursor-pointer"
+                                onClick={() => setMoved(prev => !prev)}
+                            >
+                                <div className="absolute left-1/4 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20 text-lg">
+                                    {t("home-page.hero.count")}
+                                </div>
+                                <div className="absolute right-1/4 translate-x-1/2 top-1/2 -translate-y-1/2 z-20 text-lg">
+                                    {t("home-page.hero.count2")}
+                                </div>
+
+                                <div
+                                    className={`bg-white absolute top-1/2 -translate-y-1/2 w-1/2 h-full border-4 rounded-xl border-gray-300 transition-all duration-500 ease-in-out`}
+                                    style={{
+                                        left: moved ? "50%" : "0",
+                                    }}
+                                />
+                            </div>
+
+                            {/* Button */}
+                            <div className="flex gap-4 justify-center md:justify-start">
+                                <button
+                                    onClick={() => setOverlay(true)}
+                                    className="px-6 py-3 bg-[#D8F3A2] hover:bg-[#c8e096] text-black rounded-lg font-medium"
+                                >
+                                    {t("home-page.hero.findSpecialist")}
+                                </button>
+                            </div>
+                            <div className="flex gap-4 justify-center md:justify-start">
+                                <button
+                                    className="px-6 py-3 bg-[#D8F3A2] hover:bg-[#c8e096] text-gray-400 rounded-lg font-medium"
+                                >
+                                    129900 somdan
+                                </button>
+                            </div>
                         </div>
 
-                        <div className="flex gap-4">
-                            <button
-                                onClick={() => setOverlay(true)}
-                                className="px-6 py-3 bg-[#D8F3A2] hover:bg-[#c8e096] text-black rounded-lg font-medium"
-                            >
-                                {t("home-page.hero.findSpecialist")}
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
