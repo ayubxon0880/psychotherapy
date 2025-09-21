@@ -25,22 +25,18 @@
       "findSpecialist": "Найти специалиста",
       "bookConsultation": "Записаться на консультацию"
     },
-      "coolNumbers": {
-        "foundTitle": "1,200+",
-        "foundText": "people have already found <br /> their psychologist online",
-    
-        "specialistsTitle": "150",
-        "specialistsText": "verified specialists are ready to help you",
-    
-        "resultTitle": "76%",
-        "resultText": "clients report results after just 5 sessions",
-    
-        "experienceTitle": "5 years",
-        "experienceText": "average experience of our experts",
-    
-        "availabilityTitle": "24/7",
-        "availabilityText": "you can book a consultation at any convenient time"
-      },
+    "coolNumbers": {
+      "foundTitle": "1 200+",
+      "foundText": "человек уже нашли <br /> своего психолога онлайн",
+      "specialistsTitle": "150",
+      "specialistsText": "проверенных специалистов готовы помочь именно вам",
+      "resultTitle": "76%",
+      "resultText": "клиентов отмечают результат уже после 5-й сессии",
+      "experienceTitle": "5 лет",
+      "experienceText": "средний опыт практики наших экспертов",
+      "availabilityTitle": "24/7",
+      "availabilityText": "вы можете записаться на консультацию в удобное для вас время"
+    },
     "search": {
       "title": "Быстрый поиск",
       "onlineOffline": "онлайн / офлайн",
@@ -241,7 +237,6 @@
       "severe": "Тяжёлая"
     }
   },
-
   "footer": {
     "brand": "Psychotherapy",
     "description": "Мы помогаем людям заботиться о своём психическом здоровье и находить квалифицированных специалистов.",
