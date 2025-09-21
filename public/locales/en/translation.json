@@ -47,6 +47,11 @@
       "frequentRequests": "Frequent requests",
       "bestSpecialists": "Best specialists of the week"
     },
+    "tests": {
+      "title": "Tests",
+      "description": "On our website, you can take verified psychological tests that will help you better understand yourself, your strengths, and areas for growth.",
+      "button": "Take a test"
+    },
     "suggestions": [
       "Anxiety",
       "Depression",

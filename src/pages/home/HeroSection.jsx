@@ -53,7 +53,7 @@ export const HeroSection = ({ setOverlay }) => {
                             </div>
                             <div className="flex gap-4 justify-center md:justify-start">
                                 <button
-                                    className="px-6 py-3 bg-[#D8F3A2] hover:bg-[#c8e096] text-gray-400 rounded-lg font-medium"
+                                    className="px-6 py-3 bg-[#e5ffb1e3] hover:bg-[#c8e096] text-gray-800 rounded-lg font-medium"
                                 >
                                     129900 somdan
                                 </button>

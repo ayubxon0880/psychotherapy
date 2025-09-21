@@ -47,6 +47,11 @@
       "frequentRequests": "Ko‘p uchraydigan so‘rovlar",
       "bestSpecialists": "Haftaning eng yaxshi mutaxassislari"
     },
+    "tests": {
+      "title": "Testlar",
+      "description": "Saytimizda siz o'zingizni, kuchli tomonlaringizni va rivojlanish sohalaringizni yaxshiroq tushunishga yordam beradigan ishonchli psixologik testlarni o'tishingiz mumkin.",
+      "button": "Testdan o'tish"
+    },
     "suggestions": [
       "Tashvish",
       "Depressiya",
