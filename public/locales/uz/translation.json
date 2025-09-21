@@ -19,9 +19,23 @@
     "about": "Biz haqimizda",
     "hero": {
       "title": "O‘zbekistonda psixologik va psixoterapevtik yordam",
-      "title2": "Найдите специалиста в области психического здоровья",
+      "title2": "Ruhiy salomatlik bo'yicha mutaxassisni toping",
+      "count": "O'zim uchun",
+      "count2": "Ikki kishiga",
       "findSpecialist": "Mutaxassis topish",
       "bookConsultation": "Konsultatsiyaga yozilish"
+    },
+    "coolNumbers": {
+      "foundTitle": "1 200+",
+      "foundText": "odamlar allaqachon <br /> o‘z psixologini topishdi",
+      "specialistsTitle": "150",
+      "specialistsText": "tasdiqlangan mutaxassislar sizga yordam berishga tayyor",
+      "resultTitle": "76%",
+      "resultText": "mijozlar faqat 5 ta sessiyadan so‘ng natija sezishadi",
+      "experienceTitle": "5 yil",
+      "experienceText": "mutaxassislarimizning o‘rtacha tajribasi",
+      "availabilityTitle": "24/7",
+      "availabilityText": "siz qulay vaqtda maslahatga yozilishingiz mumkin"
     },
     "search": {
       "title": "Tezkor qidiruv",

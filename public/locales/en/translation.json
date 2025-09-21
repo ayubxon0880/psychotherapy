@@ -19,11 +19,23 @@
     "about": "About us",
     "hero": {
       "title": "Psychological and psychotherapeutic help in Uzbekistan",
-      "title2": "Найдите специалиста в области психического здоровья",
+      "title2": "Find a mental health professional",
       "count": "For myself",
       "count2": "For 2 people",
       "findSpecialist": "Find a specialist",
       "bookConsultation": "Book a consultation"
+    },
+    "coolNumbers": {
+      "foundTitle": "1,200+",
+      "foundText": "people have already found <br /> their psychologist online",
+      "specialistsTitle": "150",
+      "specialistsText": "verified specialists are ready to help you",
+      "resultTitle": "76%",
+      "resultText": "clients report results after just 5 sessions",
+      "experienceTitle": "5 years",
+      "experienceText": "average experience of our experts",
+      "availabilityTitle": "24/7",
+      "availabilityText": "you can book a consultation at any convenient time"
     },
     "search": {
       "title": "Quick search",

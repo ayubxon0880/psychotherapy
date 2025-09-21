@@ -20,9 +20,27 @@
     "hero": {
       "title": "Найдите специалиста в области психического здоровья",
       "title2": "На нашем сайте вы можете найти психиатра, психотерапевта, психолога или сексолога. ",
+      "count": "Для себя",
+      "count2": "Для двоих",
       "findSpecialist": "Найти специалиста",
       "bookConsultation": "Записаться на консультацию"
     },
+      "coolNumbers": {
+        "foundTitle": "1,200+",
+        "foundText": "people have already found <br /> their psychologist online",
+    
+        "specialistsTitle": "150",
+        "specialistsText": "verified specialists are ready to help you",
+    
+        "resultTitle": "76%",
+        "resultText": "clients report results after just 5 sessions",
+    
+        "experienceTitle": "5 years",
+        "experienceText": "average experience of our experts",
+    
+        "availabilityTitle": "24/7",
+        "availabilityText": "you can book a consultation at any convenient time"
+      },
     "search": {
       "title": "Быстрый поиск",
       "onlineOffline": "онлайн / офлайн",
