@@ -19,6 +19,9 @@
     "about": "About us",
     "hero": {
       "title": "Psychological and psychotherapeutic help in Uzbekistan",
+      "title2": "Найдите специалиста в области психического здоровья",
+      "count": "For myself",
+      "count2": "For 2 people",
       "findSpecialist": "Find a specialist",
       "bookConsultation": "Book a consultation"
     },
