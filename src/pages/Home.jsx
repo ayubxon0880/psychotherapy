@@ -4,6 +4,8 @@ import {Analytics} from "@vercel/analytics/react";
 import {HeroSection} from "./home/HeroSection.jsx";
 import {SpecialistSections} from "./home/SpecialistSections.jsx";
 import {MapSection} from "./home/MapSection.jsx";
+import CoolNumbers from "./home/CoolNumbers.jsx";
+import Tests from "./home/Tests.jsx";
 
 export default function Home() {
     const [showOverlay, setShowOverlay] = useState(false);
@@ -15,7 +17,11 @@ export default function Home() {
 
             <HeroSection setOverlay={setShowOverlay} />
 
+            <CoolNumbers />
+
             <SpecialistSections />
+
+            <Tests />
 
             <MapSection/>
         </div>

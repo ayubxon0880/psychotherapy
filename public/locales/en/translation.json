@@ -18,9 +18,24 @@
     "community": "Community",
     "about": "About us",
     "hero": {
-      "title": "Psychological and psychotherapeutic help in Uzbekistan",
+      "title": "Find a mental health professional",
+      "title2": "On our website you can find a psychiatrist, psychotherapist, psychologist or sexologist.",
+      "count": "For myself",
+      "count2": "For 2 people",
       "findSpecialist": "Find a specialist",
       "bookConsultation": "Book a consultation"
+    },
+    "coolNumbers": {
+      "foundTitle": "1,200+",
+      "foundText": "people have already found <br /> their psychologist online",
+      "specialistsTitle": "150",
+      "specialistsText": "verified specialists are ready to help you",
+      "resultTitle": "76%",
+      "resultText": "clients report results after just 5 sessions",
+      "experienceTitle": "5 years",
+      "experienceText": "average experience of our experts",
+      "availabilityTitle": "24/7",
+      "availabilityText": "you can book a consultation at any convenient time"
     },
     "search": {
       "title": "Quick search",
@@ -31,6 +46,11 @@
       "describePlaceholder": "Relationship problems",
       "frequentRequests": "Frequent requests",
       "bestSpecialists": "Best specialists of the week"
+    },
+    "tests": {
+      "title": "Tests",
+      "description": "On our website, you can take verified psychological tests that will help you better understand yourself, your strengths, and areas for growth.",
+      "button": "Take a test"
     },
     "suggestions": [
       "Anxiety",
