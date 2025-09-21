@@ -51,7 +51,7 @@ export default function Navbar() {
                                 to={item.href}
                                 className={`px-3 py-2 rounded-md text-sm transition ${
                                     location.pathname === item.href
-                                        ? "bg-[#d5beb0] text-black"
+                                        ? "bg-[#D8F3A2] text-black"
                                         : "text-gray-800 hover:bg-gray-100 hover:text-gray-600"
                                 }`}
                             >
