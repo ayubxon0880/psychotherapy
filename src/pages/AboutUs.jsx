@@ -44,7 +44,7 @@ export default function AboutUs() {
                         onClick={() => {
                             window.scrollBy({top: 400, left: 0, behavior: "smooth"});
                         }}
-                        className="bg-[#d5beb0] hover:bg-[#a5beb0] text-white px-6 py-3 rounded-lg">
+                        className="bg-[#D8F3A2] hover:bg-[#cfe99b] text-black px-6 py-3 rounded-lg">
                         {t("about-page.cta")}
                     </button>
                 </div>

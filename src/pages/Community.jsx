@@ -20,7 +20,7 @@ export default function Community() {
             <div className="mb-6 flex justify-end">
                 <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLSeGMB1RbJQ8p167GbciAGEfPm9IgeDKJQWgxuDSlddSNmzO8A/viewform?usp=dialog"
-                    className="px-4 py-2 bg-[#d5beb0] hover:bg-[#a8a89e] text-black rounded"
+                    className="px-4 py-2 bg-[#D8F3A2] hover:bg-[#cce599] text-black rounded"
                     target="_blank"
                 >
                     {t("community.addCommunity")}

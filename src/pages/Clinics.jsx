@@ -100,7 +100,7 @@ export default function Clinics() {
                     href="https://docs.google.com/forms/d/e/1FAIpQLSe9iVzU6_Lt2hpoO5m2bFcToienSdbnsiWhlxI-1UFoZX6UrQ/viewform?usp=dialog"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-block px-6 py-3 bg-[#d5beb0] hover:bg-[#a8a89e] text-black rounded-lg font-medium"
+                    className="inline-block px-6 py-3 bg-[#D8F3A2] hover:bg-[#c5dd94] text-black rounded-lg font-medium"
                 >
                     {t("clinics.fillForm")}
                 </a>

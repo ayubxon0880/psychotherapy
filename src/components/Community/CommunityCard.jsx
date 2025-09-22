@@ -32,7 +32,7 @@ export default function CommunityCard({ com }) {
                 </div>
                 <a
                     href={"https://t.me/psychotherapy_consultant_bot?start=8076698584"}
-                    className="mt-4 bg-[#d5beb0] text-white px-5 py-2 rounded-lg hover:bg-[#5A3620] transition self-start"
+                    className="mt-4 bg-[#D8F3A2] text-black px-5 py-2 rounded-lg hover:bg-[#c6df94] transition self-start"
                 >
                     {t("communityCard.join")}
                 </a>

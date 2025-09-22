@@ -101,7 +101,7 @@ export default function TestsPage() {
                             <div className="mt-4 flex items-center gap-3">
                                 <button
                                     onClick={() => startTest(tst)}
-                                    className="px-4 py-2 bg-black text-white rounded-lg font-medium hover:bg-gray-400"
+                                    className="px-4 py-2 bg-[#D8F3A2] text-black rounded-lg font-medium hover:bg-[#c4dd93]"
                                 >
                                     {t("test-page.buttons.start")}
                                 </button>
@@ -123,7 +123,7 @@ export default function TestsPage() {
                                     <div key={i} className="flex items-center justify-between bg-gray-100 rounded-lg p-3">
                                         <div className="text-sm">{q[i18n.language]}</div>
                                         <select
-                                            className="bg-white text-black px-3 py-1 rounded-md border border-gray-300 hover:bg-gray-200"
+                                            className="bg-white text-black px-3 py-1 rounded-md border border-gray-300"
                                             value={answers[`q${i}`] ?? 0}
                                             onChange={(e) => setAnswer(i, e.target.value)}
                                         >
@@ -139,7 +139,7 @@ export default function TestsPage() {
                             <div className="mt-6 flex items-center gap-3">
                                 <button
                                     onClick={submitTest}
-                                    className="px-5 py-2 bg-black text-white rounded-lg font-semibold hover:bg-gray-400"
+                                    className="px-5 py-2 bg-[#D8F3A2] text-black rounded-lg font-semibold hover:bg-[#c9e297]"
                                 >
                                     {t("test-page.buttons.finish")}
                                 </button>
@@ -174,7 +174,7 @@ export default function TestsPage() {
                                 <div className="mt-3 flex gap-3">
                                     <a
                                         onClick={() => connectWithSpecialist(result)}
-                                        className="px-4 py-2 bg-[#d5beb0] text-black rounded-md hover:bg-[#7A5240] hover:text-white cursor-pointer"
+                                        className="px-4 py-2 bg-[#D8F3A2] text-black rounded-md hover:bg-[#cce699] cursor-pointer"
                                     >
                                         {t("test-page.buttons.book")}
                                     </a>
