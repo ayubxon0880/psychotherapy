@@ -55,7 +55,7 @@ export default function Clinics() {
             </div>
 
             <h2 className="text-lg font-semibold mb-4">{t("clinics.top3")}</h2>
-            <div className="relative px-4 sm:px-6 lg:px-10 rounded-3xl">
+            <div className="relative px-4 sm:px-6 lg:px-10 rounded-3xl max-w-2xl m-auto">
                 <Swiper
                     modules={[Navigation]}
                     navigation={{
@@ -64,11 +64,6 @@ export default function Clinics() {
                     }}
                     spaceBetween={20}
                     slidesPerView={1}
-                    breakpoints={{
-                        640: { slidesPerView: 1 }, // 📱 mobil
-                        768: { slidesPerView: 2 }, // 📲 tablet
-                        // 1024: { slidesPerView: 3 }, // 💻 laptop
-                    }}
                     className="mb-8"
                 >
                     {topClinics.map((clinic) => (
