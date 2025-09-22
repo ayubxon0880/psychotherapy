@@ -93,7 +93,7 @@ export default function TestsPage() {
                 <p className="text-sm text-gray-700 mb-6">{t("test-page.pageSubtitle")}</p>
 
                 {/* Cards */}
-                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {/* <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {TESTS.map((tst) => (
                         <div key={tst.id} className="bg-[#d5beb0] rounded-2xl p-6 shadow-md">
                             <h3 className="text-xl font-semibold">{t(tst.i18nKey + ".title")}</h3>
@@ -108,7 +108,7 @@ export default function TestsPage() {
                             </div>
                         </div>
                     ))}
-                </div>
+                </div> */}
 
                 {/* Test Area */}
                 <div id="test-area" className="mt-10">

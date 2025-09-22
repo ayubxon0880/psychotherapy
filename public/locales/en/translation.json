@@ -37,6 +37,12 @@
       "availabilityTitle": "24/7",
       "availabilityText": "you can book a consultation at any convenient time"
     },
+    "ourSpecialists": {
+      "title": "Our Specialists",
+      "subtitle": "Psychologist",
+      "slideText": "Will help you understand yourself, deal with anxiety, and overcome inner conflicts.",
+      "button": "Book a consultation"
+    },
     "search": {
       "title": "Quick search",
       "onlineOffline": "online / offline",
@@ -46,6 +52,56 @@
       "describePlaceholder": "Relationship problems",
       "frequentRequests": "Frequent requests",
       "bestSpecialists": "Best specialists of the week"
+    },
+    "contacts": {
+      "title": "contact information",
+      "number": "phone number",
+      "email": "email"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": [
+        {
+          "q": "Anxiety",
+          "a": "Anxiety is a normal reaction of the body to stress. When it becomes chronic, it can interfere with sleep, concentration, and cause physical symptoms such as rapid heartbeat, sweating, and trembling. Breathing techniques, psychotherapy, and regular physical activity can help."
+        },
+        {
+          "q": "Depression",
+          "a": "Depression is characterized by a persistent feeling of sadness, loss of interest in favorite activities, low energy, and changes in appetite and sleep. Therapy, social support, and medication can be helpful."
+        },
+        {
+          "q": "Panic Attacks",
+          "a": "Panic attacks are sudden episodes of intense fear with physical symptoms: rapid heartbeat, shortness of breath, trembling. Psychotherapy, breathing exercises, and sometimes medication are helpful."
+        },
+        {
+          "q": "Fears and Phobias",
+          "a": "Phobias are irrational fears of certain objects or situations. Gradual exposure, cognitive therapy techniques, and relaxation exercises can help overcome them."
+        },
+        {
+          "q": "Relationship Problems",
+          "a": "Relationship issues may arise from poor communication, lack of trust, or unclear boundaries. Couples therapy and improving communication skills are often helpful."
+        },
+        {
+          "q": "Burnout",
+          "a": "Burnout is emotional exhaustion, cynicism, and loss of motivation. Rest, work-life balance, support from others, and psychological help are effective ways to recover."
+        },
+        {
+          "q": "Self-Esteem",
+          "a": "Low self-esteem is shown through self-criticism and a sense of inadequacy. It can be improved through changing negative beliefs, self-acceptance, and therapy."
+        },
+        {
+          "q": "Sexual Life Problems",
+          "a": "Problems with sexual life may be linked to stress, physical health, trauma, or trust issues. Open communication and professional support can be helpful."
+        },
+        {
+          "q": "Childhood Trauma",
+          "a": "Childhood trauma can lead to long-lasting psychological effects such as difficulties with trust and emotional instability. Therapy and trauma-informed approaches can support healing."
+        },
+        {
+          "q": "Aggression and Irritability",
+          "a": "Aggression and irritability often arise due to stress, unresolved emotions, or trauma. Anger management techniques, physical activity, and therapy can help."
+        }
+      ]
     },
     "tests": {
       "title": "Tests",
