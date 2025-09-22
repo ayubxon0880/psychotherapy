@@ -5,12 +5,12 @@ export default function Footer() {
     const { t } = useTranslation();
 
     return (
-        <footer style={{ backgroundColor: "#4C3837" }} className="text-white">
+        <footer style={{ backgroundColor: "#e5ffb1e3" }} className="text-black">
             <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
 
                 <div>
                     <h2 className="text-lg font-bold mb-2">{t("footer.brand")}</h2>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-900">
                         {t("footer.description")}
                     </p>
                 </div>
@@ -28,9 +28,9 @@ export default function Footer() {
 
                 <div>
                     <h3 className="font-semibold mb-3">{t("footer.contacts")}</h3>
-                    <p className="text-sm text-gray-300">📍 {t("footer.address")}</p>
-                    <p className="text-sm text-gray-300">📞 {t("footer.phone")}</p>
-                    <p className="text-sm text-gray-300">✉ {t("footer.email")}</p>
+                    <p className="text-sm text-gray-900">📍 {t("footer.address")}</p>
+                    <p className="text-sm text-gray-900">📞 {t("footer.phone")}</p>
+                    <p className="text-sm text-gray-900">✉ {t("footer.email")}</p>
 
                     <div className="flex space-x-4 mt-3">
                         <a
@@ -53,7 +53,7 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className="border-t border-gray-500 text-center py-4 text-xs text-gray-300">
+            <div className="border-t border-gray-500 text-center py-4 text-xs text-gray-900">
                 © {new Date().getFullYear()} {t("footer.brand")}. {t("footer.rights")}
             </div>
         </footer>
