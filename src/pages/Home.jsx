@@ -6,6 +6,7 @@ import {SpecialistSections} from "./home/SpecialistSections.jsx";
 import {MapSection} from "./home/MapSection.jsx";
 import CoolNumbers from "./home/CoolNumbers.jsx";
 import Tests from "./home/Tests.jsx";
+import OurSpecialists from "./home/OurSpecialists.jsx";
 
 export default function Home() {
     const [showOverlay, setShowOverlay] = useState(false);
@@ -19,9 +20,11 @@ export default function Home() {
 
             <CoolNumbers />
 
-            <SpecialistSections />
+            <OurSpecialists />
 
             <Tests />
+
+            <SpecialistSections />
 
             <MapSection/>
         </div>

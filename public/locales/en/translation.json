@@ -37,6 +37,12 @@
       "availabilityTitle": "24/7",
       "availabilityText": "you can book a consultation at any convenient time"
     },
+    "ourSpecialists": {
+      "title": "Our Specialists",
+      "subtitle": "Psychologist",
+      "slideText": "Will help you understand yourself, deal with anxiety, and overcome inner conflicts.",
+      "button": "Book a consultation"
+    },
     "search": {
       "title": "Quick search",
       "onlineOffline": "online / offline",

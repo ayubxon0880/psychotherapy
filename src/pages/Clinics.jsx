@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { Search, ChevronRight, ChevronLeft } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
-import {API} from "../service/api.jsx";
+import { API } from "../service/api.jsx";
 
 export default function Clinics() {
     const { t } = useTranslation();
@@ -17,7 +17,7 @@ export default function Clinics() {
     const fetchTopClinics = async () => {
         try {
             const res = await axios.get(`${API}/clinic/filter`, {
-                params: { page: 0, size: 3, sort: 'id', name: search, direction:"asc" },
+                params: { page: 0, size: 3, sort: 'id', name: search, direction: "asc" },
             });
             setTopClinics(res.data.content);
         } catch (err) {
@@ -28,7 +28,7 @@ export default function Clinics() {
     const fetchAllClinics = async () => {
         try {
             const res = await axios.get(`${API}/clinic/filter`, {
-                params: { page: 0, size: 20, sort: 'id', name: search, direction:"asc" },
+                params: { page: 0, size: 20, sort: 'id', name: search, direction: "asc" },
             });
             setAllClinics(res.data.content);
         } catch (err) {
@@ -51,7 +51,7 @@ export default function Clinics() {
                     onChange={(e) => setSearch(e.target.value)}
                     className="w-full border border-gray-300 rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-blue-500"
                 />
-                <Search className="absolute left-3 top-2.5 text-gray-400" size={18}/>
+                <Search className="absolute left-3 top-2.5 text-gray-400" size={18} />
             </div>
 
             <h2 className="text-lg font-semibold mb-4">{t("clinics.top3")}</h2>
@@ -68,33 +68,30 @@ export default function Clinics() {
                 >
                     {topClinics.map((clinic) => (
                         <SwiperSlide key={clinic.id}>
-                            <ClinicCard clinic={clinic}/>
+                            <ClinicCard clinic={clinic} />
                         </SwiperSlide>
                     ))}
                 </Swiper>
 
                 <div className="clinic-prev absolute top-1/2 left-0 z-10 bg-white p-2 rounded-full shadow cursor-pointer -translate-y-1/2">
-                    <ChevronLeft size={18}/>
+                    <ChevronLeft size={18} />
                 </div>
                 <div className="clinic-next absolute top-1/2 right-0 z-10 bg-white p-2 rounded-full shadow cursor-pointer -translate-y-1/2">
-                    <ChevronRight size={18}/>
+                    <ChevronRight size={18} />
                 </div>
             </div>
 
-
-            {/* 🔹 All Clinics */}
             <h2 className="text-lg font-semibold mt-10 mb-4">{t("clinics.all")}</h2>
             {allClinics.length === 0 ? (
                 <p className="text-center text-gray-500">{t("clinics.noData")}</p>
             ) : (
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {allClinics.map((clinic) => (
-                        <ClinicCard key={clinic.id} clinic={clinic}/>
+                        <ClinicCard key={clinic.id} clinic={clinic} />
                     ))}
                 </div>
             )}
 
-            {/* 🔹 Form Button */}
             <div className="text-center mt-10">
                 <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLSe9iVzU6_Lt2hpoO5m2bFcToienSdbnsiWhlxI-1UFoZX6UrQ/viewform?usp=dialog"
@@ -109,13 +106,12 @@ export default function Clinics() {
     );
 }
 
-// 🔹 Reusable Clinic Card Component
 function ClinicCard({ clinic }) {
     const { t } = useTranslation();
     return (
         <div className="bg-white rounded-3xl p-6 flex flex-col gap-4 border border-gray-200 shadow-sm">
             <img
-                src={clinic.imageUrl !== null ? API+"/file/files/"+clinic.imageUrl : "/images/clinic.png"}
+                src={clinic.imageUrl !== null ? API + "/file/files/" + clinic.imageUrl : "/images/clinic.png"}
                 alt={clinic.name}
                 className="w-full h-96 object-cover rounded-2xl"
             />

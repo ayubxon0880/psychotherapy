@@ -37,6 +37,12 @@
       "availabilityTitle": "24/7",
       "availabilityText": "siz qulay vaqtda maslahatga yozilishingiz mumkin"
     },
+    "ourSpecialists": {
+      "title": "Bizning mutaxassislar",
+      "subtitle": "Psixolog",
+      "slideText": "O'zingizni tushunishga, xavotirni yengishga va ichki qarama-qarshiliklarni hal qilishga yordam beradi.",
+      "button": "Konsultatsiyaga yozilish"
+    },
     "search": {
       "title": "Tezkor qidiruv",
       "onlineOffline": "onlayn / oflayn",
