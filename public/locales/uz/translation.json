@@ -53,6 +53,56 @@
       "frequentRequests": "Ko‘p uchraydigan so‘rovlar",
       "bestSpecialists": "Haftaning eng yaxshi mutaxassislari"
     },
+    "contacts": {
+      "title": "bog'lanish uchun ma'lumot",
+      "number": "telefon no'mer",
+      "email": "elektron pochta"
+    },
+    "faq": {
+      "title": "Ko‘p beriladigan savollar",
+      "questions": [
+        {
+          "q": "Tashvish",
+          "a": "Tashvish — bu organizmning stressga normal javobi. U surunkali holatga aylansa, uyquga, diqqatga xalaqit beradi va yurak urishi tezlashishi, terlash, titrash kabi belgilarni keltirib chiqaradi. Nafas olish mashqlari, psixoterapiya va muntazam jismoniy faollik yordam beradi."
+        },
+        {
+          "q": "Depressiya",
+          "a": "Depressiya — doimiy qayg‘u, sevimli mashg‘ulotlarga qiziqish yo‘qolishi, energiya pasayishi, ishtaha va uyqudagi o‘zgarishlar bilan kechadi. Terapiya, ijtimoiy qo‘llab-quvvatlash va dori-darmonlar yordam beradi."
+        },
+        {
+          "q": "Panik hujumlar",
+          "a": "Panik hujum — bu to‘satdan paydo bo‘ladigan kuchli qo‘rquv xuruji bo‘lib, yurak urishi tezlashishi, nafas qisishi, titrash bilan namoyon bo‘ladi. Psixoterapiya, nafas mashqlari va ba’zan dorilar foydali."
+        },
+        {
+          "q": "Qo‘rquv va fobiyalar",
+          "a": "Fobiyalar — ma’lum narsalardan yoki vaziyatlardan asossiz qo‘rquv. Bosqichma-bosqich yaqinlashish, kognitiv terapiya va dam olish mashqlari ularni yengishga yordam beradi."
+        },
+        {
+          "q": "Munosaabatdagi muammolar",
+          "a": "Munosaabatlar muammosi noto‘g‘ri muloqot, ishonchsizlik yoki noaniq chegaralar tufayli kelib chiqadi. Er-xotin terapiyasi va muloqot ko‘nikmalarini rivojlantirish foydali bo‘lishi mumkin."
+        },
+        {
+          "q": "Charchash va kuyish (burnout)",
+          "a": "Kuyish — bu hissiy charchash, befarqlik va motivatsiyaning yo‘qolishi. Dam olish, ish va hayot muvozanati, yaqinlar qo‘llab-quvvatlashi va psixologik yordam tiklanishga yordam beradi."
+        },
+        {
+          "q": "O‘z-o‘zini baholash",
+          "a": "Past o‘z-o‘zini baholash o‘zini tanqid qilish va o‘zini yetarli his qilmaslikda namoyon bo‘ladi. Buni salbiy e’tiqodlarni o‘zgartirish, o‘zini qabul qilish va terapiya orqali yaxshilash mumkin."
+        },
+        {
+          "q": "Jinsiy hayotdagi muammolar",
+          "a": "Jinsiy hayotdagi muammolar stress, sog‘liq, travma yoki ishonchsizlik bilan bog‘liq bo‘lishi mumkin. Ochiq muloqot va mutaxassis yordami foydali."
+        },
+        {
+          "q": "Bola davridagi jarohatlar",
+          "a": "Bola davridagi travmalar ishonchsizlik, hissiy beqarorlik kabi uzoq davom etuvchi oqibatlarga olib kelishi mumkin. Terapiya va travmaga yo‘naltirilgan yondashuv tiklanishga yordam beradi."
+        },
+        {
+          "q": "Haddan tashqari asabiylik",
+          "a": "Agres­siya va asabiylik stress, yechilmagan his-tuyg‘ular yoki travma sababli paydo bo‘ladi. G‘azabni nazorat qilish texnikalari, jismoniy faollik va terapiya yordam beradi."
+        }
+      ]
+    },
     "tests": {
       "title": "Testlar",
       "description": "Saytimizda siz o'zingizni, kuchli tomonlaringizni va rivojlanish sohalaringizni yaxshiroq tushunishga yordam beradigan ishonchli psixologik testlarni o'tishingiz mumkin.",
