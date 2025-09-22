@@ -44,7 +44,7 @@ export default function Contact() {
                             sendMessage(fio, setFio, phone, setPhone, about, setAbout, setLoading)
                         }
                         disabled={loading}
-                        className="w-full bg-[#d5beb0] text-white py-2 rounded-lg hover:bg-[#3c2d28]"
+                        className="w-full bg-[#D8F3A2] text-black py-2 rounded-lg hover:bg-[#c6df95]"
                     >
                         {loading ? t("contact.sending") : t("contact.send")}
                     </button>

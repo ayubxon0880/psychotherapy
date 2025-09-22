@@ -7,7 +7,6 @@ const Tests = () => {
   return (
     <section className="w-full bg-white py-12 px-4 md:px-12 flex flex-col items-center gap-10">
       <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-2 items-center">
-        {/* Left text content */}
         <div>
           <h2 className="text-4xl font-semibold text-gray-800 mb-4">
             {t("home-page.tests.title")}
@@ -17,7 +16,6 @@ const Tests = () => {
           </p>
         </div>
 
-        {/* Right image block */}
         <img
           src="/images/Rectangle45.png"
           alt="Человек читает книгу и зеркало"

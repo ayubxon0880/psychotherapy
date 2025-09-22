@@ -55,7 +55,7 @@ export default function Clinics() {
             </div>
 
             <h2 className="text-lg font-semibold mb-4">{t("clinics.top3")}</h2>
-            <div className="relative px-4 sm:px-6 lg:px-10 rounded-3xl">
+            <div className="relative px-4 sm:px-6 lg:px-10 rounded-3xl max-w-2xl m-auto">
                 <Swiper
                     modules={[Navigation]}
                     navigation={{
@@ -64,11 +64,6 @@ export default function Clinics() {
                     }}
                     spaceBetween={20}
                     slidesPerView={1}
-                    breakpoints={{
-                        640: { slidesPerView: 1 }, // 📱 mobil
-                        768: { slidesPerView: 2 }, // 📲 tablet
-                        // 1024: { slidesPerView: 3 }, // 💻 laptop
-                    }}
                     className="mb-8"
                 >
                     {topClinics.map((clinic) => (
@@ -105,7 +100,7 @@ export default function Clinics() {
                     href="https://docs.google.com/forms/d/e/1FAIpQLSe9iVzU6_Lt2hpoO5m2bFcToienSdbnsiWhlxI-1UFoZX6UrQ/viewform?usp=dialog"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-block px-6 py-3 bg-[#d5beb0] hover:bg-[#a8a89e] text-black rounded-lg font-medium"
+                    className="inline-block px-6 py-3 bg-[#D8F3A2] hover:bg-[#c5dd94] text-black rounded-lg font-medium"
                 >
                     {t("clinics.fillForm")}
                 </a>
