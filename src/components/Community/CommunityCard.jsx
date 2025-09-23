@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { API } from "../../service/api";
+import image from "../../../public/images/women-talk-2.png";
+
 
 export default function CommunityCard({ com }) {
     const { t } = useTranslation();
@@ -7,7 +9,8 @@ export default function CommunityCard({ com }) {
     return (
         <div className="bg-gray-100 rounded-3xl p-4 flex flex-col md:flex-row items-start gap-6">
             <img
-                src={API+"/file/files/"+com.imageUrl}
+                // src={API+"/file/files/"+com.imageUrl}
+                src={image}
                 alt={'community image'}
                 className="w-full md:w-64 h-64 object-cover rounded-lg"
             />

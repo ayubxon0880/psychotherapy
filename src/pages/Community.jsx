@@ -67,7 +67,6 @@ export default function Community() {
                 {communities.length > 0 ? (
                     communities.map(c => (
                         <CommunityCard key={c} com={c} />
-                        // <>gay</>
                     ))
                 ) : (
                     <p className="text-gray-500">{t("community.notFound")}</p>
