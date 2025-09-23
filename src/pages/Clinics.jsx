@@ -82,7 +82,7 @@ export default function Clinics() {
                 </div>
             </div>
 
-            <SpecialistSections />
+            <SpecialistSections hasFilter={false} count={6}/>
 
             {/* <h2 className="text-lg font-semibold mt-10 mb-4">{t("clinics.all")}</h2>
             {allClinics.length === 0 ? (

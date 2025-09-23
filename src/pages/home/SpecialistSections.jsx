@@ -1,10 +1,10 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import {useTranslation} from "react-i18next";
-import {API} from "../../service/api.jsx";
+import { useTranslation } from "react-i18next";
+import { API } from "../../service/api.jsx";
 
-export const SpecialistSections = ({hasFilter}) => {
-    const {t} = useTranslation();
+export const SpecialistSections = ({ hasFilter, count }) => {
+    const { t } = useTranslation();
 
     const [specialists, setSpecialists] = useState([]);
     const [directions, setDirections] = useState([]);
@@ -15,13 +15,16 @@ export const SpecialistSections = ({hasFilter}) => {
     const [error, setError] = useState(null); // ✅ xatolik uchun state
 
     const fetchSpecialists = async () => {
+        if (!count) {
+            count = 5
+        }
         setLoading(true);
         setError(null); // ✅ yangi so‘rov oldidan xatoni tozalash
         try {
             const res = await axios.get(`${API}/specialist/filter`, {
                 params: {
                     page: 0,
-                    size: 5,
+                    size: count,
                     sort: 'id',
                     directionId: directionId || undefined,
                     workFormat: workFormat.length ? workFormat : undefined,
@@ -75,68 +78,75 @@ export const SpecialistSections = ({hasFilter}) => {
 
     return (
         <div className="p-4 max-w-5xl mx-auto">
-            <div className="bg-white p-4 rounded-xl shadow mb-6">
-                <h2 className="text-lg font-semibold mb-3">
-                    {t("home-page.specialist-section.filter")}
-                </h2>
+            {
+                hasFilter ? (
 
-                {/* Filterlar */}
-                <div className="mb-4">
-                    <label className="block font-medium mb-1">
-                        {t("home-page.specialist-section.direction")}
-                    </label>
-                    <select
-                        value={directionId}
-                        onChange={(e) => setDirectionId(e.target.value)}
-                        className="border rounded-lg p-2 w-full"
-                    >
-                        <option value="">
-                            {t("home-page.specialist-section.all")}
-                        </option>
-                        {directions.map((d) => (
-                            <option key={d.id} value={d.id}>
-                                {d.direction}
-                            </option>
-                        ))}
-                    </select>
-                </div>
+                    <div className="bg-white p-4 rounded-xl shadow mb-6">
+                        <h2 className="text-lg font-semibold mb-3">
+                            {t("home-page.specialist-section.filter")}
+                        </h2>
 
-                <div className="mb-4">
-                    <label className="block font-medium mb-1">
-                        {t("home-page.specialist-section.work-format")}
-                    </label>
-                    <div className="flex gap-4">
-                        {[t("home-page.specialist-section.online"), t("home-page.specialist-section.offline")].map((format) => (
-                            <label key={format} className="flex items-center gap-2">
-                                <input
-                                    type="checkbox"
-                                    checked={workFormat.includes(format)}
-                                    onChange={() => toggleFilter(format, setWorkFormat, workFormat)}
-                                />
-                                {format}
+                        {/* Filterlar */}
+                        <div className="mb-4">
+                            <label className="block font-medium mb-1">
+                                {t("home-page.specialist-section.direction")}
                             </label>
-                        ))}
-                    </div>
-                </div>
+                            <select
+                                value={directionId}
+                                onChange={(e) => setDirectionId(e.target.value)}
+                                className="border rounded-lg p-2 w-full"
+                            >
+                                <option value="">
+                                    {t("home-page.specialist-section.all")}
+                                </option>
+                                {directions.map((d) => (
+                                    <option key={d.id} value={d.id}>
+                                        {d.direction}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
 
-                <div className="mb-4">
-                    <label className="block font-medium mb-1">
-                        {t("home-page.specialist-section.language")}
-                    </label>
-                    <div className="flex gap-4 flex-wrap">
-                        {["ENGLISH", "UZBEK", "RUSSIAN"].map((lang) => (
-                            <label key={lang} className="flex items-center gap-2">
-                                <input
-                                    type="checkbox"
-                                    checked={languages.includes(lang)}
-                                    onChange={() => toggleFilter(lang, setLanguages, languages)}
-                                />
-                                {lang}
+                        <div className="mb-4">
+                            <label className="block font-medium mb-1">
+                                {t("home-page.specialist-section.work-format")}
                             </label>
-                        ))}
+                            <div className="flex gap-4">
+                                {[t("home-page.specialist-section.online"), t("home-page.specialist-section.offline")].map((format) => (
+                                    <label key={format} className="flex items-center gap-2">
+                                        <input
+                                            type="checkbox"
+                                            checked={workFormat.includes(format)}
+                                            onChange={() => toggleFilter(format, setWorkFormat, workFormat)}
+                                        />
+                                        {format}
+                                    </label>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="mb-4">
+                            <label className="block font-medium mb-1">
+                                {t("home-page.specialist-section.language")}
+                            </label>
+                            <div className="flex gap-4 flex-wrap">
+                                {["ENGLISH", "UZBEK", "RUSSIAN"].map((lang) => (
+                                    <label key={lang} className="flex items-center gap-2">
+                                        <input
+                                            type="checkbox"
+                                            checked={languages.includes(lang)}
+                                            onChange={() => toggleFilter(lang, setLanguages, languages)}
+                                        />
+                                        {lang}
+                                    </label>
+                                ))}
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                ) : (
+                    ""
+                )
+            }
 
             {/* Content holatlari */}
             {loading ? (
@@ -166,7 +176,7 @@ export const SpecialistSections = ({hasFilter}) => {
                             />
                             <h3 className="font-bold text-lg">{s.fio || " "}</h3>
                             <p className="text-sm text-gray-600">
-                                {s.directionResponse?.map(it => it.direction+" ")}
+                                {s.directionResponse?.map(it => it.direction + " ")}
                             </p>
                             <p className="text-sm">{s.category}</p>
                             <p className="text-sm">Exp: {s.experience}</p>

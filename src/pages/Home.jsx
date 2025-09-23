@@ -26,7 +26,7 @@ export default function Home() {
 
             <Tests />
 
-            <SpecialistSections />
+            <SpecialistSections hasFilter={true}/>
 
             <Contacts />
 
