@@ -1,19 +1,43 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
-import { communities } from "../data/communities";
-import { articles } from "../data/articles";
+// import { communities } from "../data/communities";
+import { useTranslation } from "react-i18next";
+import { API } from "../service/api.jsx";
 import CommunityCard from "../components/Community/CommunityCard.jsx";
 import ArticleCard from "../components/Article/ArticleCard.jsx";
-import { useTranslation } from "react-i18next";
+import axios from "axios";
+
 
 export default function Community() {
     const { t } = useTranslation();
     const [search, setSearch] = useState("");
+    const [articles, setArticles] = useState([]);
+    const [communities, setCommunities] = useState([]);
 
-    const filteredCommunities = communities.filter(c =>
-        c.community.name.toLowerCase().includes(search.toLowerCase()) ||
-        c.community.city.toLowerCase().includes(search.toLowerCase())
-    );
+    const fetchArticles = async () => {
+        try {
+            const res = await axios.get(`${API}/article/newest?size=3`);
+            setArticles(res.data.content);
+            console.log(res.data.content)
+        } catch (err) {
+            console.error("Error fetching articles", err);
+        }
+    }
+
+    const fetchCommunities = async () => {
+        try {
+            const res = await axios.get(`${API}/community/filter?page=0&size=5`);
+            setCommunities(res.data.content);
+            console.log(res.data.content)
+        } catch (err) {
+            console.error("Error fetching communities", err);
+        }
+    }
+
+    useEffect(() => {
+        fetchArticles();
+        fetchCommunities();
+    }, [])
 
     return (
         <div className="max-w-5xl mx-auto p-4">
@@ -40,9 +64,10 @@ export default function Community() {
 
             <h2 className="text-xl font-semibold mb-4">{t("community.ourCommunities")}</h2>
             <div className="space-y-6">
-                {filteredCommunities.length > 0 ? (
-                    filteredCommunities.map(c => (
-                        <CommunityCard key={c.community.contacts.website} com={c} />
+                {communities.length > 0 ? (
+                    communities.map(c => (
+                        <CommunityCard key={c} com={c} />
+                        // <>gay</>
                     ))
                 ) : (
                     <p className="text-gray-500">{t("community.notFound")}</p>
