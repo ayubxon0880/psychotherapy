@@ -166,7 +166,7 @@ export const SpecialistSections = () => {
                             />
                             <h3 className="font-bold text-lg">{s.fio || " "}</h3>
                             <p className="text-sm text-gray-600">
-                                {s.directionResponse?.direction || " "}
+                                {s.directionResponse?.map(it => it.direction+" ")}
                             </p>
                             <p className="text-sm">{s.category}</p>
                             <p className="text-sm">Exp: {s.experience}</p>
