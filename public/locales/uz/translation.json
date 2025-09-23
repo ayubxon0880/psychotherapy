@@ -192,8 +192,8 @@
     "join": "Qo‘shilish"
   },
   "about-page": {
-    "title": "Psychotherapy.uz loyihasi haqida",
-    "description": "Biz ushbu platformani ruhiy salomatlik mutaxassislari va yordamga muhtoj odamlarni birlashtirish uchun yaratdik. Bizning maqsadimiz – psixoterapevtik yordamni O‘zbekistonda va undan tashqarida hamma uchun ochiq qilish.",
+    "title": "Biz Haqimizda",
+    "description": "Bizning loyihamiz ruhiy salomatlik bo'yicha mutaxassislarni topish uchun platformadir. Biz qulay va ishonchli qidiruvni ta'minlash orqali odamlarga malakali mutaxassislarni topishga yordam berishga intilamiz. Bizning vazifamiz yuqori sifatli mutaxassislardan foydalanish orqali odamlarning ruhiy salomatligi va farovonligini qo'llab-quvvatlashdir.",
     "valuesTitle": "Bizning qadriyatlarimiz",
     "values": [
       "Mutaxassislarning professionalligi",
@@ -253,8 +253,10 @@
     }
   },
   "test-page": {
-    "pageTitle": "Psixologik testlar onlayn",
-    "pageSubtitle": "Klinik jihatdan tekshirilgan so‘rovnomalar. Bepul va anonim. 2–5 daqiqada o‘ting va natijani talqin qilib oling.",
+    "pageTitle": "testlar",
+    "pageSubtitle": "Bizning veb-saytimizda siz o'zingizni, kuchli tomonlaringizni va rivojlanish sohalarini yaxshiroq tushunishga yordam beradigan tasdiqlangan psixologik testlardan o'tishingiz mumkin.",
+    "testTitle": "test «O'zingnni bil»",
+    "test2Title": "test «O'zingizni bil»",
     "buttons": {
       "start": "Testni boshlash",
       "finish": "Yakunlash va natijani olish",

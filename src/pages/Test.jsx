@@ -87,10 +87,31 @@ export default function TestsPage() {
         <div className="bg-gray-100 min-h-screen py-12">
             <div className="max-w-6xl mx-auto px-4">
                 {/* Header */}
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 text-[#7A5240]">
+                <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-[#545453]">
                     {t("test-page.pageTitle")}
                 </h1>
-                <p className="text-sm text-gray-700 mb-6">{t("test-page.pageSubtitle")}</p>
+                <p className="text-xl text-[#545453] mb-6">{t("test-page.pageSubtitle")}</p>
+
+                <div className="flex flex-wrap justify-center gap-4">
+                    <a className="w-full sm:w-[45%] max-w-[500px] text-center">
+                        <img
+                            src="/images/Rectangle45.png"
+                            alt="person"
+                            className="w-full h-auto rounded-2xl object-cover"
+                        />
+                        <p className="mt-2 text-lg font-bold text-[#545453]">{t("test-page.testTitle")}</p>
+                    </a>
+
+                    <a className="w-full sm:w-[45%] max-w-[500px] text-center">
+                        <img
+                            src="/images/Rectangle46.png"
+                            alt="person"
+                            className="w-full h-auto rounded-2xl object-cover"
+                        />
+                        <p className="mt-2 text-lg font-bold text-[#545453]">{t("test-page.test2Title")}</p>
+                    </a>
+                </div>
+
 
                 {/* Cards */}
                 {/* <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -110,8 +131,7 @@ export default function TestsPage() {
                     ))}
                 </div> */}
 
-                {/* Test Area */}
-                <div id="test-area" className="mt-10">
+                {/* <div id="test-area" className="mt-10">
                     {selectedTest && (
                         <div className="bg-white rounded-2xl p-6 border border-gray-300">
                             <h2 className="text-2xl font-semibold text-[#7A5240]">
@@ -146,9 +166,8 @@ export default function TestsPage() {
                             </div>
                         </div>
                     )}
-                </div>
+                </div> */}
 
-                {/* Result Modal */}
                 {showResultModal && result && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
                         <div

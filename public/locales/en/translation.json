@@ -192,8 +192,8 @@
     "join": "Join"
   },
   "about-page": {
-    "title": "About Psychotherapy.uz",
-    "description": "We created this platform to connect mental health professionals and people who need support. Our mission is to make psychotherapeutic help accessible in Uzbekistan and beyond.",
+    "title": "About us",
+    "description": "Our project is a platform for finding mental health specialists. We strive to help people find qualified specialists by providing a convenient and reliable search. Our mission is to support people's mental health and well-being through access to high-quality specialist care.",
     "valuesTitle": "Our values",
     "values": [
       "Professionalism of specialists",
@@ -253,8 +253,10 @@
     }
   },
   "test-page": {
-    "pageTitle": "Psychological tests online",
-    "pageSubtitle": "Clinically validated questionnaires. Free and anonymous. Complete in 2–5 minutes and get an interpretation of the result.",
+    "pageTitle": "Tests",
+    "pageSubtitle": "On our website, you can take proven psychological tests that will help you better understand yourself, your strengths, and areas for development.",
+    "testTitle": "Test «Know Yourself»",
+    "test2Title": "Test «Making Internal Decisions»",
     "buttons": {
       "start": "Start test",
       "finish": "Finish and get result",
