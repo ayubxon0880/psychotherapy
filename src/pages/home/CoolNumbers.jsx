@@ -7,7 +7,6 @@ const CoolNumbers = () => {
   return (
     <section className="w-full bg-white py-12 px-4 md:px-12">
       <div className="max-w-6xl mx-auto grid gap-4 md:grid-cols-2">
-        {/* Left Large Card */}
         <div className="bg-lime-200 rounded-2xl p-6 flex flex-col justify-center md:col-span-1 shadow-md">
           <h2 className="text-6xl font-bold text-gray-800 mb-2">
             {t("home-page.coolNumbers.foundTitle")}
