@@ -8,8 +8,12 @@ export const HeroSection = ({ setOverlay }) => {
     return (
         <section
             className="relative min-h-[70vh] md:min-h-screen bg-cover bg-center flex items-center px-4"
-            style={{ backgroundImage: "url('/images/Vector3.svg')" }}
-
+            style={{
+                backgroundImage: `
+      url('/images/bghero.png'),
+      linear-gradient(to bottom, #F2F3A2 0%, rgba(255,255,255,0.8) 100%)
+    `,
+            }}
         >
             <div className="wrapper max-w-7xl w-full m-auto">
                 <div className="relative z-10 max-w-[90%] ml-2">
