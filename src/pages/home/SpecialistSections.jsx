@@ -19,7 +19,7 @@ export const SpecialistSections = ({ hasFilter, count }) => {
             count = 5
         }
         setLoading(true);
-        setError(null); // ✅ yangi so‘rov oldidan xatoni tozalash
+        setError(null);
         try {
             const res = await axios.get(`${API}/specialist/filter`, {
                 params: {
