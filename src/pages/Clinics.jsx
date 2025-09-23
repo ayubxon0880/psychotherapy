@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { API } from "../service/api.jsx";
+import { SpecialistSections } from "./home/SpecialistSections.jsx";
 
 export default function Clinics() {
     const { t } = useTranslation();
@@ -81,7 +82,9 @@ export default function Clinics() {
                 </div>
             </div>
 
-            <h2 className="text-lg font-semibold mt-10 mb-4">{t("clinics.all")}</h2>
+            <SpecialistSections />
+
+            {/* <h2 className="text-lg font-semibold mt-10 mb-4">{t("clinics.all")}</h2>
             {allClinics.length === 0 ? (
                 <p className="text-center text-gray-500">{t("clinics.noData")}</p>
             ) : (
@@ -90,7 +93,7 @@ export default function Clinics() {
                         <ClinicCard key={clinic.id} clinic={clinic} />
                     ))}
                 </div>
-            )}
+            )} */}
 
             <div className="text-center mt-10">
                 <a

@@ -3,7 +3,7 @@ import axios from "axios";
 import {useTranslation} from "react-i18next";
 import {API} from "../../service/api.jsx";
 
-export const SpecialistSections = () => {
+export const SpecialistSections = ({hasFilter}) => {
     const {t} = useTranslation();
 
     const [specialists, setSpecialists] = useState([]);
