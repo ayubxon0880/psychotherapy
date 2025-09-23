@@ -255,8 +255,10 @@
   "test-page": {
     "pageTitle": "Tests",
     "pageSubtitle": "On our website, you can take proven psychological tests that will help you better understand yourself, your strengths, and areas for development.",
-    "testTitle": "Test «Know Yourself»",
-    "test2Title": "Test «Making Internal Decisions»",
+    "testTitle1": "Test «Know Yourself»",
+    "testTitle2": "Test «Making Internal Decisions»",
+    "description1": "We often ask ourselves: Who am I? What drives me? Why do I react the way I do? Sometimes finding the answers can be difficult. The Know Yourself test was created to help you look within and see what's usually hidden in the hustle and bustle of everyday life. By taking this test, you gradually begin to notice your true values, habitual behavior patterns, and how you view the world. It will help you better understand which qualities make you stronger and which, conversely, hinder your progress. This isn't just a set of questions—it's a small journey into your inner self. The results will become a mirror for you, reflecting not only your character and habits, but also your deepest motivations. Take the test and take a step toward true self-knowledge. You might discover things about yourself you've long felt but never put into words.",
+    "description2": "We often ask ourselves: Who am I? What drives me? Why do I react the way I do? Sometimes finding the answers can be difficult. The Know Yourself test was created to help you look within and see what's usually hidden in the hustle and bustle of everyday life. By taking this test, you gradually begin to notice your true values, habitual behavior patterns, and how you view the world. It will help you better understand which qualities make you stronger and which, conversely, hinder your progress. This isn't just a set of questions—it's a small journey into your inner self. The results will become a mirror for you, reflecting not only your character and habits, but also your deepest motivations. Take the test and take a step toward true self-knowledge. You might discover things about yourself you've long felt but never put into words.",
     "buttons": {
       "start": "Start test",
       "finish": "Finish and get result",

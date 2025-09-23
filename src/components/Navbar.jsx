@@ -15,7 +15,7 @@ export default function Navbar() {
         { key: "navbar.specialists", href: "/specialists" },
         { key: "navbar.community", href: "/community" },
         { key: "navbar.about", href: "/about" },
-        { key: "navbar.test", href: "/test" },
+        { key: "navbar.test", href: "/tests" },
     ];
 
     const changeLanguage = (lng) => {

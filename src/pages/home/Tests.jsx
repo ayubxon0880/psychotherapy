@@ -17,7 +17,7 @@ const Tests = () => {
         </div>
 
         <img
-          src="/images/Rectangle45.png"
+          src="/images/Rectangle1.png"
           alt="Человек читает книгу и зеркало"
           className="rounded-2xl"
         />

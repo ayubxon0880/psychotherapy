@@ -253,10 +253,12 @@
     }
   },
   "test-page": {
-    "pageTitle": "testlar",
+    "pageTitle": "Testlar",
     "pageSubtitle": "Bizning veb-saytimizda siz o'zingizni, kuchli tomonlaringizni va rivojlanish sohalarini yaxshiroq tushunishga yordam beradigan tasdiqlangan psixologik testlardan o'tishingiz mumkin.",
-    "testTitle": "test «O'zingnni bil»",
-    "test2Title": "test «O'zingizni bil»",
+    "testTitle1": "Test «O'zingnni bil»",
+    "testTitle2": "Test «O'zingizni bil»",
+    "description1": "Biz ko'pincha o'zimizga savol beramiz: men kimman? Meni nima boshqaradi? Nega men shunday munosabatdaman? Ba'zan javoblarni topish qiyin bo'lishi mumkin. O'zingni bil testi kundalik hayotning shovqin-suronida odatda nima yashiringanini ko'rish va ko'rishga yordam berish uchun yaratilgan.",
+    "description2": "Biz ko'pincha o'zimizga savol beramiz: men kimman? Meni nima boshqaradi? Nega men shunday munosabatdaman? Ba'zan javoblarni topish qiyin bo'lishi mumkin. O'zingni bil testi kundalik hayotning shovqin-suronida odatda nima yashiringanini ko'rish va ko'rishga yordam berish uchun yaratilgan.",
     "buttons": {
       "start": "Testni boshlash",
       "finish": "Yakunlash va natijani olish",

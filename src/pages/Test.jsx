@@ -93,22 +93,22 @@ export default function TestsPage() {
                 <p className="text-xl text-[#545453] mb-6">{t("test-page.pageSubtitle")}</p>
 
                 <div className="flex flex-wrap justify-center gap-4">
-                    <a className="w-full sm:w-[45%] max-w-[500px] text-center">
+                    <a className="w-full sm:w-[45%] max-w-[500px] text-center" href="/test/1">
                         <img
-                            src="/images/Rectangle45.png"
+                            src="/images/Rectangle1.png"
                             alt="person"
                             className="w-full h-auto rounded-2xl object-cover"
                         />
-                        <p className="mt-2 text-lg font-bold text-[#545453]">{t("test-page.testTitle")}</p>
+                        <p className="mt-2 text-lg font-bold text-[#545453]">{t("test-page.testTitle1")}</p>
                     </a>
 
-                    <a className="w-full sm:w-[45%] max-w-[500px] text-center">
+                    <a className="w-full sm:w-[45%] max-w-[500px] text-center" href="/test/2">
                         <img
-                            src="/images/Rectangle46.png"
+                            src="/images/Rectangle2.png"
                             alt="person"
                             className="w-full h-auto rounded-2xl object-cover"
                         />
-                        <p className="mt-2 text-lg font-bold text-[#545453]">{t("test-page.test2Title")}</p>
+                        <p className="mt-2 text-lg font-bold text-[#545453]">{t("test-page.testTitle2")}</p>
                     </a>
                 </div>
 
