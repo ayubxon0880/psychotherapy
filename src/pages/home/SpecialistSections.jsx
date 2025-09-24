@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { API } from "../../service/api.jsx";
+import { Link } from "react-router-dom";
 
 export const SpecialistSections = ({ hasFilter, count }) => {
     const { t } = useTranslation();
@@ -165,7 +166,8 @@ export const SpecialistSections = ({ hasFilter, count }) => {
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {specialists.map((s) => (
-                        <div
+                        <Link
+                            to={`/specialists/specialist/${s.id}`}
                             key={s.id}
                             className="border rounded-lg shadow p-4 bg-white"
                         >
@@ -180,7 +182,7 @@ export const SpecialistSections = ({ hasFilter, count }) => {
                             </p>
                             <p className="text-sm">{s.category}</p>
                             <p className="text-sm">Exp: {s.experience}</p>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             )}
