@@ -23,7 +23,7 @@ const Tests = () => {
         />
       </div>
 
-      <a href="/test" className="text-2xl bg-lime-200 hover:bg-lime-300 transition-colors px-6 py-3 rounded-lg font-medium text-gray-800 max-w-96 w-full flex justify-center">
+      <a href="/tests" className="text-2xl bg-lime-200 hover:bg-lime-300 transition-colors px-6 py-3 rounded-lg font-medium text-gray-800 max-w-96 w-full flex justify-center">
         {t("home-page.tests.button")}
       </a>
     </section>

@@ -56,7 +56,7 @@ export default function Clinics() {
             </div>
 
             <h2 className="text-lg font-semibold mb-4">{t("clinics.top3")}</h2>
-            <div className="relative px-4 sm:px-6 lg:px-10 rounded-3xl max-w-2xl m-auto">
+            <div className="relative px-4 sm:px-6 lg:px-10 rounded-3xl m-auto">
                 <Swiper
                     modules={[Navigation]}
                     navigation={{
@@ -112,11 +112,11 @@ export default function Clinics() {
 function ClinicCard({ clinic }) {
     const { t } = useTranslation();
     return (
-        <div className="bg-white rounded-3xl p-6 flex flex-col gap-4 border border-gray-200 shadow-sm">
+        <div className="bg-white rounded-3xl p-6 flex max-md:p-0 max-md:border-0 max-md:flex-col md:flex-row gap-4 border border-gray-200 shadow-sm">
             <img
                 src={clinic.imageUrl !== null ? API + "/file/files/" + clinic.imageUrl : "/images/clinic.png"}
                 alt={clinic.name}
-                className="w-full h-96 object-cover rounded-2xl"
+                className="max-md:max-w-full md:max-w-96 h-96 object-cover rounded-2xl"
             />
 
             <div className="flex flex-col flex-1">
