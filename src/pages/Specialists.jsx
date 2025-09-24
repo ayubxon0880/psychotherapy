@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-import {API} from "../service/api.jsx";
+import { API } from "../service/api.jsx";
+import { Link } from "react-router-dom";
 
 export default function Specialists() {
     const { t } = useTranslation();
@@ -53,6 +54,21 @@ export default function Specialists() {
         fetchSpecialists();
     }, [filters]);
 
+    //////////////// this is for test purposes only
+
+    const [specialist, setSpecialist] = useState();
+
+    useEffect(() => {
+        fetch(`${API}/specialist/${4}`)
+            .then(res => res.json())
+            .then(data => {
+                setSpecialist(data)
+                console.log(data)
+            })
+            .catch(error => console.error("Could not fetch clinic at id: ", error));
+    }, []);
+
+    //////////////// this is for test purposes only
     return (
         <div className="max-w-6xl mx-auto px-4 py-8 space-y-12">
             <section>
@@ -112,12 +128,13 @@ export default function Specialists() {
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {specialists.map((spec) => (
-                            <div
+                            <Link
+                                to={`/specialists/specialist/${spec.id}`}
                                 key={spec.id}
                                 className="relative rounded-[20px] shadow hover:shadow-lg overflow-hidden"
                             >
                                 <img
-                                    src={`${API}/file/files/`+spec.imageUrl}
+                                    src={`${API}/file/files/` + spec.imageUrl}
                                     alt={spec.FIO}
                                     className="w-full h-96 object-cover"
                                 />
@@ -127,7 +144,7 @@ export default function Specialists() {
                                         <p className="text-sm">{spec.workSkills}</p>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 )}

@@ -11,6 +11,7 @@ import TestDefinition from "./pages/test/TestDefinition.jsx";
 import TestSolve from "./pages/test/TestSolve.jsx";
 import Clinic from "./pages/Clinics/Clinic.jsx";
 import Specialists from "./pages/Specialists.jsx";
+import Specialist from "./pages/Specialist.jsx";
 
 export default function App() {
     return (
@@ -23,7 +24,7 @@ export default function App() {
                     <Route path="/clinics" element={<Clinics />} />
                     <Route path="/community" element={<Community />} />
                     <Route path="/specialists" element={<Specialists />} />
-                    {/* <Route path="/specialists" element={<Specialist />} /> */}
+                    <Route path="/specialists/specialist/:id" element={<Specialist />} />
                     <Route path="/tests" element={<TestsPage />} />
                     <Route path="/test/:id" element={<TestDefinition />} />
                     <Route path="/clinics/clinic/:id" element={<Clinic />} />

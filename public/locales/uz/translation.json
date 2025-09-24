@@ -277,6 +277,7 @@
     "rights": "Barcha huquqlar himoyalangan."
   },
   "general": {
-    "view-more": "Ko'proq ko'rish"
+    "view-more": "Ko'proq ko'rish",
+    "no-data": "Ma'lumot topilmadi"
   }
 }

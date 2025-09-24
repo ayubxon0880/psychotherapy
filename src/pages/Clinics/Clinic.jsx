@@ -7,15 +7,21 @@ const Clinic = () => {
   const { t } = useTranslation();
   const { id } = useParams();
   const [clinic, setClinic] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     fetch(`${API}/clinic/${id}`)
       .then(res => res.json())
       .then(data => setClinic(data))
-      .catch(error => console.error("Could not fetch clinic at id: " + id, error));
+      .catch(error => console.error("Could not fetch clinic at id: " + id, error))
+      .finally(() => setLoading(false));
   }, [id]);
 
-  if (!clinic) return <p className="text-center">{t("loading")}</p>;
+  if (loading) {
+    return <p className="text-center mt-10">...</p>;
+  }
+  if (!clinic) return <p className="text-center">{t("general.no-data")}</p>;
 
   return (
     <div className="bg-white rounded-3xl p-6 flex max-md:p-3 flex-col gap-4 max-w-7xl m-auto mb-16">
