@@ -146,7 +146,8 @@
     "address": "Address",
     "phone": "Phone",
     "website": "Website",
-    "fillForm": "Join us"
+    "fillForm": "Join us",
+    "time": "Time"
   },
   "community": {
     "addCommunity": "Join",
@@ -274,5 +275,8 @@
     "phone": "+998 77 378 63 67",
     "email": "admin@psychotherapy.uz",
     "rights": "All rights reserved."
+  },
+  "general": {
+    "view-more": "View more"
   }
 }

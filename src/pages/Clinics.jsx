@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { API } from "../service/api.jsx";
 import { SpecialistSections } from "./home/SpecialistSections.jsx";
+import { Link, useParams } from "react-router-dom";
 
 export default function Clinics() {
     const { t } = useTranslation();
@@ -82,7 +83,7 @@ export default function Clinics() {
                 </div>
             </div>
 
-            <SpecialistSections hasFilter={false} count={6}/>
+            <SpecialistSections hasFilter={false} count={6} />
 
             {/* <h2 className="text-lg font-semibold mt-10 mb-4">{t("clinics.all")}</h2>
             {allClinics.length === 0 ? (
@@ -111,6 +112,7 @@ export default function Clinics() {
 
 function ClinicCard({ clinic }) {
     const { t } = useTranslation();
+
     return (
         <div className="bg-white rounded-3xl p-6 flex max-md:p-0 max-md:border-0 max-md:flex-col md:flex-row gap-4 border border-gray-200 shadow-sm">
             <img
@@ -143,6 +145,7 @@ function ClinicCard({ clinic }) {
                         {clinic.website}
                     </a>
                 </p>
+                <Link to={`/clinics/clinic/${clinic.id}`} className="p-4 bg-[#D8F3A2] hover:bg-[#cce599] max-w-fit rounded-xl absolute right-4 bottom-4">{t("general.view-more")}</Link>
             </div>
         </div>
     );
