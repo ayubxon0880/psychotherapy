@@ -28,7 +28,7 @@ const Clinic = () => {
       <img
         src={clinic.imageUrl ? API + "/file/files/" + clinic.imageUrl : "/images/clinic.png"}
         alt={clinic.name}
-        className="max-w-full h-96 object-cover rounded-2xl"
+        className="w-full h-96 lg:h-[550px] object-cover rounded-3xl"
       />
       <div className="flex flex-col flex-1">
         <h3 className="text-xl font-semibold">{clinic.name}</h3>
