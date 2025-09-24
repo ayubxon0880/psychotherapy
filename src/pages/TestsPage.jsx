@@ -20,33 +20,33 @@ export function TestsPage() {
     return (
         <div className="bg-gray-100 min-h-screen py-12">
             <div className="max-w-4xl mx-auto px-4">
-                <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-[#545453]">
+                <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-[#545453] text-center">
                     {t("test-page.pageTitle")}
                 </h1>
-                <p className="text-xl text-[#545453] mb-6">{t("test-page.pageSubtitle")}</p>
+                <p className="text-xl text-[#545453] mb-10 text-center">
+                    {t("test-page.pageSubtitle")}
+                </p>
 
-                <div className="flex flex-wrap justify-center gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {tests.map(it => {
                         return (
                             <a
                                 key={it.id}
-                                className="w-full sm:w-[45%] max-w-[500px] text-center"
                                 href={`/test/${it.id}`}
+                                className="block p-6 rounded-2xl shadow-md bg-white hover:bg-gray-50 transition-transform transform hover:-translate-y-1 hover:shadow-lg"
                             >
-                                <img
-                                    src={`/images/Rectangle-phq9.png`}
-                                    alt={it.title}
-                                    className="w-full h-auto rounded-2xl object-cover"
-                                />
-                                <p className="mt-2 text-lg font-bold text-[#545453]">
+                                <p className="text-lg font-semibold text-[#545453] mb-2">
                                     {it.title}
                                 </p>
+                                <span className="text-sm text-gray-500">
+                            {t("test-page.startNow")}
+                        </span>
                             </a>
                         )
                     })}
                 </div>
-
             </div>
         </div>
+
     );
 }

@@ -20,26 +20,34 @@ export default function TestDefinition() {
 
     return (
         <div className="bg-gray-100 min-h-screen py-12">
-            <div className="max-w-6xl mx-auto px-4">
-                <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-[#545453]">
+            <div className="max-w-4xl mx-auto px-4">
+                <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-[#545453] text-center">
                     {test?.title}
                 </h1>
-                <p className="text-xl text-[#545453] mb-6">
+                <p className="text-lg md:text-xl text-[#545453] mb-8 text-center">
                     {test?.description}
                 </p>
-                <div className="flex items-center justify-center rounded-[52px] w-full bg-[#24a698]">
-                    <img src={`/images/Rectangle-phq9.png`} alt="image" />
+
+                <div className="flex justify-center">
+                    <div className="rounded-3xl overflow-hidden shadow-md w-full sm:w-[70%] md:w-[60%]">
+                        <img
+                            src={`/images/Rectangle-phq9.png`}
+                            alt="image"
+                            className="w-full h-auto object-cover"
+                        />
+                    </div>
                 </div>
 
-                <div className="mt-8 flex justify-center">
+                <div className="mt-10 flex justify-center">
                     <a
                         href={`/test/solve/${id}`}
-                        className="px-6 py-3 bg-[#24a698] text-white font-semibold rounded-full shadow hover:bg-[#1e867a] transition"
+                        className="px-8 py-3 bg-[#24a698] text-white font-semibold rounded-full shadow hover:bg-[#1e867a] transition"
                     >
                         {t("test-page.startTest")}
                     </a>
                 </div>
             </div>
         </div>
+
     );
 }

@@ -254,53 +254,9 @@
   },
   "test-page": {
     "pageTitle": "Tests",
-    "pageSubtitle": "On our website, you can take proven psychological tests that will help you better understand yourself, your strengths, and areas for development.",
-    "testTitle1": "Test «Know Yourself»",
-    "testTitle2": "Test «Making Internal Decisions»",
-    "description1": "We often ask ourselves: Who am I? What drives me? Why do I react the way I do? Sometimes finding the answers can be difficult. The Know Yourself test was created to help you look within and see what's usually hidden in the hustle and bustle of everyday life. By taking this test, you gradually begin to notice your true values, habitual behavior patterns, and how you view the world. It will help you better understand which qualities make you stronger and which, conversely, hinder your progress. This isn't just a set of questions—it's a small journey into your inner self. The results will become a mirror for you, reflecting not only your character and habits, but also your deepest motivations. Take the test and take a step toward true self-knowledge. You might discover things about yourself you've long felt but never put into words.",
-    "description2": "We often ask ourselves: Who am I? What drives me? Why do I react the way I do? Sometimes finding the answers can be difficult. The Know Yourself test was created to help you look within and see what's usually hidden in the hustle and bustle of everyday life. By taking this test, you gradually begin to notice your true values, habitual behavior patterns, and how you view the world. It will help you better understand which qualities make you stronger and which, conversely, hinder your progress. This isn't just a set of questions—it's a small journey into your inner self. The results will become a mirror for you, reflecting not only your character and habits, but also your deepest motivations. Take the test and take a step toward true self-knowledge. You might discover things about yourself you've long felt but never put into words.",
-    "buttons": {
-      "start": "Start test",
-      "finish": "Finish and get result",
-      "download": "Download PDF test",
-      "book": "Book an appointment",
-      "sendEmail": "Send result to email",
-      "close": "Close"
-    },
-    "disclaimer": "Online tests are not diagnostic and do not replace consultation with a doctor or psychologist.",
-    "questionsCount": "Questions: {{count}}",
-    "questionLabel": "Question {{number}}",
-    "options": {
-      "0": "0 — Not at all",
-      "1": "1 — Several days",
-      "2": "2 — More than half the days",
-      "3": "3 — Nearly every day"
-    },
-    "result": {
-      "title": "Result",
-      "score": "Score",
-      "interpretationPrefix": "Range",
-      "noInterpretation": "No interpretation",
-      "readyDiscuss": "Ready to discuss your result?",
-      "helpText": "Specialists at psychotherapy.uz will help you and create a support plan."
-    },
-    "tests": {
-      "phq9": {
-        "title": "PHQ-9 – Depression Test",
-        "description": "A validated 9-question tool to assess symptoms of depression."
-      },
-      "gad7": {
-        "title": "GAD-7 – Anxiety Test",
-        "description": "7 questions to assess anxiety levels over the past 2 weeks."
-      }
-    },
-    "ranges": {
-      "minimal": "Minimal",
-      "mild": "Mild",
-      "moderate": "Moderate",
-      "moderately_severe": "Moderately severe",
-      "severe": "Severe"
-    }
+    "pageSubtitle": "On our website, you can take verified psychological tests that will help you better understand yourself, your strengths, and areas for growth.",
+    "startTest": "Start Test",
+    "startNow": "Start Test"
   },
   "footer": {
     "brand": "Psychotherapy",
