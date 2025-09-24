@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { API } from "../../service/api";
+import { API } from "../service/api";
 
 
 export default function CommunityCard({ com }) {

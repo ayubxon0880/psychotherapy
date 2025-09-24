@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { API } from "../service/api.jsx";
-import CommunityCard from "../components/Community/CommunityCard.jsx";
+import CommunityCard from "./CommunityCard.jsx";
 import ArticleCard from "../components/Article/ArticleCard.jsx";
 import axios from "axios";
 

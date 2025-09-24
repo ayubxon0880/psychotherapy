@@ -166,7 +166,18 @@
     "searchResults": "Qidiruv natijalari",
     "notFound": "Hech narsa topilmadi 😔",
     "inviteText1": "Psixologlar, psixoterapevtlar, psixiatrlar va tashkilotlarni hamkorlikka taklif qilamiz. Ishlash uchun qulay platforma, targ‘ibot va qo‘llab-quvvatlashni taklif etamiz.",
-    "inviteText2": "Bizga yozing — tafsilotlarni muhokama qilamiz!"
+    "inviteText2": "Bizga yozing — tafsilotlarni muhokama qilamiz!",
+
+    "category": "Kategoriya",
+    "experience": "Tajriba",
+    "firstConsult": "Birinchi Konsultatsiya",
+    "reConsult": "Birinchi Konsultatsiya",
+    "onlineConsult": "Onlayn Konsultatsiya",
+    "workWith": "Kim bilan ishlaydi",
+    "languages": "Tillar",
+    "workSchedule": "Ish vaqti",
+    "consultPeriod": "Konsultatsiya vaqti",
+    "workSkills": "Ish ko'nikmalari"
   },
   "topSpecialists": {
     "title": "Haftaning Top 3 mutaxassisi",
@@ -277,6 +288,7 @@
     "rights": "Barcha huquqlar himoyalangan."
   },
   "general": {
-    "view-more": "Ko'proq ko'rish"
+    "view-more": "Ko'proq ko'rish",
+    "no-data": "Ma'lumot topilmadi"
   }
 }

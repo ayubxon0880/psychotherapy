@@ -166,7 +166,18 @@
     "searchResults": "Search results",
     "notFound": "Nothing found 😔",
     "inviteText1": "We invite psychologists, psychotherapists, psychiatrists, and organizations to collaborate. We offer a convenient platform for work, promotion, and support.",
-    "inviteText2": "Write to us — let's discuss the details!"
+    "inviteText2": "Write to us — let's discuss the details!",
+
+    "category": "Category",
+    "experience": "Experience",
+    "firstConsult": "First Consultation",
+    "reConsult": "Follow-up Consultation",
+    "onlineConsult": "Online Consultation",
+    "workWith": "Works With",
+    "languages": "Languages",
+    "workSchedule": "Work Schedule",
+    "consultPeriod": "Consultation Duration",
+    "workSkills": "Work Skills"
   },
   "topSpecialists": {
     "title": "Top 3 specialists of the week",
@@ -277,6 +288,7 @@
     "rights": "All rights reserved."
   },
   "general": {
-    "view-more": "View more"
+    "view-more": "View more",
+    "no-data": "No data"
   }
 }

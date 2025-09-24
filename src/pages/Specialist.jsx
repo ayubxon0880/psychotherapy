@@ -1,141 +1,121 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { useTranslation } from "react-i18next";
-import {API} from "../service/api.jsx";
+import React, { useEffect, useState } from 'react';
+import { API } from '../service/api';
+import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 
-export default function Specialist() {
-    const { t } = useTranslation();
-    const [filters, setFilters] = useState({
-        directionId: "",
-        workFormat: "",
-        workWith: "",
-        language: "",
-    });
-    const [specialists, setSpecialists] = useState([]);
-    const [directions, setDirections] = useState([]);
-    const [loading, setLoading] = useState(false);
+const Specialist = () => {
+  const [specialist, setSpecialist] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
+  const { id } = useParams();
 
-    const fetchSpecialists = async () => {
-        setLoading(true);
-        try {
-            const params = {
-                page: 0,
-                size: 12,
-                sort: "FIO",
-                ...(filters.directionId && { directionId: filters.directionId }),
-                ...(filters.workWith && { workWith: filters.workWith }),
-                ...(filters.language && { languages: filters.language }),
-                ...(filters.workFormat && { workFormat: filters.workFormat })
-            };
-            const res = await axios.get(`${API}/specialist/filter`, { params });
-            setSpecialists(res.data.content || []);
-        } catch (err) {
-            console.error("Failed to fetch specialists", err);
-        } finally {
-            setLoading(false);
-        }
-    };
+  useEffect(() => {
+    setLoading(true);
+    fetch(`${API}/specialist/${id}`)
+      .then(res => res.json())
+      .then(data => setSpecialist(data))
+      .catch(error => console.error(`Could not fetch specialist at id: ${id}`, error))
+      .finally(() => setLoading(false));
+  }, [id]);
 
-    const fetchDirections = async () => {
-        try {
-            const res = await axios.get(`${API}/direction/all`);
-            setDirections(res.data);
-        } catch (err) {
-            console.error("Error fetching directions", err);
-        }
-    };
+  if (loading) {
+    return <p className="text-center mt-10">...</p>;
+  }
 
-    useEffect(() => {
-        fetchDirections();
-    }, []);
+  if (!specialist) {
+    return <p className="text-center text-red-500">{t("general.no-data")}</p>;
+  }
 
-    useEffect(() => {
-        fetchSpecialists();
-    }, [filters]);
+  return (
+    <div className="mt-10 max-w-7xl m-auto p-6 max-md:p-3">
+      <img
+        src={`${API}/file/files/${specialist.imageUrl}`}
+        alt={specialist.FIO}
+        className="w-full h-96 lg:h-[550px] object-cover rounded-3xl"
+      />
 
-    return (
-        <div className="max-w-6xl mx-auto px-4 py-8 space-y-12">
-            <section>
-                <h2 className="font-semibold mb-4 text-center">{t("specialist.filterTitle")}</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-                    <select
-                        className="border p-2 rounded"
-                        value={filters.directionId}
-                        onChange={(e) => setFilters({ ...filters, directionId: e.target.value })}
-                    >
-                        <option value="">Yo'nalish</option>
-                        {
-                            directions.map((dr) => {
-                                return (<option key={dr.id} value={dr.id}>{dr.direction}</option>)
-                            })
-                        }
-                    </select>
+      <p className="text-3xl font-bold p-4">{specialist.fio}</p>
 
-                    {/* Work Format */}
-                    <select
-                        className="border p-2 rounded"
-                        value={filters.workFormat}
-                        onChange={(e) => setFilters({ ...filters, workFormat: e.target.value })}
-                    >
-                        <option value="">Format</option>
-                        <option value="ONLINE">Online</option>
-                        <option value="OFFLINE">Offline</option>
-                    </select>
-
-                    <select
-                        className="border p-2 rounded"
-                        value={filters.workWith}
-                        onChange={(e) => setFilters({ ...filters, workWith: e.target.value })}
-                    >
-                        <option value="">Yosh</option>
-                        <option value="ADULT">Kattalar</option>
-                        <option value="CHILD">Bolalar</option>
-                    </select>
-
-                    <select
-                        className="border p-2 rounded"
-                        value={filters.language}
-                        onChange={(e) => setFilters({ ...filters, language: e.target.value })}
-                    >
-                        <option value="">Til</option>
-                        <option value="UZBEK">O‘zbekcha</option>
-                        <option value="RUSSIAN">Ruscha</option>
-                        <option value="ENGLISH">Inglizcha</option>
-                    </select>
-                </div>
-            </section>
-
-            <section>
-                <h2 className="font-semibold mb-4">{t("specialist.searchResults")}</h2>
-                {loading ? (
-                    <p className="text-center">{t("loading")}</p>
-                ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {specialists.map((spec) => (
-                            <div
-                                key={spec.id}
-                                className="relative rounded-[20px] shadow hover:shadow-lg overflow-hidden"
-                            >
-                                <img
-                                    src={`${API}/file/files/`+spec.imageUrl}
-                                    alt={spec.FIO}
-                                    className="w-full h-96 object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                                    <div className="text-white">
-                                        <p className="text-lg font-bold">{spec.fio}</p>
-                                        <p className="text-sm">{spec.workSkills}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                )}
-
-                {specialists.length === 0 && !loading && (
-                    <p className="text-center text-gray-500 mt-6">{t("specialist.notFound")}</p>
-                )}
-            </section>
+      <div className="p-4 this-block text-[#666666] flex flex-col gap-3">
+        <div className="flex justify-between text-xl gap-4">
+          <span className="font-bold">{t("specialist.direction")}</span>
+          {
+            specialist.directionResponse.map(item => (
+              <span>{item.direction} </span>
+            ))
+          }
         </div>
-    );
-}
+
+        <div className="flex justify-between text-xl gap-4">
+          <span className="font-bold">{t("specialist.category")}</span>
+          <span>{specialist.category}</span>
+        </div>
+
+        <div className="flex justify-between text-xl gap-4">
+          <span className="font-bold">{t("specialist.experience")}</span>
+          <span>{specialist.experience}</span>
+        </div>
+
+        <div className="flex justify-between text-xl gap-4">
+          <span className="font-bold">{t("specialist.firstConsult")}</span>
+          <span>{specialist.firstConsultationPrice} UZS</span>
+        </div>
+
+        <div className="flex justify-between text-xl gap-4">
+          <span className="font-bold">{t("specialist.reConsult")}</span>
+          <span>{specialist.reconsultationPrice} UZS</span>
+        </div>
+
+        <div className="flex justify-between text-xl gap-4">
+          <span className="font-bold">{t("specialist.onlineConsult")}</span>
+          <span>{specialist.onlineConsultationPrice} UZS</span>
+        </div>
+
+        <div className="flex justify-between text-xl gap-4">
+          <span className="font-bold">{t("specialist.consultPeriod")}</span>
+          <span>{specialist.consultationPeriod}</span>
+        </div>
+
+        <div className="flex justify-between text-xl gap-4">
+          <span className="font-bold">{t("specialist.workSchedule")}</span>
+          <span>{specialist.workSchedule}</span>
+        </div>
+
+        <div className="flex justify-between text-xl gap-4">
+          <span className="font-bold">{t("specialist.workSkills")}</span>
+          <span className='text-end max-w-[500px]'>{specialist.workSkills}</span>
+        </div>
+      </div>
+
+      {/* Lists below */}
+      <div className="flex flex-col gap-1 mt-10 text-xl text-[#666666] p-4">
+        <p className='flex justify-between'>
+          <span className="font-bold">{t("specialist.workWith")} </span>
+          <div>
+            {specialist.workWith.map((item, i) => (
+              <span key={i}>{item} </span>
+            ))}
+          </div>
+        </p>
+        <p className='flex justify-between'>
+          <span className="font-bold">{t("specialist.format")} </span>
+          <div>
+            {specialist.formats.map((item, i) => (
+              <span key={i}>{item} </span>
+            ))}
+          </div>
+        </p>
+        <p className='flex justify-between'>
+          <span className="font-bold">{t("specialist.languages")} </span>
+          <div>
+            {specialist.languages.map((item, i) => (
+              <span key={i}>{item} </span>
+            ))}
+          </div>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Specialist;
