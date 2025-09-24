@@ -26,7 +26,7 @@ export default function CommunityCard({ com }) {
                         <span className="font-semibold">{t("communityCard.format")}</span>{" "}
                         {/* {com.format} */}
                         <br />
-                        this is format
+                        {com.format?.map((it) => it+" ")}
                     </p>
                     <div className="">
                         <h4 className="font-semibold mb-2">{t("communityCard.main")}:</h4>
