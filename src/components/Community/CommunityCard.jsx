@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import { API } from "../../service/api";
-import image from "../../../public/images/women-talk-2.png";
 
 
 export default function CommunityCard({ com }) {
@@ -10,7 +9,6 @@ export default function CommunityCard({ com }) {
         <div className="border-gray-200 border-2 rounded-3xl p-10 flex flex-col md:flex-row justify-between items-start gap-6">
             <img
                 src={API+"/file/files/"+com.imageUrl}
-                // src={image}
                 alt={'community image'}
                 className="max-w-96 h-full max-h-96 object-cover rounded-lg"
             />
@@ -24,7 +22,6 @@ export default function CommunityCard({ com }) {
                     </p>
                     <p className="text-gray-600 mb-4">
                         <span className="font-semibold">{t("communityCard.format")}</span>{" "}
-                        {/* {com.format} */}
                         <br />
                         {com.format?.map((it) => it+" ")}
                     </p>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const Tests = () => {
+const TestSection = () => {
   const { t } = useTranslation();
 
   return (
@@ -17,7 +17,7 @@ const Tests = () => {
         </div>
 
         <img
-          src="/images/Rectangle1.png"
+          src="/images/Rectangle-phq9.png"
           alt="Человек читает книгу и зеркало"
           className="rounded-2xl"
         />
@@ -30,4 +30,4 @@ const Tests = () => {
   );
 };
 
-export default Tests;
+export default TestSection;

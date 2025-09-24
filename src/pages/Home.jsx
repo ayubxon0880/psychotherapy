@@ -5,7 +5,7 @@ import {HeroSection} from "./home/HeroSection.jsx";
 import {SpecialistSections} from "./home/SpecialistSections.jsx";
 import {MapSection} from "./home/MapSection.jsx";
 import CoolNumbers from "./home/CoolNumbers.jsx";
-import Tests from "./home/Tests.jsx";
+import TestSection from "./home/TestSection.jsx";
 import OurSpecialists from "./home/OurSpecialists.jsx";
 import Contacts from "./home/Contacts.jsx";
 import FAQ from "./home/FAQ.jsx";
@@ -17,21 +17,13 @@ export default function Home() {
         <div className="w-full">
             <Analytics/>
             {showOverlay && <TestOverlay onClose={() => setShowOverlay(false)}/>}
-
             <HeroSection setOverlay={setShowOverlay} />
-
             <CoolNumbers />
-
             <OurSpecialists />
-
-            <Tests />
-
+            <TestSection />
             <SpecialistSections hasFilter={true}/>
-
             <Contacts />
-
             <MapSection/>
-
             <FAQ />
         </div>
     );
