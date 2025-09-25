@@ -12,9 +12,11 @@ const Clinic = () => {
   useEffect(() => {
     setLoading(true);
     fetch(`${API}/clinic/${id}`)
-      .then(res => res.json())
-      .then(data => setClinic(data))
-      .catch(error => console.error("Could not fetch clinic at id: " + id, error))
+      .then((res) => res.json())
+      .then((data) => setClinic(data))
+      .catch((error) =>
+        console.error("Could not fetch clinic at id: " + id, error)
+      )
       .finally(() => setLoading(false));
   }, [id]);
 
@@ -24,34 +26,62 @@ const Clinic = () => {
   if (!clinic) return <p className="text-center">{t("general.no-data")}</p>;
 
   return (
-    <div className="bg-white rounded-3xl p-6 flex max-md:p-3 flex-col gap-4 max-w-7xl m-auto mb-16">
+    <div className="mt-10 max-w-7xl m-auto p-6 max-md:p-3 bg-white rounded-3xl flex flex-col gap-6 mb-16">
       <img
         src={clinic.imageUrl ? API + "/file/files/" + clinic.imageUrl : "/images/clinic.png"}
         alt={clinic.name}
         className="w-full h-96 lg:h-[550px] object-cover rounded-3xl"
       />
-      <div className="flex flex-col flex-1">
-        <h3 className="text-xl font-semibold">{clinic.name}</h3>
-        <p className="text-sm text-gray-600 mt-1 mb-2">
-          <span className="font-semibold">{t("clinics.direction")}:</span>{" "}
-          {clinic.directions?.map((d) => d.direction).join(", ")}
-        </p>
-        <p className="text-sm text-gray-700">
-          <span className="font-semibold">{t("clinics.address")}:</span> {clinic.address}
-        </p>
-        <p className="text-sm text-gray-700">
-          <span className="font-semibold">{t("clinics.phone")}:</span> {clinic.phoneNumber}
-        </p>
-        <p className="text-sm text-gray-700">
-          <span className="font-semibold">{t("clinics.time")}:</span> {clinic.startWorkTime} - {clinic.endWorkTime}
-        </p>
 
-        <p className="text-sm text-gray-700">
-          <span className="font-semibold">{t("clinics.website")}:</span>{" "}
-          <a href={clinic.website} className="text-blue-600 hover:underline" target="_blank" rel="noreferrer">
-            {clinic.website}
+      <div className="p-4 flex flex-col gap-3 text-[#666666]">
+        {/* Clinic Name - Responsive */}
+        <h3 className="text-2xl md:text-3xl font-bold">{clinic.name}</h3>
+
+        {/* Responsive info sections */}
+        <div className="flex justify-between text-base md:text-xl gap-4 border-2 rounded-lg p-3">
+          <span className="font-bold">{t("clinics.direction")}:</span>
+          <span className="text-end">
+            {clinic.directions?.map((d) => d.direction).join(", ")}
+          </span>
+        </div>
+
+        <div className="flex justify-between text-base md:text-xl gap-4 border-2 rounded-lg p-3">
+          <span className="font-bold">{t("clinics.address")}:</span>
+          <span className="text-end">{clinic.address}</span>
+        </div>
+
+        <div className="flex justify-between text-base md:text-xl gap-4 border-2 rounded-lg p-3">
+          <span className="font-bold">{t("clinics.phone")}:</span>
+          <span className="text-end">{clinic.phoneNumber}</span>
+        </div>
+
+        <div className="flex justify-between text-base md:text-xl gap-4 border-2 rounded-lg p-3">
+          <span className="font-bold">{t("clinics.time")}:</span>
+          <span className="text-end">
+            {clinic.startWorkTime} - {clinic.endWorkTime}
+          </span>
+        </div>
+
+        <div className="flex justify-between text-base md:text-xl gap-4 border-2 rounded-lg p-3">
+          <span className="font-bold">{t("clinics.website")}:</span>
+          <span className="text-end">
+            <a
+              href={clinic.website}
+              className="text-blue-600 hover:underline break-words"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {clinic.website}
+            </a>
+          </span>
+        </div>
+
+        <div className="flex justify-between text-base md:text-xl gap-4 border-2 rounded-lg p-3">
+          <span className="font-bold">{t("clinics.time")}:</span>
+          <a href={`${API}/file/files/${clinic.licenceUrl}`} className="text-end">
+            {t("clinics.licence")}
           </a>
-        </p>
+        </div>
       </div>
     </div>
   );

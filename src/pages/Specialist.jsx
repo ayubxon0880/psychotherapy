@@ -34,62 +34,62 @@ const Specialist = () => {
         className="w-full h-96 lg:h-[550px] object-cover rounded-3xl"
       />
 
-      <p className="text-3xl font-bold p-4">{specialist.fio}</p>
+      {/* Responsive headline */}
+      <p className="text-2xl md:text-3xl font-bold p-4">{specialist.fio}</p>
 
       <div className="p-4 this-block text-[#666666] flex flex-col gap-3">
-        <div className="flex justify-between text-xl gap-4">
+        {/* Responsive sections */}
+        <div className="flex justify-between text-base md:text-xl gap-4 p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.direction")}</span>
-          {
-            specialist.directionResponse.map(item => (
-              <span>{item.direction} </span>
-            ))
-          }
+          {specialist.directionResponse.map(item => (
+            <span key={item.id}>{item.direction} </span>
+          ))}
         </div>
 
-        <div className="flex justify-between text-xl gap-4">
+        <div className="flex justify-between text-base md:text-xl gap-4 p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.category")}</span>
           <span>{specialist.category}</span>
         </div>
 
-        <div className="flex justify-between text-xl gap-4">
+        <div className="flex justify-between text-base md:text-xl gap-4 p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.experience")}</span>
           <span>{specialist.experience}</span>
         </div>
 
-        <div className="flex justify-between text-xl gap-4">
+        <div className="flex justify-between text-base md:text-xl gap-4 p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.firstConsult")}</span>
           <span>{specialist.firstConsultationPrice} UZS</span>
         </div>
 
-        <div className="flex justify-between text-xl gap-4">
+        <div className="flex justify-between text-base md:text-xl gap-4 p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.reConsult")}</span>
           <span>{specialist.reconsultationPrice} UZS</span>
         </div>
 
-        <div className="flex justify-between text-xl gap-4">
+        <div className="flex justify-between text-base md:text-xl gap-4 p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.onlineConsult")}</span>
           <span>{specialist.onlineConsultationPrice} UZS</span>
         </div>
 
-        <div className="flex justify-between text-xl gap-4">
+        <div className="flex justify-between text-base md:text-xl gap-4 p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.consultPeriod")}</span>
           <span>{specialist.consultationPeriod}</span>
         </div>
 
-        <div className="flex justify-between text-xl gap-4">
+        <div className="flex justify-between text-base md:text-xl gap-4 p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.workSchedule")}</span>
           <span>{specialist.workSchedule}</span>
         </div>
 
-        <div className="flex justify-between text-xl gap-4">
+        <div className="flex justify-between text-base md:text-xl gap-4 p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.workSkills")}</span>
-          <span className='text-end max-w-[500px]'>{specialist.workSkills}</span>
+          <span className="text-end max-w-[500px]">{specialist.workSkills}</span>
         </div>
       </div>
 
       {/* Lists below */}
-      <div className="flex flex-col gap-1 mt-10 text-xl text-[#666666] p-4">
-        <p className='flex justify-between'>
+      <div className="flex flex-col gap-1 mt-10 text-base md:text-xl text-[#666666] p-4">
+        <p className="flex justify-between p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.workWith")} </span>
           <div>
             {specialist.workWith.map((item, i) => (
@@ -97,7 +97,7 @@ const Specialist = () => {
             ))}
           </div>
         </p>
-        <p className='flex justify-between'>
+        <p className="flex justify-between p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.format")} </span>
           <div>
             {specialist.formats.map((item, i) => (
@@ -105,7 +105,7 @@ const Specialist = () => {
             ))}
           </div>
         </p>
-        <p className='flex justify-between'>
+        <p className="flex justify-between p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.languages")} </span>
           <div>
             {specialist.languages.map((item, i) => (
