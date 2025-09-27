@@ -6,12 +6,13 @@ import Clinics from "./pages/Clinics.jsx";
 import Community from "./pages/Community.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Contact from "./components/Contact.jsx";
-import {TestsPage} from "./pages/TestsPage.jsx";
+import { TestsPage } from "./pages/TestsPage.jsx";
 import TestDefinition from "./pages/test/TestDefinition.jsx";
 import TestSolve from "./pages/test/TestSolve.jsx";
 import Clinic from "./pages/Clinics/Clinic.jsx";
 import Specialists from "./pages/Specialists.jsx";
 import Specialist from "./pages/Specialist.jsx";
+
 
 export default function App() {
     return (
@@ -31,6 +32,7 @@ export default function App() {
                     <Route path="/test/solve/:id" element={<TestSolve />} />
                 </Routes>
             </div>
+
 
             <Contact />
             <Footer />
