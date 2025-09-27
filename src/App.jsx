@@ -13,13 +13,11 @@ import Clinic from "./pages/Clinics/Clinic.jsx";
 import Specialists from "./pages/Specialists.jsx";
 import Specialist from "./pages/Specialist.jsx";
 
-import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
     return (
         <Router>
             <Navbar />
-            <Analytics />
             <div className="pt-16">
                 <Routes>
                     <Route path="/" element={<Home />} />
