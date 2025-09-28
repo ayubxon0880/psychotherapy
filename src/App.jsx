@@ -12,6 +12,7 @@ import TestSolve from "./pages/test/TestSolve.jsx";
 import Clinic from "./pages/Clinics/Clinic.jsx";
 import Specialists from "./pages/Specialists.jsx";
 import Specialist from "./pages/Specialist.jsx";
+import SessionForm from "./pages/SessionForm.jsx";
 
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
                     <Route path="/about" element={<AboutUs />} />
                     <Route path="/clinics" element={<Clinics />} />
                     <Route path="/community" element={<Community />} />
+                    <Route path="/session-form" element={<SessionForm />} />
                     <Route path="/specialists" element={<Specialists />} />
                     <Route path="/specialists/specialist/:id" element={<Specialist />} />
                     <Route path="/tests" element={<TestsPage />} />
@@ -32,7 +34,6 @@ export default function App() {
                     <Route path="/test/solve/:id" element={<TestSolve />} />
                 </Routes>
             </div>
-
 
             <Contact />
             <Footer />
