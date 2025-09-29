@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from 'react-router-dom';
+import { API } from '../service/api';
 
 export default function SessionForm() {
   const [form, setForm] = useState({
@@ -22,7 +23,7 @@ export default function SessionForm() {
     e.preventDefault();
     setError(null);
     setSuccess(null);
-
+git 
     if (!form.fullName.trim() || !form.phone.trim() || !form.email.trim() || !form.problem.trim()) {
       setError("Iltimos, barcha maydonlarni to'ldiring.");
       return;
@@ -30,12 +31,12 @@ export default function SessionForm() {
 
     setLoading(true);
     try {
-      const res = await fetch("/send-group/psychotherapy", {
+      const res = await fetch(API+"/send-group/psychotherapy", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          problem: form.problem,
           fullName: form.fullName,
+          problem: form.problem,
           phone: form.phone,
           email: form.email,
         }),
