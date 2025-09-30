@@ -168,7 +168,6 @@
     "notFound": "Nothing found 😔",
     "inviteText1": "We invite psychologists, psychotherapists, psychiatrists, and organizations to collaborate. We offer a convenient platform for work, promotion, and support.",
     "inviteText2": "Write to us — let's discuss the details!",
-
     "category": "Category",
     "experience": "Experience",
     "firstConsult": "First Consultation",
@@ -288,8 +287,17 @@
     "email": "admin@psychotherapy.uz",
     "rights": "All rights reserved."
   },
+  "session-form": {
+    "title": "Consultation form",
+    "name": "Full name",
+    "phone": "Phone",
+    "email": "Email",
+    "problem": "Problem"
+  },
   "general": {
     "view-more": "View more",
-    "no-data": "No data"
+    "no-data": "No data",
+    "success": "Sent successfully",
+    "error": "An error occurred"
   }
 }

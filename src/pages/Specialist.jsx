@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { API } from '../service/api';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Specialist = () => {
   const [specialist, setSpecialist] = useState(null);
@@ -34,11 +34,9 @@ const Specialist = () => {
         className="w-full h-96 lg:h-[550px] object-cover rounded-3xl"
       />
 
-      {/* Responsive headline */}
       <p className="text-2xl md:text-3xl font-bold p-4">{specialist.fio}</p>
 
       <div className="p-4 this-block text-[#666666] flex flex-col gap-3">
-        {/* Responsive sections */}
         <div className="flex justify-between text-base md:text-xl gap-4 p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.direction")}</span>
           {specialist.directionResponse.map(item => (
@@ -87,8 +85,7 @@ const Specialist = () => {
         </div>
       </div>
 
-      {/* Lists below */}
-      <div className="flex flex-col gap-1 mt-10 text-base md:text-xl text-[#666666] p-4">
+      <div className="flex flex-col gap-3 text-base md:text-xl text-[#666666] pl-4 pr-4">
         <p className="flex justify-between p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.workWith")} </span>
           <div>
@@ -114,6 +111,8 @@ const Specialist = () => {
           </div>
         </p>
       </div>
+
+      <Link to={`/session-form/${id}`}></Link>
     </div>
   );
 };

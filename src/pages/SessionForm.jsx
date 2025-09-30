@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from 'react-router-dom';
 import { API } from '../service/api';
+import { useTranslation } from "react-i18next";
 
 export default function SessionForm() {
   const [form, setForm] = useState({
@@ -10,9 +11,10 @@ export default function SessionForm() {
     email: "",
   });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
   const { id } = useParams();
+  const { t } = useTranslation();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,17 +23,17 @@ export default function SessionForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null);
-    setSuccess(null);
-git 
+    setSuccess(false);
+    setError(false);
     if (!form.fullName.trim() || !form.phone.trim() || !form.email.trim() || !form.problem.trim()) {
-      setError("Iltimos, barcha maydonlarni to'ldiring.");
+      setSuccess(false);
       return;
     }
 
     setLoading(true);
+
     try {
-      const res = await fetch(API+"/send-group/psychotherapy", {
+      const res = await fetch(API + "/send-group/psychotherapy", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -41,13 +43,13 @@ git
           email: form.email,
         }),
       });
-
+    
       if (!res.ok) throw new Error(await res.text() || `Server responded with ${res.status}`);
-
-      setSuccess("So'rov muvaffaqiyatli yuborildi.");
+    
+      setSuccess(true);
       setForm({ problem: "", fullName: "", phone: "", email: "" });
     } catch (err) {
-      setError(err.message || "Yuborishda xatolik yuz berdi.");
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -56,22 +58,22 @@ git
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
       <form onSubmit={handleSubmit} className="w-full max-w-md bg-white/95 text-black rounded-2xl shadow-lg p-6">
-        <h2 className="text-2xl font-semibold mb-4">Psychotherapy Request</h2>
+        <h2 className="text-2xl font-semibold mb-4">{t("session-form.title")}</h2>
 
         <label className="block mb-3">
-          <span className="text-sm">Full name</span>
+        <span className="text-sm">{t("session-form.name")}</span>
           <input
             name="fullName"
             value={form.fullName}
             onChange={handleChange}
-            placeholder="Ism Familiya"
+            placeholder="Aziz Qurbonov"
             className="mt-1 block w-full rounded-lg border border-black/20 px-3 py-2 bg-white text-black"
             required
           />
         </label>
 
         <label className="block mb-3">
-          <span className="text-sm">Phone</span>
+        <span className="text-sm">{t("session-form.phone")}</span>
           <input
             name="phone"
             value={form.phone}
@@ -83,7 +85,7 @@ git
         </label>
 
         <label className="block mb-3">
-          <span className="text-sm">Email</span>
+        <span className="text-sm">{t("session-form.email")}</span>
           <input
             name="email"
             value={form.email}
@@ -96,19 +98,24 @@ git
         </label>
 
         <label className="block mb-4">
-          <span className="text-sm">Problem</span>
+        <span className="text-sm">{t("session-form.problem")}</span>
           <textarea
             name="problem"
             value={form.problem}
             onChange={handleChange}
-            placeholder="Uyqusizlik"
+            placeholder=""
             className="mt-1 block w-full rounded-lg border border-black/20 px-3 py-2 bg-white text-black h-24 resize-y"
             required
           />
         </label>
 
-        {error && <p className="text-sm text-red-600 mb-3">{error}</p>}
-        {success && <p className="text-sm text-green-700 mb-3">{success}</p>}
+        {success && (
+          <p className="text-sm text-green-700 mb-3">{t("general.success")}</p>
+        )}
+
+        {error && (
+          <p className="text-sm text-red-600 mb-3">{t("general.error")}</p>
+        )}
 
         <button
           type="submit"
@@ -118,7 +125,6 @@ git
           {loading ? "Yuborilmoqda..." : "Yuborish"}
         </button>
 
-        <p className="mt-3 text-xs text-gray-600">Bu forma hech qanday ID yoki vaqt maydonini yubormaydi.</p>
       </form>
     </div>
   );

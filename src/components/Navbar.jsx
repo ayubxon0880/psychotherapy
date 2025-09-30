@@ -16,6 +16,7 @@ export default function Navbar() {
         { key: "navbar.community", href: "/community" },
         { key: "navbar.about", href: "/about" },
         { key: "navbar.test", href: "/tests" },
+        { key: "home-page.ourSpecialists.button", href: "/session-form" },
     ];
 
     const changeLanguage = (lng) => {
@@ -44,7 +45,7 @@ export default function Navbar() {
                 {/* Right side: desktop menu, language selector (always visible), and mobile menu button */}
                 <div className="flex items-center space-x-3">
                     {/* Desktop menu */}
-                    <div className="hidden md:flex items-center space-x-4">
+                    <div className="hidden lg:flex items-center space-x-2">
                         {menuItems.map((item) => (
                             <Link
                                 key={item.key}
@@ -68,7 +69,7 @@ export default function Navbar() {
                             id="language-select"
                             onChange={(e) => changeLanguage(e.target.value)}
                             value={i18n.language}
-                            className="px-2 py-1 border rounded text-xs md:text-sm focus:outline-none focus:ring-2 focus:ring-[#d5beb0] appearance-none"
+                            className="px-2 py-1 border rounded text-xs lg:text-sm focus:outline-none focus:ring-2 focus:ring-[#d5beb0] appearance-none"
                         >
                             <option value="uz">Uzbek</option>
                             <option value="en">English</option>
@@ -78,7 +79,7 @@ export default function Navbar() {
 
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="md:hidden focus:outline-none"
+                        className="lg:hidden focus:outline-none"
                         aria-label={isOpen ? "Close menu" : "Open menu"}
                     >
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -87,7 +88,7 @@ export default function Navbar() {
             </div>
 
             {isOpen && (
-                <div className="md:hidden bg-white shadow-md px-6 pb-4 space-y-2">
+                <div className="lg:hidden bg-white shadow-md px-6 pb-4 space-y-2">
                     {menuItems.map((item) => (
                         <Link
                             key={item.key}

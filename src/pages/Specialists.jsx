@@ -11,6 +11,8 @@ export default function Specialists() {
         workFormat: "",
         workWith: "",
         language: "",
+        experience: "",
+        workSchedule: "",
     });
     const [specialists, setSpecialists] = useState([]);
     const [directions, setDirections] = useState([]);
@@ -26,8 +28,11 @@ export default function Specialists() {
                 ...(filters.directionId && { directionId: filters.directionId }),
                 ...(filters.workWith && { workWith: filters.workWith }),
                 ...(filters.language && { languages: filters.language }),
-                ...(filters.workFormat && { workFormat: filters.workFormat })
+                ...(filters.workFormat && { workFormat: filters.workFormat }),
+                ...(filters.experience && { experience: filters.experience }),
+                ...(filters.workSchedule && { workSchedule: filters.workSchedule }),
             };
+            console.log(params)
             const res = await axios.get(`${API}/specialist/filter`, { params });
             setSpecialists(res.data.content || []);
         } catch (err) {
@@ -58,15 +63,15 @@ export default function Specialists() {
 
     const [specialist, setSpecialist] = useState();
 
-    useEffect(() => {
-        fetch(`${API}/specialist/${4}`)
-            .then(res => res.json())
-            .then(data => {
-                setSpecialist(data)
-                console.log(data)
-            })
-            .catch(error => console.error("Could not fetch clinic at id: ", error));
-    }, []);
+    // useEffect(() => {
+    //     fetch(`${API}/specialist/${4}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setSpecialist(data)
+    //             console.log(data)
+    //         })
+    //         .catch(error => console.error("Could not fetch clinic at id: ", error));
+    // }, []);
 
     //////////////// this is for test purposes only
     return (
@@ -118,6 +123,12 @@ export default function Specialists() {
                         <option value="RUSSIAN">Ruscha</option>
                         <option value="ENGLISH">Inglizcha</option>
                     </select>
+                    <input type="number"
+                        className="border p-2 rounded"
+                        value={filters.experience}
+                        onChange={(e) => setFilters({ ...filters, experience: e.target.value})}
+                        placeholder={t("specialist.experience")}
+                    />
                 </div>
             </section>
 

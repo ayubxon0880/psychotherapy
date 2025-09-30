@@ -288,8 +288,17 @@
     "email": "admin@psychotherapy.uz",
     "rights": "Barcha huquqlar himoyalangan."
   },
+  "session-form": {
+    "title": "Maslahat shakli",
+    "name": "To‘liq ism",
+    "phone": "Telefon",
+    "email": "Elektron pochta",
+    "problem": "Muammo"
+  },
   "general": {
     "view-more": "Ko'proq ko'rish",
-    "no-data": "Ma'lumot topilmadi"
+    "no-data": "Ma'lumot topilmadi",
+    "success": "Muvaffaqiyatli yuborildi",
+    "error": "Xatolik yuz berdi"
   }
 }
