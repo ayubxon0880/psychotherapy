@@ -25,7 +25,7 @@ export default function App() {
                     <Route path="/about" element={<AboutUs />} />
                     <Route path="/clinics" element={<Clinics />} />
                     <Route path="/community" element={<Community />} />
-                    <Route path="/session-form" element={<SessionForm />} />
+                    <Route path="/session-form/:id" element={<SessionForm />} />
                     <Route path="/specialists" element={<Specialists />} />
                     <Route path="/specialists/specialist/:id" element={<Specialist />} />
                     <Route path="/tests" element={<TestsPage />} />

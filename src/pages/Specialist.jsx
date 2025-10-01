@@ -112,7 +112,7 @@ const Specialist = () => {
         </p>
       </div>
 
-      <Link to={`/session-form/${id}`}></Link>
+      <Link to={`/session-form/${id}`}>test</Link>
     </div>
   );
 };

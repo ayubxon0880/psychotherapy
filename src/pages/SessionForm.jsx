@@ -1,20 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import { API } from '../service/api';
 import { useTranslation } from "react-i18next";
 
 export default function SessionForm() {
-  const [form, setForm] = useState({
-    problem: "",
-    fullName: "",
-    phone: "",
-    email: "",
-  });
+  const [specialists, setSpecialists] = useState([]);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const { id } = useParams();
   const { t } = useTranslation();
+
+  const [form, setForm] = useState({
+    doctorId: id ? id : "",
+    problem: "",
+    fullName: "",
+    phone: "",
+    email: "",
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,9 +46,9 @@ export default function SessionForm() {
           email: form.email,
         }),
       });
-    
+
       if (!res.ok) throw new Error(await res.text() || `Server responded with ${res.status}`);
-    
+
       setSuccess(true);
       setForm({ problem: "", fullName: "", phone: "", email: "" });
     } catch (err) {
@@ -55,13 +58,50 @@ export default function SessionForm() {
     }
   };
 
+  useEffect(() => {
+    fetch(API+"/specialist", {
+      method: "GET"
+    })
+    .then(res => res.json())
+    .then(data => setSpecialists(data))
+    .catch(err => console.log(err))
+  }, [])
+
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
       <form onSubmit={handleSubmit} className="w-full max-w-md bg-white/95 text-black rounded-2xl shadow-lg p-6">
         <h2 className="text-2xl font-semibold mb-4">{t("session-form.title")}</h2>
 
+        {id ? (
+          <select
+            className="border p-2 rounded"
+            value={filters.directionId}
+            onChange={(e) => setFilters({ ...filters, directionId: e.target.value })}
+          >
+            <option value="">Yo'nalish</option>
+            {
+              specialists.map((dr) => {
+                return (<option key={dr.id} value={dr.id}>{dr.direction}</option>)
+              })
+            }
+          </select>
+        ) : (
+          <select
+            className="border p-2 rounded"
+            value={filters.directionId}
+            onChange={(e) => setFilters({ ...filters, directionId: e.target.value })}
+          >
+            <option value="">Yo'nalish</option>
+            {
+              specialists.map((dr) => {
+                return (<option key={dr.id} value={dr.id}>{dr.direction}</option>)
+              })
+            }
+          </select>
+
+          )}
         <label className="block mb-3">
-        <span className="text-sm">{t("session-form.name")}</span>
+          <span className="text-sm">{t("session-form.name")}</span>
           <input
             name="fullName"
             value={form.fullName}
@@ -73,7 +113,7 @@ export default function SessionForm() {
         </label>
 
         <label className="block mb-3">
-        <span className="text-sm">{t("session-form.phone")}</span>
+          <span className="text-sm">{t("session-form.phone")}</span>
           <input
             name="phone"
             value={form.phone}
@@ -85,7 +125,7 @@ export default function SessionForm() {
         </label>
 
         <label className="block mb-3">
-        <span className="text-sm">{t("session-form.email")}</span>
+          <span className="text-sm">{t("session-form.email")}</span>
           <input
             name="email"
             value={form.email}
@@ -98,7 +138,7 @@ export default function SessionForm() {
         </label>
 
         <label className="block mb-4">
-        <span className="text-sm">{t("session-form.problem")}</span>
+          <span className="text-sm">{t("session-form.problem")}</span>
           <textarea
             name="problem"
             value={form.problem}
