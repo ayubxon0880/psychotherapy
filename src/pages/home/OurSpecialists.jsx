@@ -64,7 +64,7 @@ const OurSpecialists = () => {
 
       <a
         // href="https://t.me/psychotherapy_consultant_bot?start=8076698584"
-        href="session-form"
+        href="/session-form/simplified"
         className="text-2xl bg-lime-200 hover:bg-lime-300 transition-colors px-6 py-3 rounded-lg font-medium text-gray-800 max-w-96 w-full flex justify-center m-auto"
       >
         {t("home-page.ourSpecialists.button")}
