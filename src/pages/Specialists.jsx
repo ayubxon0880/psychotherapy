@@ -69,7 +69,7 @@ export default function Specialists() {
                     </h2>
                     <div className="flex flex-col gap-4">
                         <select
-                            className="border-gray-300 rounded-xl p-2 focus:ring-2 focus:ring-indigo-500"
+                            className="border-gray-300 p-2"
                             value={filters.directionId}
                             onChange={(e) =>
                                 setFilters({ ...filters, directionId: e.target.value })
@@ -84,7 +84,7 @@ export default function Specialists() {
                         </select>
 
                         <select
-                            className="border-gray-300 rounded-xl p-2 focus:ring-2 focus:ring-indigo-500"
+                            className="border-gray-300 p-2"
                             value={filters.workFormat}
                             onChange={(e) =>
                                 setFilters({ ...filters, workFormat: e.target.value })
@@ -96,7 +96,7 @@ export default function Specialists() {
                         </select>
 
                         <select
-                            className="border-gray-300 rounded-xl p-2 focus:ring-2 focus:ring-indigo-500"
+                            className="border-gray-300 p-2"
                             value={filters.workWith}
                             onChange={(e) =>
                                 setFilters({ ...filters, workWith: e.target.value })
@@ -108,7 +108,7 @@ export default function Specialists() {
                         </select>
 
                         <select
-                            className="border-gray-300 rounded-xl p-2 focus:ring-2 focus:ring-indigo-500"
+                            className="border-gray-300 p-2"
                             value={filters.language}
                             onChange={(e) =>
                                 setFilters({ ...filters, language: e.target.value })
@@ -140,22 +140,22 @@ export default function Specialists() {
                     {loading ? (
                         <Loading />
                     ) : (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
                             {specialists.map((spec) => (
                                 <Link
                                     to={`/specialists/specialist/${spec.id}`}
                                     key={spec.id}
-                                    className="relative rounded-2xl shadow-md hover:shadow-xl transform hover:scale-[1.02] transition-all overflow-hidden group"
+                                    className="relative rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-[1.03] transition-all overflow-hidden group"
                                 >
                                     <img
                                         src={`${API}/file/files/` + spec.imageUrl}
                                         alt={spec.FIO}
-                                        className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                                        className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-5">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-8">
                                         <div className="text-white">
-                                            <p className="text-lg font-bold">{spec.fio}</p>
-                                            <p className="text-sm opacity-90">{spec.workSkills}</p>
+                                            <p className="text-xl font-bold">{spec.fio}</p>
+                                            {/* <p className="text-base opacity-90">{spec.workSkills}</p> */}
                                         </div>
                                     </div>
                                 </Link>
