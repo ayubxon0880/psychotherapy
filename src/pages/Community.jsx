@@ -17,7 +17,6 @@ export default function Community() {
         try {
             const res = await axios.get(`${API}/article/newest?size=3`);
             setArticles(res.data.content);
-            console.log(res.data.content)
         } catch (err) {
             console.error("Error fetching articles", err);
         }
@@ -27,7 +26,6 @@ export default function Community() {
         try {
             const res = await axios.get(`${API}/community/filter?page=0&size=5`);
             setCommunities(res.data.content);
-            console.log(res.data.content)
         } catch (err) {
             console.error("Error fetching communities", err);
         }

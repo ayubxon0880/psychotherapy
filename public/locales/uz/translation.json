@@ -178,6 +178,7 @@
     "languages": "Tillar",
     "workSchedule": "Ish vaqti",
     "consultPeriod": "Konsultatsiya vaqti",
+    "button": "Konsultatsiyaga yozilish",
     "workSkills": "Ish ko'nikmalari"
   },
   "topSpecialists": {
@@ -293,6 +294,7 @@
     "name": "To‘liq ism",
     "phone": "Telefon",
     "email": "Elektron pochta",
+    "selectedId": "Tanlangan shifokor",
     "problem": "Muammo"
   },
   "general": {

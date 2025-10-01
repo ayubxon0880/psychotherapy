@@ -32,7 +32,6 @@ export default function Specialists() {
                 ...(filters.experience && { experience: filters.experience }),
                 ...(filters.workSchedule && { workSchedule: filters.workSchedule }),
             };
-            console.log(params)
             const res = await axios.get(`${API}/specialist/filter`, { params });
             setSpecialists(res.data.content || []);
         } catch (err) {

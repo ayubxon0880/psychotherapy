@@ -4,19 +4,22 @@ import { API } from '../service/api';
 import { useTranslation } from "react-i18next";
 
 export default function SessionForm() {
-  const [specialists, setSpecialists] = useState([]);
+  const [specialist, setSpecialist] = useState();
+  const [timeSlot, setTimeSlot] = useState();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const { id } = useParams();
   const { t } = useTranslation();
 
+
   const [form, setForm] = useState({
-    doctorId: id ? id : "",
+    doctorId: id == "simplified" ? "" : id,
     problem: "",
     fullName: "",
     phone: "",
     email: "",
+    timeSlot: "",
   });
 
   const handleChange = (e) => {
@@ -39,12 +42,7 @@ export default function SessionForm() {
       const res = await fetch(API + "/send-group/psychotherapy", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fullName: form.fullName,
-          problem: form.problem,
-          phone: form.phone,
-          email: form.email,
-        }),
+        body: JSON.stringify(form),
       });
 
       if (!res.ok) throw new Error(await res.text() || `Server responded with ${res.status}`);
@@ -59,48 +57,41 @@ export default function SessionForm() {
   };
 
   useEffect(() => {
-    fetch(API+"/specialist", {
-      method: "GET"
-    })
-    .then(res => res.json())
-    .then(data => setSpecialists(data))
-    .catch(err => console.log(err))
+    if (id != "simplified") {
+      fetch(API + "/specialist/" + id, {
+        method: "GET"
+      })
+        .then(res => res.json())
+        .then(data => setSpecialist(data))
+        .catch(err => console.log(err))
+    }
   }, [])
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
       <form onSubmit={handleSubmit} className="w-full max-w-md bg-white/95 text-black rounded-2xl shadow-lg p-6">
         <h2 className="text-2xl font-semibold mb-4">{t("session-form.title")}</h2>
-
-        {id ? (
-          <select
-            className="border p-2 rounded"
-            value={filters.directionId}
-            onChange={(e) => setFilters({ ...filters, directionId: e.target.value })}
-          >
-            <option value="">Yo'nalish</option>
-            {
-              specialists.map((dr) => {
-                return (<option key={dr.id} value={dr.id}>{dr.direction}</option>)
-              })
-            }
-          </select>
-        ) : (
-          <select
-            className="border p-2 rounded"
-            value={filters.directionId}
-            onChange={(e) => setFilters({ ...filters, directionId: e.target.value })}
-          >
-            <option value="">Yo'nalish</option>
-            {
-              specialists.map((dr) => {
-                return (<option key={dr.id} value={dr.id}>{dr.direction}</option>)
-              })
-            }
-          </select>
-
-          )}
         <label className="block mb-3">
+          {
+            specialist && id != "simplified" ? (
+              <div className="mb-4">
+                <div className="text-lg bg-gray-200 p-3 rounded-lg text-gray-700 mb-4">{t("session-form.selectedId")}: {specialist.fio}</div>
+                <select
+                  className="border p-2 rounded"
+                  value={timeSlot}
+                  onChange={(e) => setTimeSlot(e.target.value)}
+                >
+                  {
+                    Array.from({ length: 10 }, (_, i) => (
+                      <option key={i} value={`${Date.now}:${10 + i}`}>
+                        {10 + i}:00
+                      </option>
+                    ))
+                  }
+                </select>
+              </div>
+            ) : ("")
+          }
           <span className="text-sm">{t("session-form.name")}</span>
           <input
             name="fullName"

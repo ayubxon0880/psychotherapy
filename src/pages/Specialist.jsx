@@ -85,7 +85,7 @@ const Specialist = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 text-base md:text-xl text-[#666666] pl-4 pr-4">
+      <div className="flex flex-col gap-3 text-base md:text-xl text-[#666666] pl-4 pr-4 mb-10">
         <p className="flex justify-between p-3 rounded-lg border-2">
           <span className="font-bold">{t("specialist.workWith")} </span>
           <div>
@@ -112,7 +112,7 @@ const Specialist = () => {
         </p>
       </div>
 
-      <Link to={`/session-form/${id}`}>test</Link>
+      <Link to={`/session-form/${id}`} className="block bg-[#D8F3A2] text-black px-5 py-2 rounded-lg hover:bg-[#c6df94] max-w-64 m-auto text-center">{t("specialist.button")}</Link>
     </div>
   );
 };
