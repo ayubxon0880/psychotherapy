@@ -3,6 +3,7 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { API } from "../service/api.jsx";
 import { Link } from "react-router-dom";
+import Loading from "../components/Loading.jsx";
 
 export default function Specialists() {
     const { t } = useTranslation();
@@ -58,36 +59,23 @@ export default function Specialists() {
         fetchSpecialists();
     }, [filters]);
 
-    //////////////// this is for test purposes only
-
-    const [specialist, setSpecialist] = useState();
-
-    // useEffect(() => {
-    //     fetch(`${API}/specialist/${4}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setSpecialist(data)
-    //             console.log(data)
-    //         })
-    //         .catch(error => console.error("Could not fetch clinic at id: ", error));
-    // }, []);
-
-    //////////////// this is for test purposes only
     return (
-        <div className="max-w-6xl mx-auto px-4 py-8">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
                 {/* Filters */}
-                <aside className="md:col-span-1 space-y-6">
-                    <h2 className="font-semibold mb-4">{t("specialist.filterTitle")}</h2>
+                <aside className="md:col-span-1 bg-white shadow rounded-2xl p-6 space-y-5">
+                    <h2 className="text-xl font-semibold text-gray-800 border-b pb-3">
+                        {t("specialist.filterTitle")}
+                    </h2>
                     <div className="flex flex-col gap-4">
                         <select
-                            className="border p-2 rounded"
+                            className="border-gray-300 rounded-xl p-2 focus:ring-2 focus:ring-indigo-500"
                             value={filters.directionId}
                             onChange={(e) =>
                                 setFilters({ ...filters, directionId: e.target.value })
                             }
                         >
-                            <option value="">{t("specialist.direction") || "Yo'nalish"}</option>
+                            <option value="">{t("specialist.direction")}</option>
                             {directions.map((dr) => (
                                 <option key={dr.id} value={dr.id}>
                                     {dr.direction}
@@ -96,37 +84,37 @@ export default function Specialists() {
                         </select>
 
                         <select
-                            className="border p-2 rounded"
+                            className="border-gray-300 rounded-xl p-2 focus:ring-2 focus:ring-indigo-500"
                             value={filters.workFormat}
                             onChange={(e) =>
                                 setFilters({ ...filters, workFormat: e.target.value })
                             }
                         >
-                            <option value="">{t("specialist.format") || "Format"}</option>
+                            <option value="">{t("specialist.format")}</option>
                             <option value="ONLINE">Online</option>
                             <option value="OFFLINE">Offline</option>
                         </select>
 
                         <select
-                            className="border p-2 rounded"
+                            className="border-gray-300 rounded-xl p-2 focus:ring-2 focus:ring-indigo-500"
                             value={filters.workWith}
                             onChange={(e) =>
                                 setFilters({ ...filters, workWith: e.target.value })
                             }
                         >
-                            <option value="">{t("specialist.workWith") || "Yosh"}</option>
-                            <option value="ADULT">{t("general.adults") || "Kattalar"}</option>
-                            <option value="CHILD">{t("general.children") || "Bolalar"}</option>
+                            <option value="">{t("specialist.workWith")}</option>
+                            <option value="ADULT">{t("general.adults")}</option>
+                            <option value="CHILD">{t("general.children")}</option>
                         </select>
 
                         <select
-                            className="border p-2 rounded"
+                            className="border-gray-300 rounded-xl p-2 focus:ring-2 focus:ring-indigo-500"
                             value={filters.language}
                             onChange={(e) =>
                                 setFilters({ ...filters, language: e.target.value })
                             }
                         >
-                            <option value="">{t("home-page.specialist-section.language") || "Til"}</option>
+                            <option value="">{t("home-page.specialist-section.language")}</option>
                             <option value="UZBEK">O‘zbekcha</option>
                             <option value="RUSSIAN">Русский</option>
                             <option value="ENGLISH">English</option>
@@ -134,7 +122,7 @@ export default function Specialists() {
 
                         <input
                             type="number"
-                            className="border p-2 rounded"
+                            className="border-gray-300 rounded-xl p-2 focus:ring-2 focus:ring-indigo-500"
                             value={filters.experience}
                             onChange={(e) =>
                                 setFilters({ ...filters, experience: e.target.value })
@@ -146,26 +134,28 @@ export default function Specialists() {
 
                 {/* Results */}
                 <main className="md:col-span-3">
-                    <h2 className="font-semibold mb-4">{t("specialist.searchResults")}</h2>
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+                        {t("specialist.searchResults")}
+                    </h2>
                     {loading ? (
-                        <p className="text-center">{t("loading")}</p>
+                        <Loading />
                     ) : (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {specialists.map((spec) => (
                                 <Link
                                     to={`/specialists/specialist/${spec.id}`}
                                     key={spec.id}
-                                    className="relative rounded-[20px] shadow hover:shadow-lg overflow-hidden"
+                                    className="relative rounded-2xl shadow-md hover:shadow-xl transform hover:scale-[1.02] transition-all overflow-hidden group"
                                 >
                                     <img
                                         src={`${API}/file/files/` + spec.imageUrl}
                                         alt={spec.FIO}
-                                        className="w-full h-96 object-cover"
+                                        className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-5">
                                         <div className="text-white">
                                             <p className="text-lg font-bold">{spec.fio}</p>
-                                            <p className="text-sm">{spec.workSkills}</p>
+                                            <p className="text-sm opacity-90">{spec.workSkills}</p>
                                         </div>
                                     </div>
                                 </Link>
@@ -174,7 +164,7 @@ export default function Specialists() {
                     )}
 
                     {specialists.length === 0 && !loading && (
-                        <p className="text-center text-gray-500 mt-6">
+                        <p className="text-center text-gray-500 mt-10 text-lg">
                             {t("specialist.notFound")}
                         </p>
                     )}
@@ -182,5 +172,4 @@ export default function Specialists() {
             </div>
         </div>
     );
-
 }

@@ -153,7 +153,7 @@ export default function SessionForm() {
           disabled={loading}
           className="w-full py-2 rounded-lg border text-black bg-[#D8F3A2] font-medium disabled:opacity-60"
         >
-          {loading ? "Yuborilmoqda..." : "Yuborish"}
+          {loading ? t("contact.sending") : t("contact.send")}
         </button>
 
       </form>

@@ -35,6 +35,7 @@ const Specialist = () => {
       />
 
       <p className="text-2xl md:text-3xl font-bold p-4">{specialist.fio}</p>
+      <p className="text-2xl md:text-xl p-4">{specialist.recommendation}</p>
 
       <div className="p-4 this-block text-[#666666] flex flex-col gap-3">
         <div className="flex justify-between text-base md:text-xl gap-4 p-3 rounded-lg border-2">
@@ -83,6 +84,10 @@ const Specialist = () => {
           <span className="font-bold">{t("specialist.workSkills")}</span>
           <span className="text-end max-w-[500px]">{specialist.workSkills}</span>
         </div>
+
+        <a href={API + "/file/files/" + specialist.licenseUrl} className="flex justify-between text-base md:text-xl gap-4 p-3 rounded-lg border-2">
+          <span className="font-bold">{t("clinics.licence")}</span>
+        </a>
       </div>
 
       <div className="flex flex-col gap-3 text-base md:text-xl text-[#666666] pl-4 pr-4 mb-10">
@@ -110,6 +115,7 @@ const Specialist = () => {
             ))}
           </div>
         </p>
+
       </div>
 
       <Link to={`/session-form/${id}`} className="block bg-[#D8F3A2] text-black px-5 py-2 rounded-lg hover:bg-[#c6df94] max-w-64 m-auto text-center">{t("specialist.button")}</Link>

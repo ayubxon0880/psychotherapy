@@ -303,6 +303,7 @@
     "adult": "Adults",
     "children": "Children",
     "age": "Age",
+    "loading": "Loading",
     "error": "An error occurred"
   }
 }

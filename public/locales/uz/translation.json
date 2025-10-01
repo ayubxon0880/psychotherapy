@@ -304,6 +304,7 @@
     "adults": "Kattalar",
     "children": "Yoshlar",
     "age": "Yosh",
+    "loading": "yuklash",
     "error": "Xatolik yuz berdi"
   }
 }
