@@ -74,95 +74,113 @@ export default function Specialists() {
 
     //////////////// this is for test purposes only
     return (
-        <div className="max-w-6xl mx-auto px-4 py-8 space-y-12">
-            <section>
-                <h2 className="font-semibold mb-4 text-center">{t("specialist.filterTitle")}</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-                    <select
-                        className="border p-2 rounded"
-                        value={filters.directionId}
-                        onChange={(e) => setFilters({ ...filters, directionId: e.target.value })}
-                    >
-                        <option value="">Yo'nalish</option>
-                        {
-                            directions.map((dr) => {
-                                return (<option key={dr.id} value={dr.id}>{dr.direction}</option>)
-                            })
-                        }
-                    </select>
+        <div className="max-w-6xl mx-auto px-4 py-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                {/* Filters */}
+                <aside className="md:col-span-1 space-y-6">
+                    <h2 className="font-semibold mb-4">{t("specialist.filterTitle")}</h2>
+                    <div className="flex flex-col gap-4">
+                        <select
+                            className="border p-2 rounded"
+                            value={filters.directionId}
+                            onChange={(e) =>
+                                setFilters({ ...filters, directionId: e.target.value })
+                            }
+                        >
+                            <option value="">{t("specialist.direction") || "Yo'nalish"}</option>
+                            {directions.map((dr) => (
+                                <option key={dr.id} value={dr.id}>
+                                    {dr.direction}
+                                </option>
+                            ))}
+                        </select>
 
-                    {/* Work Format */}
-                    <select
-                        className="border p-2 rounded"
-                        value={filters.workFormat}
-                        onChange={(e) => setFilters({ ...filters, workFormat: e.target.value })}
-                    >
-                        <option value="">Format</option>
-                        <option value="ONLINE">Online</option>
-                        <option value="OFFLINE">Offline</option>
-                    </select>
+                        <select
+                            className="border p-2 rounded"
+                            value={filters.workFormat}
+                            onChange={(e) =>
+                                setFilters({ ...filters, workFormat: e.target.value })
+                            }
+                        >
+                            <option value="">{t("specialist.format") || "Format"}</option>
+                            <option value="ONLINE">Online</option>
+                            <option value="OFFLINE">Offline</option>
+                        </select>
 
-                    <select
-                        className="border p-2 rounded"
-                        value={filters.workWith}
-                        onChange={(e) => setFilters({ ...filters, workWith: e.target.value })}
-                    >
-                        <option value="">Yosh</option>
-                        <option value="ADULT">Kattalar</option>
-                        <option value="CHILD">Bolalar</option>
-                    </select>
+                        <select
+                            className="border p-2 rounded"
+                            value={filters.workWith}
+                            onChange={(e) =>
+                                setFilters({ ...filters, workWith: e.target.value })
+                            }
+                        >
+                            <option value="">{t("specialist.workWith") || "Yosh"}</option>
+                            <option value="ADULT">{t("general.adults") || "Kattalar"}</option>
+                            <option value="CHILD">{t("general.children") || "Bolalar"}</option>
+                        </select>
 
-                    <select
-                        className="border p-2 rounded"
-                        value={filters.language}
-                        onChange={(e) => setFilters({ ...filters, language: e.target.value })}
-                    >
-                        <option value="">Til</option>
-                        <option value="UZBEK">O‘zbekcha</option>
-                        <option value="RUSSIAN">Ruscha</option>
-                        <option value="ENGLISH">Inglizcha</option>
-                    </select>
-                    <input type="number"
-                        className="border p-2 rounded"
-                        value={filters.experience}
-                        onChange={(e) => setFilters({ ...filters, experience: e.target.value})}
-                        placeholder={t("specialist.experience")}
-                    />
-                </div>
-            </section>
+                        <select
+                            className="border p-2 rounded"
+                            value={filters.language}
+                            onChange={(e) =>
+                                setFilters({ ...filters, language: e.target.value })
+                            }
+                        >
+                            <option value="">{t("home-page.specialist-section.language") || "Til"}</option>
+                            <option value="UZBEK">O‘zbekcha</option>
+                            <option value="RUSSIAN">Русский</option>
+                            <option value="ENGLISH">English</option>
+                        </select>
 
-            <section>
-                <h2 className="font-semibold mb-4">{t("specialist.searchResults")}</h2>
-                {loading ? (
-                    <p className="text-center">{t("loading")}</p>
-                ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {specialists.map((spec) => (
-                            <Link
-                                to={`/specialists/specialist/${spec.id}`}
-                                key={spec.id}
-                                className="relative rounded-[20px] shadow hover:shadow-lg overflow-hidden"
-                            >
-                                <img
-                                    src={`${API}/file/files/` + spec.imageUrl}
-                                    alt={spec.FIO}
-                                    className="w-full h-96 object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                                    <div className="text-white">
-                                        <p className="text-lg font-bold">{spec.fio}</p>
-                                        <p className="text-sm">{spec.workSkills}</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        ))}
+                        <input
+                            type="number"
+                            className="border p-2 rounded"
+                            value={filters.experience}
+                            onChange={(e) =>
+                                setFilters({ ...filters, experience: e.target.value })
+                            }
+                            placeholder={t("specialist.experience")}
+                        />
                     </div>
-                )}
+                </aside>
 
-                {specialists.length === 0 && !loading && (
-                    <p className="text-center text-gray-500 mt-6">{t("specialist.notFound")}</p>
-                )}
-            </section>
+                {/* Results */}
+                <main className="md:col-span-3">
+                    <h2 className="font-semibold mb-4">{t("specialist.searchResults")}</h2>
+                    {loading ? (
+                        <p className="text-center">{t("loading")}</p>
+                    ) : (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {specialists.map((spec) => (
+                                <Link
+                                    to={`/specialists/specialist/${spec.id}`}
+                                    key={spec.id}
+                                    className="relative rounded-[20px] shadow hover:shadow-lg overflow-hidden"
+                                >
+                                    <img
+                                        src={`${API}/file/files/` + spec.imageUrl}
+                                        alt={spec.FIO}
+                                        className="w-full h-96 object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                                        <div className="text-white">
+                                            <p className="text-lg font-bold">{spec.fio}</p>
+                                            <p className="text-sm">{spec.workSkills}</p>
+                                        </div>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    )}
+
+                    {specialists.length === 0 && !loading && (
+                        <p className="text-center text-gray-500 mt-6">
+                            {t("specialist.notFound")}
+                        </p>
+                    )}
+                </main>
+            </div>
         </div>
     );
+
 }

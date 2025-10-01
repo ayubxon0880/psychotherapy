@@ -300,6 +300,9 @@
     "view-more": "View more",
     "no-data": "No data",
     "success": "Sent successfully",
+    "adult": "Adults",
+    "children": "Children",
+    "age": "Age",
     "error": "An error occurred"
   }
 }

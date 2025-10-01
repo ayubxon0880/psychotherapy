@@ -301,6 +301,9 @@
     "view-more": "Ko'proq ko'rish",
     "no-data": "Ma'lumot topilmadi",
     "success": "Muvaffaqiyatli yuborildi",
+    "adults": "Kattalar",
+    "children": "Yoshlar",
+    "age": "Yosh",
     "error": "Xatolik yuz berdi"
   }
 }
