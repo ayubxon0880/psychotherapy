@@ -97,7 +97,7 @@ export default function SessionForm() {
             name="fullName"
             value={form.fullName}
             onChange={handleChange}
-            placeholder="Aziz Qurbonov"
+            placeholder="Jamshid Farmonov"
             className="mt-1 block w-full rounded-lg border border-black/20 px-3 py-2 bg-white text-black"
             required
           />
@@ -153,7 +153,7 @@ export default function SessionForm() {
           disabled={loading}
           className="w-full py-2 rounded-lg border text-black bg-[#D8F3A2] font-medium disabled:opacity-60"
         >
-          {loading ? "Yuborilmoqda..." : "Yuborish"}
+          {loading ? t("contact.sending") : t("contact.send")}
         </button>
 
       </form>

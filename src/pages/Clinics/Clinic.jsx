@@ -76,12 +76,9 @@ const Clinic = () => {
           </span>
         </div>
 
-        <div className="flex justify-between text-base md:text-xl gap-4 border-2 rounded-lg p-3">
-          <span className="font-bold">{t("clinics.time")}:</span>
-          <a href={`${API}/file/files/${clinic.licenceUrl}`} className="text-end">
-            {t("clinics.licence")}
-          </a>
-        </div>
+        <a href={`${API}/file/files/${clinic.licenceUrl}`} className="flex justify-between text-base md:text-xl gap-4 border-2 rounded-lg p-3 font-bold">
+          {t("clinics.licence")}
+        </a>
       </div>
     </div>
   );

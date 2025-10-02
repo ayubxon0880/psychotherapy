@@ -23,7 +23,7 @@
       "count": "For myself",
       "count2": "For 2 people",
       "findSpecialist": "Find a specialist",
-      "bookConsultation": "Book a consultation"
+      "bookConsultation": "Book"
     },
     "coolNumbers": {
       "foundTitle": "1,200+",
@@ -41,7 +41,7 @@
       "title": "Our Specialists",
       "subtitle": "Psychologist",
       "slideText": "Will help you understand yourself, deal with anxiety, and overcome inner conflicts.",
-      "button": "Book a consultation"
+      "button": "Book"
     },
     "search": {
       "title": "Quick search",
@@ -174,7 +174,7 @@
     "reConsult": "Follow-up Consultation",
     "onlineConsult": "Online Consultation",
     "workWith": "Works With",
-    "button": "Book a consultation",
+    "button": "Book",
     "languages": "Languages",
     "workSchedule": "Work Schedule",
     "consultPeriod": "Consultation Duration",
@@ -300,6 +300,10 @@
     "view-more": "View more",
     "no-data": "No data",
     "success": "Sent successfully",
+    "adult": "Adults",
+    "children": "Children",
+    "age": "Age",
+    "loading": "Loading",
     "error": "An error occurred"
   }
 }

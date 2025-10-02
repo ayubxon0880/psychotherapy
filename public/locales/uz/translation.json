@@ -23,7 +23,7 @@
       "count": "O'zim uchun",
       "count2": "Ikki kishiga",
       "findSpecialist": "Mutaxassis topish",
-      "bookConsultation": "Konsultatsiyaga yozilish"
+      "bookConsultation": "Yozilish"
     },
     "coolNumbers": {
       "foundTitle": "1 200+",
@@ -41,7 +41,7 @@
       "title": "Bizning mutaxassislar",
       "subtitle": "Psixolog",
       "slideText": "O'zingizni tushunishga, xavotirni yengishga va ichki qarama-qarshiliklarni hal qilishga yordam beradi.",
-      "button": "Konsultatsiyaga yozilish"
+      "button": "Yozilish"
     },
     "search": {
       "title": "Tezkor qidiruv",
@@ -178,7 +178,7 @@
     "languages": "Tillar",
     "workSchedule": "Ish vaqti",
     "consultPeriod": "Konsultatsiya vaqti",
-    "button": "Konsultatsiyaga yozilish",
+    "button": "Yozilish",
     "workSkills": "Ish ko'nikmalari"
   },
   "topSpecialists": {
@@ -301,6 +301,10 @@
     "view-more": "Ko'proq ko'rish",
     "no-data": "Ma'lumot topilmadi",
     "success": "Muvaffaqiyatli yuborildi",
+    "adults": "Kattalar",
+    "children": "Yoshlar",
+    "age": "Yosh",
+    "loading": "yuklash",
     "error": "Xatolik yuz berdi"
   }
 }
