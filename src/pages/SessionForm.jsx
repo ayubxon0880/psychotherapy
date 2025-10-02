@@ -14,7 +14,8 @@ export default function SessionForm() {
 
 
     const [form, setForm] = useState({
-        doctorId: id == "simplified" ? "" : id,
+        doctorUrl: id == "simplified" ? "" : "https://www.psychotherapy.uz/specialists/specialist/"+id,
+        doctorFullName: "",
         problem: "",
         fullName: "",
         phone: "",
@@ -38,11 +39,17 @@ export default function SessionForm() {
 
         setLoading(true);
 
+        const finalForm = {
+            ...form,
+            doctorFullName: specialist ? specialist.fio : "",
+            timeSlot: timeSlot || form.timeSlot,
+        };
+
         try {
             const res = await fetch(API + "/telegram/consultation/book", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(form),
+                body: JSON.stringify(finalForm),
             });
 
             if (!res.ok) throw new Error(await res.text() || `Server responded with ${res.status}`);
