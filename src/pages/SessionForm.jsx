@@ -42,7 +42,7 @@ export default function SessionForm() {
         const finalForm = {
             ...form,
             doctorFullName: specialist ? specialist.fio : "",
-            timeSlot: timeSlot || form.timeSlot,
+            timeSlot: "unknown",
         };
 
         try {
