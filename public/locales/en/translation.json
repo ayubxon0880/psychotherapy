@@ -294,6 +294,7 @@
     "phone": "Phone",
     "email": "Email",
     "selectedId": "Selected doctor",
+    "chooseTime": "Select time",
     "problem": "Problem"
   },
   "general": {

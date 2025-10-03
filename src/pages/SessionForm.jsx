@@ -1,20 +1,18 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {useParams} from 'react-router-dom';
 import {API} from '../service/api';
 import {useTranslation} from "react-i18next";
 
 export default function SessionForm() {
     const [specialist, setSpecialist] = useState();
-    const [timeSlot, setTimeSlot] = useState();
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
     const {id} = useParams();
     const {t} = useTranslation();
 
-
     const [form, setForm] = useState({
-        doctorUrl: id == "simplified" ? "" : "https://www.psychotherapy.uz/specialists/specialist/"+id,
+        doctorUrl: id === "simplified" ? "" : "https://www.psychotherapy.uz/specialists/specialist/"+id,
         doctorFullName: "",
         problem: "",
         fullName: "",
@@ -32,8 +30,8 @@ export default function SessionForm() {
         e.preventDefault();
         setSuccess(false);
         setError(false);
+
         if (!form.fullName.trim() || !form.phone.trim() || !form.email.trim() || !form.problem.trim()) {
-            setSuccess(false);
             return;
         }
 
@@ -42,7 +40,6 @@ export default function SessionForm() {
         const finalForm = {
             ...form,
             doctorFullName: specialist ? specialist.fio : "",
-            timeSlot: "unknown",
         };
 
         try {
@@ -55,7 +52,15 @@ export default function SessionForm() {
             if (!res.ok) throw new Error(await res.text() || `Server responded with ${res.status}`);
 
             setSuccess(true);
-            setForm({problem: "", fullName: "", phone: "", email: ""});
+            setForm({
+                doctorUrl: id === "simplified" ? "" : "https://www.psychotherapy.uz/specialists/specialist/"+id,
+                doctorFullName: "",
+                problem: "",
+                fullName: "",
+                phone: "",
+                email: "",
+                timeSlot: "",
+            });
         } catch (err) {
             setError(true);
         } finally {
@@ -64,15 +69,13 @@ export default function SessionForm() {
     };
 
     useEffect(() => {
-        if (id != "simplified") {
-            fetch(API + "/specialist/" + id, {
-                method: "GET"
-            })
+        if (id !== "simplified") {
+            fetch(API + "/specialist/" + id)
                 .then(res => res.json())
                 .then(data => setSpecialist(data))
                 .catch(err => console.log(err))
         }
-    }, [])
+    }, [id])
 
     return (
         <div className="min-h-screen flex items-center justify-center p-6">
@@ -80,25 +83,31 @@ export default function SessionForm() {
                 <h2 className="text-2xl font-semibold mb-4">{t("session-form.title")}</h2>
                 <label className="block mb-3">
                     {
-                        specialist && id != "simplified" ? (
+                        specialist && id !== "simplified" && (
                             <div className="mb-4">
                                 <div
-                                    className="text-lg bg-gray-200 p-3 rounded-lg text-gray-700 mb-4">{t("session-form.selectedId")}: {specialist.fio}</div>
+                                    className="text-lg bg-gray-200 p-3 rounded-lg text-gray-700 mb-4">
+                                    {t("session-form.selectedId")}: {specialist.fio}
+                                </div>
                                 <select
-                                    className="border p-2 rounded"
-                                    value={timeSlot}
-                                    onChange={(e) => setTimeSlot(e.target.value)}
+                                    name="timeSlot"
+                                    className="border p-2 rounded w-full"
+                                    value={form.timeSlot}
+                                    onChange={handleChange}
+                                    required
                                 >
-                                    {
-                                        Array.from({length: 10}, (_, i) => (
-                                            <option key={i} value={`${Date.now}:${10 + i}`}>
-                                                {10 + i}:00
+                                    <option value="">{t("session-form.chooseTime")}</option>
+                                    {Array.from({length: 10}, (_, i) => {
+                                        const hour = 10 + i;
+                                        return (
+                                            <option key={i} value={`${hour}:00`}>
+                                                {hour}:00
                                             </option>
-                                        ))
-                                    }
+                                        );
+                                    })}
                                 </select>
                             </div>
-                        ) : ("")
+                        )
                     }
                     <span className="text-sm">{t("session-form.name")}</span>
                     <input
@@ -142,7 +151,6 @@ export default function SessionForm() {
                         name="problem"
                         value={form.problem}
                         onChange={handleChange}
-                        placeholder=""
                         className="mt-1 block w-full rounded-lg border border-black/20 px-3 py-2 bg-white text-black h-24 resize-y"
                         required
                     />
@@ -163,7 +171,6 @@ export default function SessionForm() {
                 >
                     {loading ? t("contact.sending") : t("contact.send")}
                 </button>
-
             </form>
         </div>
     );

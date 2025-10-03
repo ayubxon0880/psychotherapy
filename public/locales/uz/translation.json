@@ -295,7 +295,8 @@
     "phone": "Telefon",
     "email": "Elektron pochta",
     "selectedId": "Tanlangan shifokor",
-    "problem": "Muammo"
+    "problem": "Muammo",
+    "chooseTime": "Vaqtni tanlang"
   },
   "general": {
     "view-more": "Ko'proq ko'rish",
