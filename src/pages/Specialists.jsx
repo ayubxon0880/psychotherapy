@@ -62,7 +62,6 @@ export default function Specialists() {
     return (
         <div className="max-w-7xl mx-auto px-6 py-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-                {/* Filters */}
                 <aside className="md:col-span-1 bg-white shadow rounded-2xl p-6 space-y-5">
                     <h2 className="text-xl font-semibold text-gray-800 border-b pb-3">
                         {t("specialist.filterTitle")}

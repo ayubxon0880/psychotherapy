@@ -9,7 +9,8 @@
     "join": "Bizga qo'shiling",
     "join-clinic": "Klinika",
     "join-specialist": "Mutaxassis",
-    "join-community": "Hamjamiyat"
+    "join-community": "Hamjamiyat",
+    "partners": "Hamkorlar"
   },
   "home-page": {
     "home": "Bosh sahifa",
@@ -18,12 +19,15 @@
     "community": "Hamjamiyat",
     "about": "Biz haqimizda",
     "hero": {
-      "title": "Ruhiy salomatlik bo'yicha mutaxassisni toping",
-      "title2": "Bizning veb-saytimizda siz psixiatr, psixoterapevt, psixolog yoki seksologni topishingiz mumkin.",
+      "title1": "Terapiya - bu hashamat emas. Bu yana normal yashashning bir usuli.",
+      "title2": "O'zbekistonda birinchi ruhiy salomatlik platformasi",
+      "title3": "5 daqiqada mutaxassis topamiz",
       "count": "O'zim uchun",
       "count2": "Ikki kishiga",
-      "findSpecialist": "Mutaxassis topish",
-      "bookConsultation": "Yozilish"
+      "findSpecialist": "Mutaxassis toping",
+      "bookConsultation": "Yozilish",
+      "price1": "150 000 UZS so'mdan",
+      "price2": "250 000 UZS so'mdan"
     },
     "coolNumbers": {
       "foundTitle": "1 200+",
@@ -47,7 +51,7 @@
       "title": "Tezkor qidiruv",
       "onlineOffline": "onlayn / oflayn",
       "optionsLocation": "Toshkent",
-      "inputPlaceholder": "seksolog Evgeniy",
+      "inputPlaceholder": "Evgeniy",
       "describeState": "Holatingizni tasvirlab bering",
       "describePlaceholder": "Munozaralar va munosabat muammolari",
       "frequentRequests": "Ko‘p uchraydigan so‘rovlar",
@@ -127,6 +131,7 @@
       "email": "elektron pochta"
     },
     "specialist-section": {
+      "experience": "Tajriba",
       "filter": "Filter",
       "direction": "Yo'nalish",
       "all": "Barchasi",
@@ -134,6 +139,25 @@
       "online": "Onlayn",
       "offline": "Offlayn",
       "language": "Til"
+    },
+    "spec_mission": {
+      "title": "Bizning mutaxassislar yordam beradi",
+      "card1": "Depressiyadan chiqish va kuchni tiklash",
+      "card2": "Ichki tinchlikni qayta tiklash",
+      "card3": "Jinsiy muammolarni hal qilish",
+      "card4": "Tashvish va vahima xurujlarini yengish",
+      "mission_title": "Missiya",
+      "mission_desc": "Har bir inson baxtli bo‘lishga qodir. Bizning maqsadimiz — sizga bunga erishishga yordam berish.",
+      "mission_btn": "Maslahatga yozilish"
+    },
+    "how_work": {
+      "title": "Biz qanday ishlaymiz",
+      "step1_title": "1. Mutaxassisni tanlang",
+      "step1_desc": "Psixolog, psixoterapevt, psixiatr yoki addiktolog profillarini ko‘rib chiqing. Tajriba, yondashuv va fikrlarni o‘rganing, o‘zingizga mos mutaxassisni tanlang.",
+      "step2_title": "2. Vaqtni belgilang",
+      "step2_desc": "Qulay kun va soatni onlayn jadvaldan tanlang. Seansni xavfsiz usulda to‘lang va maslahat oldidan eslatma oling.",
+      "step3_title": "3. Terapiyani boshlang",
+      "step3_desc": "Dunyoning istalgan joyidan sessiyaga ulaning. Maxfiy, xavfsiz va stresssiz."
     },
     "map": "Biz xaritada"
   },

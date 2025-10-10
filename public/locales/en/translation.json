@@ -9,7 +9,8 @@
     "join": "Join us",
     "join-clinic": "Clinic",
     "join-specialist": "Specialist",
-    "join-community": "Community"
+    "join-community": "Community",
+    "partners": "Partners"
   },
   "home-page": {
     "home": "Home",
@@ -127,6 +128,7 @@
       "email": "email"
     },
     "specialist-section": {
+      "experience": "Exp",
       "filter": "Filter",
       "direction": "Direction",
       "all": "All",
@@ -134,6 +136,25 @@
       "online": "Online",
       "offline": "Offline",
       "language": "Language"
+    },
+    "spec_mission": {
+      "title": "Our specialists help you",
+      "card1": "Overcome depression and restore strength",
+      "card2": "Regain inner peace",
+      "card3": "Resolve sexual difficulties",
+      "card4": "Cope with anxiety and panic attacks",
+      "mission_title": "Mission",
+      "mission_desc": "Everyone is capable of being happy. Our mission is to help you achieve it.",
+      "mission_btn": "Book a consultation"
+    },
+    "how_work": {
+      "title": "How we work",
+      "step1_title": "1. Choose a specialist",
+      "step1_desc": "View profiles of psychologists, psychotherapists, psychiatrists, sexologists, and addiction specialists. Explore their experience, approach, and reviews to find your ideal expert.",
+      "step2_title": "2. Schedule a session",
+      "step2_desc": "Select a convenient day and time from the online schedule. Pay safely and receive a reminder before your consultation.",
+      "step3_title": "3. Start therapy",
+      "step3_desc": "Join your session from anywhere in the world. Confidential, safe, and stress-free."
     },
     "map": "We are on the map"
   },
