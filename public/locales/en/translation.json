@@ -6,69 +6,121 @@
     "community": "Community",
     "about": "About Us",
     "test": "Tests",
-    "join": "Join us",
+    "join": "Join Us",
     "join-clinic": "Clinic",
     "join-specialist": "Specialist",
     "join-community": "Community",
-    "partners": "Partners"
+    "partners": "For Partners"
   },
   "home-page": {
     "home": "Home",
-    "clinics": "Clinics",
+    "clinics": "Clinic",
     "specialists": "Specialists",
     "community": "Community",
-    "about": "About us",
+    "about": "About Us",
     "hero": {
-      "title": "Find a mental health professional",
-      "title2": "On our website you can find a psychiatrist, psychotherapist, psychologist or sexologist.",
-      "count": "For myself",
-      "count2": "For 2 people",
-      "findSpecialist": "Find a specialist",
-      "bookConsultation": "Book"
+      "subtitle1": "The first mental health platform in Uzbekistan",
+      "title": "Therapy is not a luxury. It's a way to live normally again.",
+      "subtitle2": "We'll match you with a specialist in 5 minutes",
+      "count": "For yourself",
+      "count2": "For couples",
+      "findSpecialist": "find a specialist",
+      "price1": "from 150,000 UZS per session",
+      "price2": "from 250,000 UZS per session",
+      "bookConsultation": "Book Consultation"
     },
     "coolNumbers": {
       "foundTitle": "1,200+",
       "foundText": "people have already found <br /> their psychologist online",
       "specialistsTitle": "150",
-      "specialistsText": "verified specialists are ready to help you",
+      "specialistsText": "verified specialists ready to help you",
       "resultTitle": "76%",
-      "resultText": "clients report results after just 5 sessions",
+      "resultText": "clients notice results after just 5 sessions",
       "experienceTitle": "5 years",
       "experienceText": "average experience of our experts",
       "availabilityTitle": "24/7",
-      "availabilityText": "you can book a consultation at any convenient time"
+      "availabilityText": "you can book a consultation at your convenient time"
+    },
+    "spec_mission": {
+      "title": "Our specialists help",
+      "card1": "overcome depression and regain strength",
+      "card2": "increase self-esteem and self-confidence",
+      "card3": "solve sexual difficulties",
+      "card4": "cope with anxiety and panic attacks",
+      "mission_title": "Mission",
+      "mission_desc": "Each of us is capable of being happy. Our mission is to help you with that.",
+      "mission_btn": "book a consultation"
     },
     "ourSpecialists": {
       "title": "Our Specialists",
       "subtitle": "Psychologist",
-      "slideText": "Will help you understand yourself, deal with anxiety, and overcome inner conflicts.",
+      "slideText": "Will help you understand yourself, cope with anxieties and internal conflicts.",
       "button": "Book"
     },
-    "search": {
-      "title": "Quick search",
-      "onlineOffline": "online / offline",
-      "optionsLocation": "Tashkent",
-      "inputPlaceholder": "sexologist Eugene",
-      "describeState": "Describe your condition",
-      "describePlaceholder": "Relationship problems",
-      "frequentRequests": "Frequent requests",
-      "bestSpecialists": "Best specialists of the week"
+    "how_work": {
+      "title": "How We Work",
+      "step1_title": "1. Choose a specialist",
+      "step1_desc": "Browse profiles of psychologists, psychotherapists, psychiatrists, sexologists, and addiction specialists. Review their experience, approaches, and reviews to choose your expert.",
+      "step2_title": "2. Schedule a time",
+      "step2_desc": "Choose a convenient day and time in the online schedule. Pay for the session securely and receive a reminder before the consultation.",
+      "step3_title": "3. Start therapy",
+      "step3_desc": "Join the session from anywhere in the world. Confidential, safe, and without unnecessary stress."
+    },
+    "test": {
+      "title": "Tests",
+      "description": "Answer a few simple questions to better understand your mental health condition. Find out your anxiety level.",
+      "button": "take the test",
+      "note": "Results are indicative and do not replace specialist consultation.",
+      "help": {
+        "card1": "overcome depression and regain strength",
+        "card2": "increase self-esteem and self-confidence",
+        "card3": "solve sexual difficulties",
+        "card4": "cope with anxiety and panic attacks"
+      }
+    },
+    "findSpecialist": {
+      "title": "Find a Mental Health Specialist",
+      "forOne": "for yourself",
+      "forTwo": "for couples",
+      "button": "find a specialist"
+    },
+    "newMission": {
+      "title": "If you're unsure",
+      "description": "You don't necessarily need to immediately 'get treated' or start long-term therapy. Try one session. Sometimes that's enough to feel better - or to finally understand the root of the problem.",
+      "question": "Ready to try?"
     },
     "contacts": {
-      "title": "contact information",
-      "number": "phone number",
-      "email": "email"
+      "button": "book your first session",
+      "title": "Frequent Questions",
+      "cards": [
+        "How does online consultation work?",
+        "How to choose the right specialist?",
+        "Is it confidential?",
+        "How much does a consultation cost?",
+        "Is online therapy suitable for serious problems?",
+        "Can I cancel or reschedule an appointment?"
+      ]
+    },
+    "search": {
+      "title": "Quick Search",
+      "onlineOffline": "online / offline",
+      "optionsLocation": "Tashkent",
+      "inputPlaceholder": "sexologist Evgeny",
+      "describeState": "Describe your condition",
+      "describePlaceholder": "Relationship problems",
+      "frequentRequests": "frequent requests",
+      "bestSpecialists": "Best Specialists of the Week"
     },
     "faq": {
       "title": "Frequently Asked Questions",
       "questions": [
         {
           "q": "Anxiety",
-          "a": "Anxiety is a normal reaction of the body to stress. When it becomes chronic, it can interfere with sleep, concentration, and cause physical symptoms such as rapid heartbeat, sweating, and trembling. Breathing techniques, psychotherapy, and regular physical activity can help."
+          "a": "Anxiety is a normal body response to stress. When it becomes chronic, it can interfere with sleep, concentration, and cause physical symptoms like rapid heartbeat, sweating, trembling. Breathing techniques, psychotherapy, and physical activity help."
         },
         {
           "q": "Depression",
-          "a": "Depression is characterized by a persistent feeling of sadness, loss of interest in favorite activities, low energy, and changes in appetite and sleep. Therapy, social support, and medication can be helpful."
+          "a": "Depression is characterized by persistent sadness, loss of interest in favorite activities, reduced energy, changes in appetite and sleep. Therapy, social support, and medication can help."
         },
         {
           "q": "Panic Attacks",
@@ -76,85 +128,66 @@
         },
         {
           "q": "Fears and Phobias",
-          "a": "Phobias are irrational fears of certain objects or situations. Gradual exposure, cognitive therapy techniques, and relaxation exercises can help overcome them."
+          "a": "Phobias are irrational fears of specific objects or situations. Working with them through exposure, cognitive methods, and relaxation helps."
         },
         {
           "q": "Relationship Problems",
-          "a": "Relationship issues may arise from poor communication, lack of trust, or unclear boundaries. Couples therapy and improving communication skills are often helpful."
+          "a": "Relationship problems can arise from poor communication, distrust, or unclear boundaries. Couples therapy and improving communication skills often help."
         },
         {
           "q": "Burnout",
-          "a": "Burnout is emotional exhaustion, cynicism, and loss of motivation. Rest, work-life balance, support from others, and psychological help are effective ways to recover."
+          "a": "Burnout is emotional exhaustion, cynicism, loss of motivation. Rest, work-life balance, support, and psychological help are beneficial."
         },
         {
-          "q": "Self-Esteem",
-          "a": "Low self-esteem is shown through self-criticism and a sense of inadequacy. It can be improved through changing negative beliefs, self-acceptance, and therapy."
+          "q": "Self-esteem",
+          "a": "Low self-esteem manifests in self-criticism and feelings of inadequacy. Improvement is possible through changing beliefs, self-acceptance, and therapy."
         },
         {
           "q": "Sexual Life Problems",
-          "a": "Problems with sexual life may be linked to stress, physical health, trauma, or trust issues. Open communication and professional support can be helpful."
+          "a": "Sexual life problems can be related to stress, physical health, trauma, or distrust. Open communication and professional help can be beneficial."
         },
         {
           "q": "Childhood Trauma",
-          "a": "Childhood trauma can lead to long-lasting psychological effects such as difficulties with trust and emotional instability. Therapy and trauma-informed approaches can support healing."
+          "a": "Childhood trauma can cause lasting psychological consequences: difficulties with trust, emotional instability. Therapy and trauma-focused approaches aid recovery."
         },
         {
           "q": "Aggression and Irritability",
-          "a": "Aggression and irritability often arise due to stress, unresolved emotions, or trauma. Anger management techniques, physical activity, and therapy can help."
+          "a": "Aggression and irritability often appear due to stress, unresolved emotions, or trauma. Anger management techniques, physical activity, and therapy can help."
         }
       ]
     },
     "tests": {
       "title": "Tests",
-      "description": "On our website, you can take verified psychological tests that will help you better understand yourself, your strengths, and areas for growth.",
-      "button": "Take a test"
+      "description": "On our website, you can take verified psychological tests that will help you better understand yourself, your strengths, and areas for development.",
+      "button": "take the test"
     },
     "suggestions": [
       "Anxiety",
       "Depression",
-      "Panic attacks",
-      "Fears and phobias",
-      "Relationship problems",
+      "Panic Attacks",
+      "Fears and Phobias",
+      "Relationship Problems",
       "Burnout",
       "Self-esteem",
-      "Sexual life issues",
-      "Childhood trauma",
-      "Aggression and irritability"
+      "Sexual Life Problems",
+      "Childhood Trauma",
+      "Aggression and Irritability"
     ],
     "contact": {
-      "title": "Contact information",
+      "title": "contact information",
       "phone": "phone number",
       "call": "Call",
       "email": "email"
     },
     "specialist-section": {
-      "experience": "Exp",
+      "experience": "Experience",
       "filter": "Filter",
-      "direction": "Direction",
+      "direction": "Specialization",
       "all": "All",
       "work-format": "Work Format",
       "online": "Online",
       "offline": "Offline",
       "language": "Language"
-    },
-    "spec_mission": {
-      "title": "Our specialists help you",
-      "card1": "Overcome depression and restore strength",
-      "card2": "Regain inner peace",
-      "card3": "Resolve sexual difficulties",
-      "card4": "Cope with anxiety and panic attacks",
-      "mission_title": "Mission",
-      "mission_desc": "Everyone is capable of being happy. Our mission is to help you achieve it.",
-      "mission_btn": "Book a consultation"
-    },
-    "how_work": {
-      "title": "How we work",
-      "step1_title": "1. Choose a specialist",
-      "step1_desc": "View profiles of psychologists, psychotherapists, psychiatrists, sexologists, and addiction specialists. Explore their experience, approach, and reviews to find your ideal expert.",
-      "step2_title": "2. Schedule a session",
-      "step2_desc": "Select a convenient day and time from the online schedule. Pay safely and receive a reminder before your consultation.",
-      "step3_title": "3. Start therapy",
-      "step3_desc": "Join your session from anywhere in the world. Confidential, safe, and stress-free."
     },
     "map": "We are on the map"
   },
@@ -162,133 +195,202 @@
     "searchPlaceholder": "Search clinic...",
     "top3": "Top 3 clinics",
     "all": "All",
-    "direction": "Direction",
+    "direction": "Specialization",
     "main": "Main",
     "address": "Address",
     "phone": "Phone",
     "website": "Website",
-    "fillForm": "Join us",
-    "licence": "Download licence",
-    "time": "Time"
+    "fillForm": "Join Us",
+    "licence": "Download license",
+    "time": "Hours"
   },
   "community": {
     "addCommunity": "Join",
     "searchPlaceholder": "Search community...",
-    "ourCommunities": "Our communities",
-    "notFound": "No communities found",
-    "articlesNews": "Articles & News",
-    "readMore": "Read more →"
+    "ourCommunities": "Our Communities",
+    "notFound": "Communities not found",
+    "articlesNews": "Articles and News",
+    "readMore": "Read →"
   },
   "specialist": {
-    "fillForm": "Join us",
-    "filterTitle": "Specialist filter",
+    "fillForm": "Join Us",
+    "filterTitle": "Specialist Filter",
     "city": "City",
     "format": "Format",
-    "direction": "Direction",
-    "searchResults": "Search results",
+    "direction": "Specialization",
+    "searchResults": "Search Results",
     "notFound": "Nothing found 😔",
     "inviteText1": "We invite psychologists, psychotherapists, psychiatrists, and organizations to collaborate. We offer a convenient platform for work, promotion, and support.",
-    "inviteText2": "Write to us — let's discuss the details!",
+    "inviteText2": "Write to us - let's discuss the details!",
     "category": "Category",
     "experience": "Experience",
     "firstConsult": "First Consultation",
     "reConsult": "Follow-up Consultation",
     "onlineConsult": "Online Consultation",
     "workWith": "Works With",
-    "button": "Book",
     "languages": "Languages",
     "workSchedule": "Work Schedule",
+    "button": "Book",
     "consultPeriod": "Consultation Duration",
     "workSkills": "Work Skills"
   },
-  "topSpecialists": {
-    "title": "Top 3 specialists of the week",
-    "direction": "Direction",
-    "city": "City",
+  "topSpecialist": {
+    "title": "Top 3 Specialists of the Week",
+    "loading": "Loading...",
+    "noSpecialists": "No specialists to display",
+    "noName": "Name not specified",
+    "direction": "Specialization",
     "experience": "Experience",
-    "specialization": "Specialization",
-    "prev": "Previous specialist",
-    "next": "Next specialist",
-    "book": "Book an appointment"
+    "years": "years",
+    "schedule": "Work Schedule",
+    "book": "Book"
+  },
+  "specialistsTop6": {
+    "searchPlaceholder": "Search specialist...",
+    "title": "Search Results",
+    "noSpecialist": "Specialist not found",
+    "filter": {
+      "lang": "Language",
+      "city": "City",
+      "offline": "Offline",
+      "special": "Special"
+    }
+  },
+  "contribution": {
+    "title": "We Invite Collaboration",
+    "text1": "psychologists, psychotherapists, psychiatrists, and organizations. We offer a convenient platform for work, promotion, and support",
+    "text2": "Write to us - let's discuss the details!",
+    "imgAlt": "Know Yourself Test"
   },
   "contact": {
-    "title": "Add yourself or become a partner",
+    "title": "Add Yourself or Become a Partner",
     "aboutPlaceholder": "About yourself...",
-    "fioPlaceholder": "Full name",
-    "phonePlaceholder": "Phone number",
+    "fioPlaceholder": "Full Name",
+    "phonePlaceholder": "Phone Number",
     "send": "Send",
     "sending": "Sending..."
   },
   "communityCard": {
     "city": "City",
     "format": "Format",
-    "main": "Main focus",
+    "main": "Main",
     "join": "Join"
   },
   "about-page": {
-    "title": "About us",
-    "description": "Our project is a platform for finding mental health specialists. We strive to help people find qualified specialists by providing a convenient and reliable search. Our mission is to support people's mental health and well-being through access to high-quality specialist care.",
-    "valuesTitle": "Our values",
+    "hero": {
+      "title": "We believe that mental health care should be as normal as visiting a doctor or going to the gym",
+      "description": "Terapiya.life is the first mental health platform in Uzbekistan that connects people with certified psychologists, psychotherapists, psychiatrists, sexologists, and coaches - online and offline."
+    },
+    "why": {
+      "title1": "Why We Created This Project",
+      "card1": "One in four people experiences a psychological crisis at least once in their lifetime.",
+      "card2": "But over 60% of people don't seek help - due to fear, shame, or unavailability of specialists.",
+      "title2": "What We've Already Done",
+      "list": [
+        "Only certified psychologists, psychotherapists, psychiatrists, and coaches work on the platform - each specialist undergoes diploma verification and personal interview.",
+        "We created a convenient online and offline booking system - without queues and long waits.",
+        "We collaborate with clinics, private specialists, and corporate clients, creating employee support programs.",
+        "Hundreds of requests from people who decided to seek help for the first time - and remained in therapy."
+      ]
+    },
+    "hero2": {
+      "title": "You don't have to cope alone.",
+      "description": "And now you don't need to search for support blindly - we've already found it for you."
+    },
+    "openToPartner": {
+      "title": "We're Open to Partnerships:",
+      "items": [
+        {
+          "question": "Clinics and Private Centers",
+          "answer": "We offer collaboration to expand patient access to quality psychological help and unite efforts in mental health."
+        },
+        {
+          "question": "HR and Companies",
+          "answer": "We create corporate employee support programs, help reduce stress levels and increase team engagement."
+        },
+        {
+          "question": "Associations and Educational Organizations",
+          "answer": "We collaborate with training centers and associations to develop professional community and create joint projects."
+        },
+        {
+          "question": "Psychologists and Psychiatrists",
+          "answer": "We're open to collaboration with specialists who want to develop, share experience, and help more people."
+        }
+      ]
+    },
+    "contact": {
+      "allClinics": "all clinics",
+      "allSpecialists": "all specialists",
+      "allCommunities": "all communities",
+      "contactInfo": "contact information",
+      "phone": "phone number",
+      "email": "email",
+      "address": "address",
+      "addressValue": "Tashkent, Uzbekistan"
+    },
+    "title": "About Us",
+    "description": "Our project is a platform for finding mental health specialists. We strive to help people find qualified specialists, providing convenient and reliable search. Our mission is to support mental health and wellbeing through access to quality specialist help.",
+    "valuesTitle": "Our Values",
     "values": [
-      "Professionalism of specialists",
-      "Confidentiality and respect",
-      "Accessibility online and offline",
-      "Community development and education"
+      "professionalism of specialists",
+      "confidentiality and respect",
+      "accessibility online and offline",
+      "community development and education"
     ],
     "articlesTitle": "📌 Articles",
-    "articlesText": "Here you will find the story of the project, interviews with the founders, as well as our philosophy and mission: 'Why we created Psychotherapy.uz'.",
-    "cta": "Book an appointment"
+    "articlesText": "Here you'll find the project history, interviews with founders, as well as our philosophy and mission: 'Why We Created Terapiya.life'.",
+    "cta": "book an appointment"
   },
   "common": {
     "close": "Close"
   },
   "test-overlay": {
-    "title": "Mini-test: Which specialist should you see?",
-    "resultTitle": "Your result",
-    "recommended": "Recommended specialist",
+    "title": "Mini-test 'Which Specialist Should I See?'",
+    "resultTitle": "Your Result",
+    "recommended": "Recommended Specialist",
     "results": {
       "psy": "Psychologist 💬",
       "pth": "Psychotherapist 🛠️",
       "psychiatrist": "Psychiatrist 💊",
       "sex": "Sexologist ❤️",
-      "nar": "Narcologist 🚭"
+      "nar": "Addiction Specialist 🚭"
     },
     "q1": {
-      "question": "What is most important to you right now?",
+      "question": "What's most important for you right now?",
       "a1": "Feelings, stress, relationships",
       "a2": "I want practical advice and techniques",
-      "a3": "Medical help or medication may be needed",
-      "a4": "Questions about intimate life",
-      "a5": "Issues related to substance use"
+      "a3": "I might need medical help or medication",
+      "a4": "Intimate life questions",
+      "a5": "Questions related to substance use"
     },
     "q2": {
       "question": "How much does this interfere with your life?",
-      "a1": "It bothers me a little",
-      "a2": "It interferes with work/home",
-      "a3": "It’s very difficult, hard to cope",
-      "a4": "I don’t know",
-      "a5": "I struggle with controlling substance use"
+      "a1": "Slightly interferes",
+      "a2": "Interferes with work/home",
+      "a3": "Very interfering, hard to cope",
+      "a4": "I don't know",
+      "a5": "Having difficulties controlling substance use"
     },
     "q3": {
       "question": "What do you expect from a specialist?",
-      "a1": "To talk and better understand myself",
+      "a1": "Talk and understand myself better",
       "a2": "Get specific methods and exercises",
       "a3": "Check if medical help or medication is needed",
-      "a4": "Understand intimate life",
-      "a5": "Help with reducing or stopping substance use"
+      "a4": "Understand intimate sphere",
+      "a5": "Help reducing or stopping substance use"
     },
     "q4": {
       "question": "What else do you notice in yourself?",
       "a1": "Poor sleep, anxiety, panic",
       "a2": "Conflicts, burnout, procrastination",
-      "a3": "Suspected mental disorder or medication experience",
+      "a3": "Suspicion of mental disorder or experience with medications",
       "a4": "Difficulties with libido, erection, orgasm",
       "a5": "Substance use interferes with life"
     }
   },
   "test-page": {
     "pageTitle": "Tests",
-    "pageSubtitle": "On our website, you can take verified psychological tests that will help you better understand yourself, your strengths, and areas for growth.",
+    "pageSubtitle": "On our website, you can take verified psychological tests that will help you better understand yourself, your strengths, and areas for development.",
     "startTest": "Start Test",
     "startNow": "Start Test"
   },
@@ -301,7 +403,7 @@
       "clinics": "Clinics",
       "specialists": "Specialists",
       "community": "Community",
-      "about": "About us"
+      "about": "About Us"
     },
     "contacts": "Contacts",
     "address": "Tashkent, Uzbekistan",
@@ -310,22 +412,22 @@
     "rights": "All rights reserved."
   },
   "session-form": {
-    "title": "Consultation form",
-    "name": "Full name",
+    "title": "Consultation Form",
+    "name": "Full Name",
     "phone": "Phone",
     "email": "Email",
-    "selectedId": "Selected doctor",
-    "chooseTime": "Select time",
+    "selectedId": "Selected Doctor",
+    "chooseTime": "Choose Time",
     "problem": "Problem"
   },
   "general": {
-    "view-more": "View more",
-    "no-data": "No data",
-    "success": "Sent successfully",
-    "adult": "Adults",
-    "children": "Children",
+    "view-more": "View Details",
+    "no-data": "No Data",
+    "success": "Successfully Sent",
+    "adults": "Adults",
+    "children": "Youth",
     "age": "Age",
     "loading": "Loading",
-    "error": "An error occurred"
+    "error": "An Error Occurred"
   }
 }

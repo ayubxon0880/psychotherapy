@@ -14,7 +14,7 @@ export default function SpecialistsAndMission() {
                     <div className="w-full flex flex-col lg:flex-row items-center gap-8 bg-gray-100 p-6 justify-center rounded-3xl max-w-7xl">
                         <div className="w-full lg:w-[462px] h-auto lg:h-[450px] shadow rounded-2xl flex flex-col justify-between bg-[#F2F3A2] items-center p-4">
                             <p className="text-center font-semibold text-gray-700 mb-3 text-sm md:text-base">
-                                Bu birinchi rasm
+                                {t("home-page.spec_mission.card1")}
                             </p>
                             <img
                                 src="/images/home/hero/1.png"
@@ -27,13 +27,13 @@ export default function SpecialistsAndMission() {
                             <div className="flex flex-col sm:flex-row items-stretch gap-8">
                                 <div className="bg-[#FFE0E6] w-full shadow rounded-2xl flex items-center justify-start p-6 h-48 bg-[url('/images/home/hero/2.png')] bg-no-repeat bg-right-bottom bg-contain">
                                     <p className="text-left font-semibold text-gray-700 max-w-[60%] text-sm md:text-base">
-                                        Uchinchi blok
+                                        {t("home-page.spec_mission.card2")}
                                     </p>
                                 </div>
 
                                 <div className="bg-[url('/images/home/hero/3.png')] bg-[#F2F3A2] w-full bg-cover bg-center bg-no-repeat shadow rounded-2xl flex items-center justify-center h-48">
                                     <p className="text-center font-semibold text-white bg-black/40 px-3 py-1 rounded-lg text-sm md:text-base">
-                                        To‘rtinchi blok
+                                        {t("home-page.spec_mission.card3")}
                                     </p>
                                 </div>
                             </div>
@@ -48,16 +48,13 @@ export default function SpecialistsAndMission() {
                                 </div>
                                 <div className="w-full md:w-1/2 flex justify-center items-center">
                                     <p className="text-center font-semibold text-gray-700 text-sm md:text-base">
-                                        Bu beshinchi rasm (katta blok)
+                                        {t("home-page.spec_mission.card4")}
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-              
-
             </div>
         </section>
     );

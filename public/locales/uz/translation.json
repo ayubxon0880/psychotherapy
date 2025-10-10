@@ -1,223 +1,270 @@
 {
   "navbar": {
     "home": "Bosh sahifa",
-    "clinics": "Klinika",
+    "clinics": "Klinikalar",
     "specialists": "Mutaxassislar",
-    "community": "Hamjamiyat",
+    "community": "Jamiyat",
     "about": "Biz haqimizda",
     "test": "Testlar",
     "join": "Bizga qo'shiling",
     "join-clinic": "Klinika",
     "join-specialist": "Mutaxassis",
-    "join-community": "Hamjamiyat",
-    "partners": "Hamkorlar"
+    "join-community": "Jamiyat",
+    "partners": "Hamkorlar uchun"
   },
   "home-page": {
     "home": "Bosh sahifa",
     "clinics": "Klinika",
     "specialists": "Mutaxassislar",
-    "community": "Hamjamiyat",
+    "community": "Jamiyat",
     "about": "Biz haqimizda",
     "hero": {
-      "title1": "Terapiya - bu hashamat emas. Bu yana normal yashashning bir usuli.",
-      "title2": "O'zbekistonda birinchi ruhiy salomatlik platformasi",
-      "title3": "5 daqiqada mutaxassis topamiz",
+      "subtitle1": "O'zbekistondagi birinchi ruhiy salomatlik platformasi",
+      "title": "Terapiya - bu hashamat emas. Bu oddiy hayotga qaytish yo'li.",
+      "subtitle2": "5 daqiqada mutaxassis topamiz",
       "count": "O'zim uchun",
-      "count2": "Ikki kishiga",
-      "findSpecialist": "Mutaxassis toping",
-      "bookConsultation": "Yozilish",
-      "price1": "150 000 UZS so'mdan",
-      "price2": "250 000 UZS so'mdan"
+      "count2": "Juftlik uchun",
+      "findSpecialist": "mutaxassis topish",
+      "price1": "seans uchun 150.000 so'mdan",
+      "price2": "seans uchun 250.000 so'mdan",
+      "bookConsultation": "Yozilish"
     },
     "coolNumbers": {
       "foundTitle": "1 200+",
-      "foundText": "odamlar allaqachon <br /> o‘z psixologini topishdi",
+      "foundText": "kishi o'z psixologini onlayn topdi <br />",
       "specialistsTitle": "150",
-      "specialistsText": "tasdiqlangan mutaxassislar sizga yordam berishga tayyor",
+      "specialistsText": "tasdiqlangan mutaxassis sizga yordam berishga tayyor",
       "resultTitle": "76%",
-      "resultText": "mijozlar faqat 5 ta sessiyadan so‘ng natija sezishadi",
+      "resultText": "mijozlar 5-seansdan keyin natijani sezadi",
       "experienceTitle": "5 yil",
-      "experienceText": "mutaxassislarimizning o‘rtacha tajribasi",
+      "experienceText": "mutaxassislarimizning o'rtacha tajribasi",
       "availabilityTitle": "24/7",
-      "availabilityText": "siz qulay vaqtda maslahatga yozilishingiz mumkin"
+      "availabilityText": "qulay vaqtda konsultatsiyaga yozilishingiz mumkin"
+    },
+    "spec_mission": {
+      "title": "Mutaxassislarimiz yordam beradi",
+      "card1": "depressiyadan chiqish va kuchlarni tiklash",
+      "card2": "o'zini-o'zi qadrlash va ishonchni oshirish",
+      "card3": "jinsiy qiyinchiliklarni hal qilish",
+      "card4": "tashvish va vahimalar bilan kurashish",
+      "mission_title": "Missiya",
+      "mission_desc": "Har birimiz baxtli bo'lishimiz mumkin. Bizning missiyamiz - sizga bunda yordam berish.",
+      "mission_btn": "konsultatsiyaga yozilish"
     },
     "ourSpecialists": {
-      "title": "Bizning mutaxassislar",
+      "title": "Mutaxassislarimiz",
       "subtitle": "Psixolog",
-      "slideText": "O'zingizni tushunishga, xavotirni yengishga va ichki qarama-qarshiliklarni hal qilishga yordam beradi.",
+      "slideText": "O'zingizni tushunishga, tashvishlar va ichki ziddiyatlar bilan kurashishga yordam beradi.",
       "button": "Yozilish"
     },
-    "search": {
-      "title": "Tezkor qidiruv",
-      "onlineOffline": "onlayn / oflayn",
-      "optionsLocation": "Toshkent",
-      "inputPlaceholder": "Evgeniy",
-      "describeState": "Holatingizni tasvirlab bering",
-      "describePlaceholder": "Munozaralar va munosabat muammolari",
-      "frequentRequests": "Ko‘p uchraydigan so‘rovlar",
-      "bestSpecialists": "Haftaning eng yaxshi mutaxassislari"
+    "how_work": {
+      "title": "Biz qanday ishlaymiz",
+      "step1_title": "1. Mutaxassisni tanlang",
+      "step1_desc": "Psixologlar, psixoterapevtlar, psixiatrlar, seksologlar va addiktologlarning profiliga qarang. Tajriba, yondashuvlar va sharhlarni o'rganib, o'zingizga mos mutaxassisni tanlang.",
+      "step2_title": "2. Vaqt belgilang",
+      "step2_desc": "Onlayn jadvaldan qulay kun va soatni tanlang. Seansni xavfsiz to'lang va konsultatsiyadan oldin eslatma oling.",
+      "step3_title": "3. Terapiyani boshlang",
+      "step3_desc": "Seansga dunyoning istalgan nuqtasidan qo'shiling. Maxfiylik, xavfsizlik va ortiqcha stresssiz."
+    },
+    "test": {
+      "title": "Testlar",
+      "description": "Ruhiy salomatlik holatingizni yaxshiroq tushunish uchun bir nechta oddiy savollarga javob bering. Tashvishingiz darajasini biling.",
+      "button": "test topshirish",
+      "note": "Natijalar ko'rsatma xarakteriga ega va mutaxassis konsultatsiyasini almashtirmaydi.",
+      "help": {
+        "card1": "depressiyadan chiqish va kuchlarni tiklash",
+        "card2": "o'zini-o'zi qadrlash va ishonchni oshirish",
+        "card3": "jinsiy qiyinchiliklarni hal qilish",
+        "card4": "tashvish va vahimalar bilan kurashish"
+      }
+    },
+    "findSpecialist": {
+      "title": "Ruhiy salomatlik mutaxassisi toping",
+      "forOne": "o'zim uchun",
+      "forTwo": "juftlik uchun",
+      "button": "mutaxassis topish"
+    },
+    "newMission": {
+      "title": "Agar shubhangiz bo'lsa",
+      "description": "Darvogal davolanish yoki uzoq muddatli terapiyani boshlash shart emas. Bir marta suhbatni sinab ko'ring. Ba'zida yengillashish uchun bu yetarli - yoki muammoning ildizini tushunish uchun.",
+      "question": "Sinab ko'rishga tayyormisiz?"
     },
     "contacts": {
-      "title": "bog'lanish uchun ma'lumot",
-      "number": "telefon raqam",
-      "email": "elektron pochta"
+      "button": "birinchi seansga yozilish",
+      "title": "Tez-tez so'raladigan savollar",
+      "cards": [
+        "Onlayn konsultatsiya qanday o'tadi?",
+        "Qanday qilib mos mutaxassisni tanlash kerak?",
+        "Bu maxfiymi?",
+        "Konsultatsiya qancha turadi?",
+        "Onlayn terapiya jiddiy muammolar uchun mosmi?",
+        "Yozilishni bekor qilish yoki ko'chirish mumkinmi?"
+      ]
+    },
+    "search": {
+      "title": "Tez qidiruv",
+      "onlineOffline": "onlayn / oflayn",
+      "optionsLocation": "Toshkent",
+      "inputPlaceholder": "seksolog Yevgeniy",
+      "describeState": "Holatingizni tasvirlang",
+      "describePlaceholder": "Munosabatlardagi muammolar",
+      "frequentRequests": "tez-tez so'raladigan so'rovlar",
+      "bestSpecialists": "Haftaning eng yaxshi mutaxassislari"
     },
     "faq": {
-      "title": "Ko‘p beriladigan savollar",
+      "title": "Tez-tez so'raladigan savollar",
       "questions": [
         {
           "q": "Tashvish",
-          "a": "Tashvish — bu organizmning stressga normal javobi. U surunkali holatga aylansa, uyquga, diqqatga xalaqit beradi va yurak urishi tezlashishi, terlash, titrash kabi belgilarni keltirib chiqaradi. Nafas olish mashqlari, psixoterapiya va muntazam jismoniy faollik yordam beradi."
+          "a": "Tashvish - organizmning stressga normal reaktsiyasi. U surunkali bo'lganda, uxlash, diqqatni jamlashga xalaqit berishi mumkin, yurak urish tezlashishi, terlash, titrosh kabi jismoniy belgilarni keltirib chiqaradi. Nafas olish texnikasi, psixoterapiya va jismoniy faollik yordam beradi."
         },
         {
           "q": "Depressiya",
-          "a": "Depressiya — doimiy qayg‘u, sevimli mashg‘ulotlarga qiziqish yo‘qolishi, energiya pasayishi, ishtaha va uyqudagi o‘zgarishlar bilan kechadi. Terapiya, ijtimoiy qo‘llab-quvvatlash va dori-darmonlar yordam beradi."
+          "a": "Depressiya doimiy g'amginlik, sevimli mashg'ulotlarga qiziqishning yo'qolishi, energiyaning pasayishi, ishtaha va uyquning o'zgarishi bilan tavsiflanadi. Terapiya, ijtimoiy qo'llab-quvvatlash va dorilar yordam beradi."
         },
         {
-          "q": "Panik hujumlar",
-          "a": "Panik hujum — bu to‘satdan paydo bo‘ladigan kuchli qo‘rquv xuruji bo‘lib, yurak urishi tezlashishi, nafas qisishi, titrash bilan namoyon bo‘ladi. Psixoterapiya, nafas mashqlari va ba’zan dorilar foydali."
+          "q": "Vahimali hujumlar",
+          "a": "Vahimali hujumlar - jismoniy belgilar bilan birga keladigan keskin qo'rquv hujumlari: tez yurak urishi, nafas qisilishi, titrosh. Psixoterapiya, nafas olish mashqlari, ba'zan dorilar foydalidir."
         },
         {
-          "q": "Qo‘rquv va fobiyalar",
-          "a": "Fobiyalar — ma’lum narsalardan yoki vaziyatlardan asossiz qo‘rquv. Bosqichma-bosqich yaqinlashish, kognitiv terapiya va dam olish mashqlari ularni yengishga yordam beradi."
+          "q": "Qo'rquvlar va fobiyalar",
+          "a": "Fobiyalar - ma'lum ob'ektlar yoki vaziyatlardan irratsional qo'rquv. Ekspozitsiya, kognitiv usullar va relaksatsiya orqali ular bilan ishlash yordam beradi."
         },
         {
-          "q": "Munosaabatdagi muammolar",
-          "a": "Munosaabatlar muammosi noto‘g‘ri muloqot, ishonchsizlik yoki noaniq chegaralar tufayli kelib chiqadi. Er-xotin terapiyasi va muloqot ko‘nikmalarini rivojlantirish foydali bo‘lishi mumkin."
+          "q": "Munosabatlardagi muammolar",
+          "a": "Munosabatlardagi muammolar yomon muloqot, ishonchsizlik yoki noaniq chegaralar tufayli paydo bo'lishi mumkin. Juftlik terapiyasi va kommunikativ ko'nikmalarni yaxshilash ko'pincha yordam beradi."
         },
         {
-          "q": "Charchash va kuyish (burnout)",
-          "a": "Kuyish — bu hissiy charchash, befarqlik va motivatsiyaning yo‘qolishi. Dam olish, ish va hayot muvozanati, yaqinlar qo‘llab-quvvatlashi va psixologik yordam tiklanishga yordam beradi."
+          "q": "Kuchdan ketish",
+          "a": "Kuchdan ketish - hissiy charchoq, sinizm, motivatsiyaning yo'qolishi. Dam olish, ish va shaxsiy hayot muvozanati, qo'llab-quvvatlash, psixologik yordam yordam beradi."
         },
         {
-          "q": "O‘z-o‘zini baholash",
-          "a": "Past o‘z-o‘zini baholash o‘zini tanqid qilish va o‘zini yetarli his qilmaslikda namoyon bo‘ladi. Buni salbiy e’tiqodlarni o‘zgartirish, o‘zini qabul qilish va terapiya orqali yaxshilash mumkin."
+          "q": "O'zini-o'zi qadrlash",
+          "a": "Past o'zini-o'zi qadrlash o'zini tanqid qilish va yetarlilik hissida namoyon bo'ladi. E'tiqodlarni o'zgartirish, o'zini qabul qilish va terapiya orqali yaxshilash mumkin."
         },
         {
           "q": "Jinsiy hayotdagi muammolar",
-          "a": "Jinsiy hayotdagi muammolar stress, sog‘liq, travma yoki ishonchsizlik bilan bog‘liq bo‘lishi mumkin. Ochiq muloqot va mutaxassis yordami foydali."
+          "a": "Jinsiy hayotdagi muammolar stress, jismoniy salomatlik, travma yoki ishonchsizlik bilan bog'liq bo'lishi mumkin. Ochiq muloqot va professional yordam foydali bo'lishi mumkin."
         },
         {
-          "q": "Bola davridagi jarohatlar",
-          "a": "Bola davridagi travmalar ishonchsizlik, hissiy beqarorlik kabi uzoq davom etuvchi oqibatlarga olib kelishi mumkin. Terapiya va travmaga yo‘naltirilgan yondashuv tiklanishga yordam beradi."
+          "q": "Bolalik travmalari",
+          "a": "Bolalik travmalari ishonch qiyinchiliklari, hissiy beqarorlik kabi barqaror psixologik oqibatlarga olib kelishi mumkin. Terapiya va travmaga yo'naltirilgan yondashuv tiklanishga yordam beradi."
         },
         {
-          "q": "Haddan tashqari asabiylik",
-          "a": "Agres­siya va asabiylik stress, yechilmagan his-tuyg‘ular yoki travma sababli paydo bo‘ladi. G‘azabni nazorat qilish texnikalari, jismoniy faollik va terapiya yordam beradi."
+          "q": "Aggressiya va asabiylik",
+          "a": "Aggressiya va asabiylik ko'pincha stress, hal qilinmagan hissiyotlar yoki travma tufayli paydo bo'ladi. G'azabni boshqarish texnikasi, jismoniy faollik va terapiya yordam beradi."
         }
       ]
     },
     "tests": {
       "title": "Testlar",
-      "description": "Saytimizda siz o'zingizni, kuchli tomonlaringizni va rivojlanish sohalaringizni yaxshiroq tushunishga yordam beradigan ishonchli psixologik testlarni o'tishingiz mumkin.",
-      "button": "Testdan o'tish"
+      "description": "Saytimizda o'zingizni, kuchli tomonlaringizni va rivojlanish sohalaringizni yaxshiroq tushunishga yordam beradigan tasdiqlangan psixologik testlarni topshirishingiz mumkin.",
+      "button": "test topshirish"
     },
     "suggestions": [
       "Tashvish",
       "Depressiya",
-      "Panik hujumlar",
-      "Qo‘rquv va fobiyalar",
-      "Munosabat muammolari",
-      "Charchash (burnout)",
-      "O‘z-o‘zini baholash",
-      "Jinsiy hayot muammolari",
-      "Bolalikdagi travmalar",
-      "Haddan tashqari tajovuzkorlik va jahldorlik"
+      "Vahimali hujumlar",
+      "Qo'rquvlar va fobiyalar",
+      "Munosabatlardagi muammolar",
+      "Kuchdan ketish",
+      "O'zini-o'zi qadrlash",
+      "Jinsiy hayotdagi muammolar",
+      "Bolalik travmalari",
+      "Aggressiya va asabiylik"
     ],
     "contact": {
-      "title": "Aloqa ma’lumotlari",
+      "title": "aloqa ma'lumotlari",
       "phone": "telefon raqami",
-      "call": "Qo‘ng‘iroq qilish",
+      "call": "Qo'ng'iroq qilish",
       "email": "elektron pochta"
     },
     "specialist-section": {
       "experience": "Tajriba",
-      "filter": "Filter",
+      "filter": "Filterni",
       "direction": "Yo'nalish",
-      "all": "Barchasi",
-      "work-format": "Ishlash formati",
+      "all": "Hammasi",
+      "work-format": "Ish formati",
       "online": "Onlayn",
-      "offline": "Offlayn",
+      "offline": "Oflayn",
       "language": "Til"
-    },
-    "spec_mission": {
-      "title": "Bizning mutaxassislar yordam beradi",
-      "card1": "Depressiyadan chiqish va kuchni tiklash",
-      "card2": "Ichki tinchlikni qayta tiklash",
-      "card3": "Jinsiy muammolarni hal qilish",
-      "card4": "Tashvish va vahima xurujlarini yengish",
-      "mission_title": "Missiya",
-      "mission_desc": "Har bir inson baxtli bo‘lishga qodir. Bizning maqsadimiz — sizga bunga erishishga yordam berish.",
-      "mission_btn": "Maslahatga yozilish"
-    },
-    "how_work": {
-      "title": "Biz qanday ishlaymiz",
-      "step1_title": "1. Mutaxassisni tanlang",
-      "step1_desc": "Psixolog, psixoterapevt, psixiatr yoki addiktolog profillarini ko‘rib chiqing. Tajriba, yondashuv va fikrlarni o‘rganing, o‘zingizga mos mutaxassisni tanlang.",
-      "step2_title": "2. Vaqtni belgilang",
-      "step2_desc": "Qulay kun va soatni onlayn jadvaldan tanlang. Seansni xavfsiz usulda to‘lang va maslahat oldidan eslatma oling.",
-      "step3_title": "3. Terapiyani boshlang",
-      "step3_desc": "Dunyoning istalgan joyidan sessiyaga ulaning. Maxfiy, xavfsiz va stresssiz."
     },
     "map": "Biz xaritada"
   },
   "clinics": {
     "searchPlaceholder": "Klinika qidirish...",
-    "top3": "Top 3 klinikalar",
-    "all": "Barchasi",
-    "direction": "Yo‘nalishi",
+    "top3": "Eng yaxshi 3 ta klinika",
+    "all": "Hammasi",
+    "direction": "Yo'nalish",
     "main": "Asosiy",
     "address": "Manzil",
     "phone": "Telefon",
-    "website": "Sayt",
+    "website": "Veb-sayt",
     "fillForm": "Bizga qo'shiling",
-    "licence": "Litsenziya yuklab olish",
-    "time": "Vaqt"
+    "licence": "Litsenziyani yuklab olish",
+    "time": "Ish vaqti"
   },
   "community": {
-    "addCommunity": "Qo‘shilish",
-    "searchPlaceholder": "Hamjamiyat qidirish...",
-    "ourCommunities": "Bizning hamjamiyatlarimiz",
-    "notFound": "Hamjamiyatlar topilmadi",
+    "addCommunity": "Qo'shilish",
+    "searchPlaceholder": "Jamiyat qidirish...",
+    "ourCommunities": "Jamiyatlarimiz",
+    "notFound": "Jamiyatlar topilmadi",
     "articlesNews": "Maqolalar va yangiliklar",
-    "readMore": "Davomini o‘qish →"
+    "readMore": "O'qish →"
   },
   "specialist": {
     "fillForm": "Bizga qo'shiling",
     "filterTitle": "Mutaxassislarni filtrlash",
     "city": "Shahar",
     "format": "Format",
-    "direction": "Yo‘nalish",
+    "direction": "Yo'nalish",
     "searchResults": "Qidiruv natijalari",
     "notFound": "Hech narsa topilmadi 😔",
-    "inviteText1": "Psixologlar, psixoterapevtlar, psixiatrlar va tashkilotlarni hamkorlikka taklif qilamiz. Ishlash uchun qulay platforma, targ‘ibot va qo‘llab-quvvatlashni taklif etamiz.",
-    "inviteText2": "Bizga yozing — tafsilotlarni muhokama qilamiz!",
-
+    "inviteText1": "Psixologlar, psixoterapevtlar, psixiatrlar va tashkilotlarni hamkorlikka taklif qilamiz. Ish, targ'ib va qo'llab-quvvatlash uchun qulay platformani taklif qilamiz.",
+    "inviteText2": "Bizga yozing - tafsilotlarni muhokama qilamiz!",
     "category": "Kategoriya",
     "experience": "Tajriba",
-    "firstConsult": "Birinchi Konsultatsiya",
-    "reConsult": "Birinchi Konsultatsiya",
-    "onlineConsult": "Onlayn Konsultatsiya",
+    "firstConsult": "Birinchi konsultatsiya",
+    "reConsult": "Qayta konsultatsiya",
+    "onlineConsult": "Onlayn konsultatsiya",
     "workWith": "Kim bilan ishlaydi",
     "languages": "Tillar",
-    "workSchedule": "Ish vaqti",
-    "consultPeriod": "Konsultatsiya vaqti",
+    "workSchedule": "Ish jadvali",
     "button": "Yozilish",
+    "consultPeriod": "Konsultatsiya vaqti",
     "workSkills": "Ish ko'nikmalari"
   },
-  "topSpecialists": {
-    "title": "Haftaning Top 3 mutaxassisi",
-    "direction": "Yo‘nalish",
-    "city": "Shahar",
+  "topSpecialist": {
+    "title": "Haftaning eng yaxshi 3 ta mutaxassisi",
+    "loading": "Yuklanmoqda...",
+    "noSpecialists": "Ko'rsatish uchun mutaxassis yo'q",
+    "noName": "Ism ko'rsatilmagan",
+    "direction": "Yo'nalish",
     "experience": "Tajriba",
-    "specialization": "Mutaxassislik",
-    "prev": "Oldingi mutaxassis",
-    "next": "Keyingi mutaxassis",
-    "book": "Qabulga yozilish"
+    "years": "yil",
+    "schedule": "Ish jadvali",
+    "book": "Yozilish"
+  },
+  "specialistsTop6": {
+    "searchPlaceholder": "Mutaxassis qidirish...",
+    "title": "Qidiruv natijalari",
+    "noSpecialist": "Mutaxassis topilmadi",
+    "filter": {
+      "lang": "Til",
+      "city": "Shahar",
+      "offline": "Oflayn",
+      "special": "Maxsus"
+    }
+  },
+  "contribution": {
+    "title": "Hamkorlikka taklif qilamiz",
+    "text1": "psixologlar, psixoterapevtlar, psixiatrlar va tashkilotlar. Ish, targ'ib va qo'llab-quvvatlash uchun qulay platformani taklif qilamiz",
+    "text2": "Bizga yozing - tafsilotlarni muhokama qilamiz!",
+    "imgAlt": "O'zingizni biling testi"
   },
   "contact": {
-    "title": "O‘zingizni qo‘shing yoki hamkor bo‘ling",
-    "aboutPlaceholder": "O‘zingiz haqingizda...",
+    "title": "O'zingizni qo'shing yoki hamkor bo'ling",
+    "aboutPlaceholder": "O'zingiz haqingizda...",
     "fioPlaceholder": "F.I.O",
     "phonePlaceholder": "Telefon raqami",
     "send": "Yuborish",
@@ -226,28 +273,79 @@
   "communityCard": {
     "city": "Shahar",
     "format": "Format",
-    "main": "Asosiy yo‘nalishlar",
-    "join": "Qo‘shilish"
+    "main": "Asosiy",
+    "join": "Qo'shilish"
   },
   "about-page": {
-    "title": "Biz Haqimizda",
-    "description": "Bizning loyihamiz ruhiy salomatlik bo'yicha mutaxassislarni topish uchun platformadir. Biz qulay va ishonchli qidiruvni ta'minlash orqali odamlarga malakali mutaxassislarni topishga yordam berishga intilamiz. Bizning vazifamiz yuqori sifatli mutaxassislardan foydalanish orqali odamlarning ruhiy salomatligi va farovonligini qo'llab-quvvatlashdir.",
+    "hero": {
+      "title": "Ruhiy salomatlik haqida g'amxo'rlik shifokorga borish yoki sport zaliga borish kabi norma bo'lishi kerakligiga ishonamiz",
+      "description": "Terapiya.life - O'zbekistondagi birinchi ruhiy salomatlik platformasi bo'lib, odamlarni sertifikatlangan psixologlar, psixoterapevtlar, psixiatrlar, seksologlar va murabbiylar bilan onlayn va oflayn bog'laydi."
+    },
+    "why": {
+      "title1": "Nima uchun biz ushbu loyihani yaratdik",
+      "card1": "Har to'rtinchi odam hayotida kamida bir marta psixologik inqirozga duch keladi.",
+      "card2": "Ammo 60% dan ortig'i odamlar qo'rquv, uyat yoki mutaxassislarning mavjud emasligi sababli yordam so'ramaydi.",
+      "title2": "Biz nimalarni amalga oshirdik",
+      "list": [
+        "Platformada faqat sertifikatlangan psixologlar, psixoterapevtlar, psixiatrlar va murabbiylar ishlaydi - har bir mutaxassis diplom tekshiruvi va shaxsiy suhbatdan o'tadi.",
+        "Navbatlar va uzoq kutishlarsiz onlayn va oflayn qulay yozilish tizimini yaratdik.",
+        "Xodimlarni qo'llab-quvvatlash dasturlarini yaratish uchun klinikalar, shaxsiy mutaxassislar va korporativ mijozlar bilan hamkorlik qilamiz.",
+        "Yordam so'rashga birinchi marta qaror qilgan va terapiyada qolgan yuzlab murojaatlar."
+      ]
+    },
+    "hero2": {
+      "title": "Yolg'iz o'zingiz kurashishingiz shart emas.",
+      "description": "Va endi siz ko'r-ko'rona qo'llab-quvvatlash qidirishingiz shart emas - biz buni siz uchun topdik."
+    },
+    "openToPartner": {
+      "title": "Biz hamkorlikka ochiqmiz:",
+      "items": [
+        {
+          "question": "Klinikalar va shaxsiy markazlar",
+          "answer": "Biz bemorlarning sifatli psixologik yordamga kirishini kengaytirish va ruhiy salomatlik sohasida kuchlarni birlashtirish uchun hamkorlik taklif qilamiz."
+        },
+        {
+          "question": "HR va kompaniyalar",
+          "answer": "Biz xodimlarni qo'llab-quvvatlash korporativ dasturlarini yaratamiz, stress darajasini pasaytirishga va jamoada ishtirokni oshirishga yordam beramiz."
+        },
+        {
+          "question": "Assotsiatsiyalar va ta'lim tashkilotlari",
+          "answer": "Biz kasbiy jamiyatni rivojlantirish va qo'shma loyihalar yaratish uchun o'quv markazlari va assotsiatsiyalar bilan hamkorlik qilamiz."
+        },
+        {
+          "question": "Psixologlar va psixiatrlar",
+          "answer": "Biz rivojlanish, tajriba almashish va ko'proq odamlarga yordam berishni istagan mutaxassislar bilan hamkorlikka ochiqmiz."
+        }
+      ]
+    },
+    "contact": {
+      "allClinics": "barcha klinikalar",
+      "allSpecialists": "barcha mutaxassislar",
+      "allCommunities": "barcha jamiyatlar",
+      "contactInfo": "aloqa ma'lumotlari",
+      "phone": "telefon raqami",
+      "email": "elektron pochta",
+      "address": "manzil",
+      "addressValue": "Toshkent, O'zbekiston"
+    },
+    "title": "Biz haqimizda",
+    "description": "Bizning loyihamiz - ruhiy salomatlik sohasidagi mutaxassislarni topish platformasi. Biz odamlarga malakali mutaxassislarni topishga yordam berishga, qulay va ishonchli qidiruvni ta'minlashga intilamiz. Bizning missiyamiz - sifatli mutaxassis yordamiga kirish orqali odamlarning ruhiy salomatligi va farovonligini qo'llab-quvvatlash.",
     "valuesTitle": "Bizning qadriyatlarimiz",
     "values": [
-      "Mutaxassislarning professionalligi",
-      "Maxfiylik va hurmat",
-      "Onlayn va oflayn mavjudlik",
-      "Hamjamiyat rivoji va ma’rifat"
+      "mutaxassislarning professionalizmi",
+      "maxfiylik va hurmat",
+      "onlayn va oflayn mavjudligi",
+      "jamiyatni rivojlantirish va ma'rifat"
     ],
     "articlesTitle": "📌 Maqolalar",
-    "articlesText": "Bu yerda siz loyihaning tarixini, asoschilar bilan intervyularni, shuningdek, bizning falsafamiz va missiyamizni topasiz: 'Nega biz Psychotherapy.uz ni yaratdik'.",
-    "cta": "Qabulga yozilish"
+    "articlesText": "Bu erda siz loyiha tarixini, asoschilar bilan intervyular, shuningdek, bizning falsafamiz va missiyamizni topasiz: \"Nima uchun biz Terapiya.life ni yaratdik\".",
+    "cta": "yozilish"
   },
   "common": {
     "close": "Yopish"
   },
   "test-overlay": {
-    "title": "Mini-test: Qaysi mutaxassisga murojaat qilish kerak?",
+    "title": "Mini-test \"Qaysi mutaxassisga murojaat qilish kerak?\"",
     "resultTitle": "Sizning natijangiz",
     "recommended": "Tavsiya etilgan mutaxassis",
     "results": {
@@ -258,47 +356,47 @@
       "nar": "Narkolog 🚭"
     },
     "q1": {
-      "question": "Siz uchun hozir eng muhimi nima?",
-      "a1": "His-tuyg‘ular, stress, munosabatlar",
-      "a2": "Amaliy maslahat va texnikalar olish",
-      "a3": "Tibbiy yordam yoki dori kerak bo‘lishi mumkin",
-      "a4": "Jinsiy hayot bilan bog‘liq savollar",
-      "a5": "Modda iste’moli bilan bog‘liq masalalar"
+      "question": "Hozir siz uchun nima muhimroq?",
+      "a1": "His-tuyg'ular, stress, munosabatlar",
+      "a2": "Amaliy maslahatlar va texnikalar kerak",
+      "a3": "Tibbiy yordam yoki dorilar kerak bo'lishi mumkin",
+      "a4": "Jinsiy hayotga oid savollar",
+      "a5": "Moddalarni iste'mol qilish bilan bog'liq savollar"
     },
     "q2": {
-      "question": "Bu sizga hayotda qanchalik xalaqit bermoqda?",
-      "a1": "Unchalik xalaqit bermaydi",
-      "a2": "Ishda yoki uyda muammo tug‘diradi",
-      "a3": "Juda qiyin, uddalash og‘ir",
+      "question": "Bu hayotingizga qanchalik xalaqit beradi?",
+      "a1": "Biroz xalaqit beradi",
+      "a2": "Ish/uyga xalaqit beradi",
+      "a3": "Juda xalaqit beradi, kurashish qiyin",
       "a4": "Bilmayman",
-      "a5": "Moddadan foydalanishni nazorat qilishda qiynalaman"
+      "a5": "Moddalarni iste'mol qilishni nazorat qilishda qiyinchiliklar bor"
     },
     "q3": {
-      "question": "Mutaxassisdan nimani kutyapsiz?",
-      "a1": "Suhbatlashib o‘zimni yaxshiroq tushunishni",
-      "a2": "Aniq metod va mashqlar olishni",
-      "a3": "Tibbiy yordam yoki dorilar kerakligini tekshirishni",
-      "a4": "Jinsiy hayotni tushunishni",
-      "a5": "Moddani kamaytirish yoki to‘xtatishda yordam"
+      "question": "Mutaxassisdan nima kutayapsiz?",
+      "a1": "Gapiramiz va o'zimni yaxshiroq tushunaman",
+      "a2": "Aniq usullar va mashqlar olaman",
+      "a3": "Tibbiy yordam yoki dorilar kerakligini tekshiraman",
+      "a4": "Jinsiy sohani tushunaman",
+      "a5": "Moddalarni iste'mol qilishni kamaytirish yoki to'xtatishda yordam"
     },
     "q4": {
-      "question": "Yana nimalarni o‘zingizda sezyapsiz?",
-      "a1": "Yomon uyqu, xavotir, vahima",
-      "a2": "Nizo, kuyish, prokrastinatsiya",
-      "a3": "Psixik kasallikka gumon yoki dorilarni qabul qilish tajribasi",
-      "a4": "Libido, ereksiya yoki orgazm bilan qiyinchilik",
-      "a5": "Moddadan foydalanish hayotga halaqit bermoqda"
+      "question": "O'zingizda yana nimalarni sezayapsiz?",
+      "a1": "Yomon uyqu, tashvish, vahima",
+      "a2": "Nizolar, kuchdan ketish, prokrastinatsiya",
+      "a3": "Ruhiy buzilish shubhasi yoki dorilar qabul qilish tajribasi",
+      "a4": "Libido, erektsiya, orgazm bilan bog'liq qiyinchiliklar",
+      "a5": "Moddalarni iste'mol qilish hayotga xalaqit beradi"
     }
   },
   "test-page": {
     "pageTitle": "Testlar",
-    "pageSubtitle": "Bizning veb-saytimizda siz o'zingizni, kuchli tomonlaringizni va rivojlanish sohalarini yaxshiroq tushunishga yordam beradigan tasdiqlangan psixologik testlardan o'tishingiz mumkin.",
+    "pageSubtitle": "Saytimizda o'zingizni, kuchli tomonlaringizni va rivojlanish sohalaringizni yaxshiroq tushunishga yordam beradigan tasdiqlangan psixologik testlarni topshirishingiz mumkin.",
     "startTest": "Testni boshlash",
     "startNow": "Testni boshlash"
   },
   "footer": {
-    "brand": "Psixoterapiya",
-    "description": "Biz odamlarning ruhiy salomatligini asrashlariga va malakali mutaxassislarni topishlariga yordam beramiz.",
+    "brand": "Psychotherapy",
+    "description": "Biz odamlarga ruhiy salomatligi haqida g'amxo'rlik qilishda va malakali mutaxassislarni topishda yordam beramiz.",
     "navigation": "Navigatsiya",
     "links": {
       "home": "Bosh sahifa",
@@ -308,28 +406,28 @@
       "about": "Biz haqimizda"
     },
     "contacts": "Aloqa",
-    "address": "Toshkent, O‘zbekiston",
+    "address": "Toshkent, O'zbekiston",
     "phone": "+998 77 378 63 67",
     "email": "admin@psychotherapy.uz",
     "rights": "Barcha huquqlar himoyalangan."
   },
   "session-form": {
-    "title": "Maslahat shakli",
-    "name": "To‘liq ism",
+    "title": "Konsultatsiya shakli",
+    "name": "To'liq ism",
     "phone": "Telefon",
     "email": "Elektron pochta",
     "selectedId": "Tanlangan shifokor",
-    "problem": "Muammo",
-    "chooseTime": "Vaqtni tanlang"
+    "chooseTime": "Vaqtni tanlang",
+    "problem": "Muammo"
   },
   "general": {
-    "view-more": "Ko'proq ko'rish",
-    "no-data": "Ma'lumot topilmadi",
+    "view-more": "Tafsilotlarni ko'rish",
+    "no-data": "Ma'lumot yo'q",
     "success": "Muvaffaqiyatli yuborildi",
     "adults": "Kattalar",
     "children": "Yoshlar",
     "age": "Yosh",
-    "loading": "yuklash",
+    "loading": "Yuklanmoqda",
     "error": "Xatolik yuz berdi"
   }
 }

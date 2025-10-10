@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const OpenToPartner = () => {
+    const { t } = useTranslation();
     const [openItems, setOpenItems] = useState([]);
 
     const toggleItem = (index) => {
@@ -13,20 +15,20 @@ const OpenToPartner = () => {
 
     const faqItems = [
         {
-            question: "Клиникам и частным центрам",
-            answer: "Мы предлагаем сотрудничество для расширения доступа пациентов к качественной психологической помощи и объединения усилий в области психического здоровья."
+            question: t("about-page.openToPartner.items.0.question"),
+            answer: t("about-page.openToPartner.items.0.answer"),
         },
         {
-            question: "HR и компаниям",
-            answer: "Мы создаём корпоративные программы поддержки сотрудников, помогаем снижать уровень стресса и повышать вовлечённость в команде."
+            question: t("about-page.openToPartner.items.1.question"),
+            answer: t("about-page.openToPartner.items.1.answer"),
         },
         {
-            question: "Ассоциациям и образовательным организациям",
-            answer: "Мы сотрудничаем с учебными центрами и ассоциациями, чтобы развивать профессиональное сообщество и создавать совместные проекты."
+            question: t("about-page.openToPartner.items.2.question"),
+            answer: t("about-page.openToPartner.items.2.answer"),
         },
         {
-            question: "Психологам и психиатрам",
-            answer: "Мы открыты к сотрудничеству со специалистами, которые хотят развиваться, делиться опытом и помогать большему числу людей."
+            question: t("about-page.openToPartner.items.3.question"),
+            answer: t("about-page.openToPartner.items.3.answer"),
         },
     ];
 
@@ -36,7 +38,7 @@ const OpenToPartner = () => {
                 {/* Title */}
                 <div className="text-left mb-16">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                        Мы открыты к партнёрствам:
+                        {t("about-page.openToPartner.title")}
                     </h1>
                 </div>
 
@@ -65,33 +67,33 @@ const OpenToPartner = () => {
                                         openItems.includes(index) ? "rotate-45" : "rotate-0"
                                     }`}
                                 >
-                                    <svg
-                                        width="36"
-                                        height="36"
-                                        viewBox="0 0 112 112"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <circle cx="56" cy="56" r="56" fill="#FF6AB2" />
-                                        <rect
-                                            x="54"
-                                            y="28"
-                                            width="4"
-                                            height="56"
-                                            rx="2"
-                                            fill="white"
-                                        />
-                                        <rect
-                                            x="28"
-                                            y="58"
-                                            width="4"
-                                            height="56"
-                                            rx="2"
-                                            transform="rotate(-90 28 58)"
-                                            fill="white"
-                                        />
-                                    </svg>
-                                </span>
+                  <svg
+                      width="36"
+                      height="36"
+                      viewBox="0 0 112 112"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="56" cy="56" r="56" fill="#FF6AB2" />
+                    <rect
+                        x="54"
+                        y="28"
+                        width="4"
+                        height="56"
+                        rx="2"
+                        fill="white"
+                    />
+                    <rect
+                        x="28"
+                        y="58"
+                        width="4"
+                        height="56"
+                        rx="2"
+                        transform="rotate(-90 28 58)"
+                        fill="white"
+                    />
+                  </svg>
+                </span>
                             </button>
 
                             {openItems.includes(index) && (

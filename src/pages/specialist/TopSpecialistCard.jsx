@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Slider from "react-slick";
 import { API } from "../../service/api.jsx";
+import { useTranslation } from "react-i18next";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export function TopSpecialistCard() {
+    const { t } = useTranslation();
     const [loading, setLoading] = useState(true);
     const [specialists, setSpecialists] = useState([]);
 
@@ -41,7 +43,7 @@ export function TopSpecialistCard() {
     if (loading) {
         return (
             <div className="flex justify-center items-center min-h-screen text-gray-600 text-lg">
-                Загрузка...
+                {t("topSpecialist.loading")}
             </div>
         );
     }
@@ -49,7 +51,7 @@ export function TopSpecialistCard() {
     if (!specialists.length) {
         return (
             <div className="flex justify-center items-center min-h-screen text-gray-600 text-lg">
-                Нет специалистов для отображения
+                {t("topSpecialist.noSpecialists")}
             </div>
         );
     }
@@ -71,7 +73,7 @@ export function TopSpecialistCard() {
         <section className="bg-gray-50 py-12 px-4">
             <div className="max-w-5xl mx-auto">
                 <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-12 text-center">
-                    Топ 3 специалиста недели
+                    {t("topSpecialist.title")}
                 </h2>
 
                 <Slider {...settings} nextArrow={<NextArrow />}>
@@ -84,7 +86,7 @@ export function TopSpecialistCard() {
                                     <div className="w-full h-64 md:h-auto aspect-[4/3]">
                                         <img
                                             src={`${API}/file/files/${s.imageUrl}`}
-                                            alt={s.fio || "Специалист"}
+                                            alt={s.fio || t("topSpecialist.noName")}
                                             className="w-full h-full object-cover rounded-l-2xl"
                                         />
                                     </div>
@@ -94,26 +96,35 @@ export function TopSpecialistCard() {
                                 <div className="md:w-1/2 p-6 flex flex-col justify-between">
                                     <div>
                                         <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                                            {s.fio || "Имя не указано"}
+                                            {s.fio || t("topSpecialist.noName")}
                                         </h3>
 
                                         <div className="space-y-2 mb-4 text-gray-600 text-sm sm:text-base">
                                             <p>
-                                                <span className="font-medium text-gray-400">Направление:</span> {s.directionResponse?.[0]?.direction || "—"}
+                                                <span className="font-medium text-gray-400">
+                                                    {t("topSpecialist.direction")}:
+                                                </span>{" "}
+                                                {s.directionResponse?.[0]?.direction || "—"}
                                             </p>
                                             <p>
-                                                <span className="font-medium text-gray-400">Опыт:</span> {s.experience ? `${s.experience} лет` : "—"}
+                                                <span className="font-medium text-gray-400">
+                                                    {t("topSpecialist.experience")}:
+                                                </span>{" "}
+                                                {s.experience ? `${s.experience} ${t("topSpecialist.years")}` : "—"}
                                             </p>
                                         </div>
 
                                         <p className="text-gray-700 text-sm sm:text-[15px] leading-snug">
-                                            <span className="font-medium text-gray-400">График работы:</span> {s.workSchedule || "—"}
+                                            <span className="font-medium text-gray-400">
+                                                {t("topSpecialist.schedule")}:
+                                            </span>{" "}
+                                            {s.workSchedule || "—"}
                                         </p>
                                     </div>
 
                                     <div className="mt-6 flex justify-center sm:justify-start">
                                         <button className="bg-[#F2F3A2] text-gray-800 font-semibold py-2 px-6 rounded-lg hover:bg-[#e8e97d] transition-colors">
-                                            Записаться
+                                            {t("topSpecialist.book")}
                                         </button>
                                     </div>
                                 </div>
@@ -125,4 +136,3 @@ export function TopSpecialistCard() {
         </section>
     );
 }
-

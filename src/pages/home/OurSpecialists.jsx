@@ -4,7 +4,6 @@ import axios from "axios";
 import { API } from "../../service/api.jsx";
 import Loading from "../../components/Loading.jsx";
 
-// Swiper importlari
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -39,7 +38,7 @@ const OurSpecialists = () => {
         <section className="py-16 bg-white relative">
             <div className="text-center mb-12">
                 <h1 className="text-3xl md:text-4xl font-bold text-[#545453] mb-3">
-                    {t("home-page.ourSpecialists.title") || "Наши специалисты"}
+                    {t("home-page.ourSpecialists.title")}
                 </h1>
                 <p className="text-lg md:text-xl text-[#545453]">
                     {t("home-page.ourSpecialists.subtitle") ||
