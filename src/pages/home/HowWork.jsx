@@ -1,79 +1,74 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 
 const HowWork = () => {
-    const { t } = useTranslation();
+  const steps = [
+    {
+      id: 1,
+      title: "1. Выберите специалиста",
+      text: "Посмотрите профили психологов, психотерапевтов, психиатров, сексологов и аддиктологов. Изучите опыт, подходы и отзывы, чтобы выбрать «своего» эксперта.",
+      image: "/images/home/hero/3.png",
+      bg: "bg-[#E8EBA8]",
+    },
+    {
+      id: 2,
+      title: "2. Назначьте время",
+      text: "Выберите удобный день и час в онлайн-расписании. Оплатите сессию безопасным способом и получите напоминание перед консультацией.",
+      image: "/images/home/hero/newpushti.png",
+      bg: "bg-[#F6D4D4]",
+    },
+    {
+      id: 3,
+      title: "3. Начните терапию",
+      text: "Подключайтесь к сессии из любой точки мира. Конфиденциально, безопасно и без лишнего стресса.",
+      image: "/images/home/hero/3.png",
+      bg: "bg-[#E8EBA8]",
+    },
+  ];
 
-    const helps = [
-        { id: 1, image: "/images/home/hero/1.png", bg: "bg-[#E8EBA8]" },
-        { id: 2, image: "/images/home/hero/2.png", bg: "bg-[#F2F0B0]" },
-        { id: 3, image: "/images/home/hero/3.png", bg: "bg-[#E8EBA8]" },
-        { id: 4, image: "/images/home/hero/4.png", bg: "bg-[#F6D4D4]" },
-    ];
+  return (
+    <section className="max-w-6xl mx-auto px-4 md:px-6 py-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        Как мы работаем
+      </h2>
 
-    return (
-        <section className="max-w-6xl mx-auto px-4 md:px-6 py-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-12">
-                {t("home-page.how_work.title")}
-            </h2>
+      <div className="flex flex-col gap-24 relative">
+        {steps.map((step, index) => (
+          <div
+            key={step.id}
+            className={`w-full flex flex-col relative ${
+              index % 2 === 1 ? "items-end" : "items-start"
+            }`}
+          >
+            <div
+              className={`
+                relative w-full md:w-[48%] rounded-[32px] shadow-lg overflow-hidden
+                p-8 transition-transform duration-300 hover:scale-[1.02]
+                ${step.bg}
+              `}
+            >
+         
+              <div
+                className="absolute inset-0 bg-no-repeat bg-right bg-contain opacity-100"
+                style={{ backgroundImage: `url(${step.image})` }}
+              ></div>
 
-            <div className="flex flex-col gap-8">
-                <div
-                    className={`flex flex-col md:flex-row items-center justify-between rounded-3xl ${helps[0].bg} shadow-sm p-6 md:p-10`}
-                >
-                    <div className="md:w-2/3 text-center md:text-left">
-                        <h2 className="text-gray-800 text-2xl md:text-3xl font-bold mb-4">
-                            {t("home-page.how_work.step1_title")}
-                        </h2>
-                        <p className="text-gray-700 font-medium leading-relaxed">
-                            {t("home-page.how_work.step1_desc")}
-                        </p>
-                    </div>
-                    <img
-                        src={helps[0].image}
-                        alt="step1"
-                        className="w-48 md:w-64 lg:w-72 mt-6 md:mt-0 object-contain"
-                    />
-                </div>
-
-                <div
-                    className={`flex flex-col md:flex-row-reverse items-center justify-between rounded-3xl ${helps[1].bg} shadow-sm p-6 md:p-10`}
-                >
-                    <div className="md:w-2/3 text-center md:text-left">
-                        <h2 className="text-gray-800 text-2xl md:text-3xl font-bold mb-4">
-                            {t("home-page.how_work.step2_title")}
-                        </h2>
-                        <p className="text-gray-700 leading-relaxed">
-                            {t("home-page.how_work.step2_desc")}
-                        </p>
-                    </div>
-                    <img
-                        src={helps[1].image}
-                        alt="step2"
-                        className="w-48 md:w-64 lg:w-72 mt-6 md:mt-0 object-contain"
-                    />
-                </div>
-
-                <div
-                    className={`flex flex-col md:flex-row items-center justify-between rounded-3xl ${helps[2].bg} shadow-sm p-6 md:p-10`}
-                >
-                    <div className="md:w-2/3 text-center md:text-left">
-                        <h2 className="text-gray-800 text-2xl md:text-3xl font-bold mb-4">
-                            {t("home-page.how_work.step3_title")}
-                        </h2>
-                        <p className="text-gray-700 leading-relaxed">
-                            {t("home-page.how_work.step3_desc")}
-                        </p>
-                    </div>
-                    <img
-                        src={helps[2].image}
-                        alt="step3"
-                        className="w-48 md:w-64 lg:w-72 mt-6 md:mt-0 object-contain"
-                    />
-                </div>
+             
+              <div className="relative z-10 md:w-2/3">
+                <h3 className="text-gray-800 text-2xl md:text-3xl font-bold mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+                  {step.text}
+                </p>
+              </div>
             </div>
-        </section>
-    );
+
+           
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default HowWork;

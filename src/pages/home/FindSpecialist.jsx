@@ -12,18 +12,18 @@ const FindSpecialist = () => {
             </h2>
 
             <div className="flex flex-col items-center gap-4">
-                <div className="flex bg-[#E0E6A2] rounded-lg overflow-hidden w-full max-w-md shadow-sm">
+                <div className="flex bg-[#9BAB4B] rounded-md pl-[.9px] p-[.5px] overflow-hidden w-full max-w-md shadow-sm">
                     <button
-                        className={`flex-1 py-3 font-medium transition ${
-                            !forTwo ? "bg-white text-black" : "text-gray-700"
+                        className={`flex-1 py-1 rounded-md font-medium transition ${
+                            !forTwo ? "bg-white text-black" : "text-white"
                         }`}
                         onClick={() => setForTwo(false)}
                     >
                         {t("home-page.hero.count") || "для себя"}
                     </button>
                     <button
-                        className={`flex-1 py-3 font-medium transition ${
-                            forTwo ? "bg-white text-black" : "text-gray-700"
+                        className={`flex-1 py-3 rounded-md font-medium transition ${
+                            forTwo ? "bg-white text-black" : "text-white"
                         }`}
                         onClick={() => setForTwo(true)}
                     >
@@ -31,7 +31,7 @@ const FindSpecialist = () => {
                     </button>
                 </div>
 
-                <button className="w-full max-w-md py-3 bg-[#BFD76F] hover:bg-[#a8c55d] text-white font-semibold rounded-lg transition">
+                <button className="w-full max-w-md py-3 bg-[#9BAB4B] hover:bg-[#a8c55d] text-white font-semibold rounded-lg transition">
                     {t("home-page.hero.findSpecialist") || "подобрать специалиста"}
                 </button>
             </div>
