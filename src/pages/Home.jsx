@@ -11,6 +11,8 @@ import FAQ from "./home/FAQ.jsx";
 import SpecialistsAndMission from "./home/SpecialistsAndMission.jsx";
 import HowWork from "./home/HowWork.jsx";
 import FindSpecialist from "./home/FindSpecialist.jsx";
+import Extramission from "./home/extramission.jsx";
+import NewMission from "./home/newmission.jsx";
 
 export default function Home() {
     const [showOverlay, setShowOverlay] = useState(false);
@@ -22,13 +24,15 @@ export default function Home() {
             <HeroSection setOverlay={setShowOverlay} />
             <CoolNumbers />
             <SpecialistsAndMission/>
-            <OurSpecialists />
+            <Extramission/>
+            <OurSpecialists />   
             <HowWork/>
             <TestSection />
             <FindSpecialist/>
-            <SpecialistSections hasFilter={true}/>
+            <NewMission/>
+            {/* <SpecialistSections hasFilter={true}/> */}
             <Contacts />
-            <FAQ />
+            {/* <FAQ /> */}
         </div>
     );
 }

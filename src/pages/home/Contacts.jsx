@@ -1,39 +1,62 @@
-import React from 'react'
-import { useTranslation } from "react-i18next";
+import React from 'react';
 
 const Contacts = () => {
-  const { t } = useTranslation();
+  const cards = [
+    "Как проходит онлайн-консультация?",
+    "Как выбрать подходящего специалиста?",
+    "Конфиденциально ли это?",
+    "Сколько стоит консультация?",
+    "Подходит ли онлайн-терапия для серьёзных проблем?",
+    "Можно ли отменить или перенести запись?"
+  ];
 
   return (
-    <div>
-      <br />
-      <h1 className="text-center text-3xl font-bold text-[#545453]">
-        {t("home-page.contacts.title")}
-      </h1>
-      <br />
-      <h1 className="text-center text-xl font-bold text-[#545453]">
-        {t("home-page.contacts.number")}
-      </h1>
-      <br />
-      <a
-        href="tel:++998773786367"
-        className="text-2xl bg-lime-200 hover:bg-lime-300 transition-colors px-6 py-3 rounded-lg font-medium text-gray-800 max-w-96 w-full flex justify-center m-auto"
-      >
-        +998 77 378 63 67
-      </a>
-      <br />
-      <h1 className="text-center text-xl font-bold text-[#545453]">
-        {t("home-page.contact.email")}
-      </h1>
-      <br />
-      <a
-        href="mailto:admin@psychotherapy.uz"
-        className="text-2xl bg-lime-200 hover:bg-lime-300 transition-colors px-6 py-3 rounded-lg font-medium text-gray-800 max-w-96 w-full flex justify-center m-auto"
-      >
-        admin@psychotherapy.uz
-      </a>
-    </div>
-  )
-}
+    <div className="w-full flex flex-col items-center py-10">
 
-export default Contacts
+      <button className="
+        bg-[#F6F39E]
+        text-black
+        rounded-[16px]
+        w-[340px]
+        h-[55px]
+        flex
+        items-center
+        justify-center
+        text-[16px]
+        font-medium
+        mb-10
+      ">
+        записаться на первую сессию
+      </button>
+
+      <h2 className="text-[28px] font-bold text-[#0B1F33] mb-10">
+        Частые запросы
+      </h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-[90%] max-w-[1100px]">
+        {cards.map((text, idx) => (
+          <div
+            key={idx}
+            className="
+              border
+              border-[#FF6AB2]
+              rounded-[16px]
+              px-5
+              py-4
+              text-[#0B1F33]
+              text-[16px]
+              font-medium
+              text-center
+              hover:shadow-md
+              transition
+            "
+          >
+            {text}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Contacts;

@@ -56,29 +56,11 @@ export default function SpecialistsAndMission() {
                     </div>
                 </div>
 
-                <div className="relative mt-14 bg-[#FFE6E8] rounded-3xl flex flex-col md:flex-row items-center justify-between p-6 md:p-16 gap-8 shadow-sm overflow-visible">
-                    <div className="relative flex justify-center md:justify-start w-full md:w-1/2">
-                        <img
-                            src="/images/home/hero/5.png"
-                            alt="mission"
-                            className="absolute md:static -top-20 md:-top-28 w-56 md:w-80 lg:w-96 object-contain"
-                        />
-                    </div>
-
-                    <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left mt-28 md:mt-0">
-                        <h3 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900">
-                            {t("home-page.spec_mission.mission_title")}
-                        </h3>
-                        <p className="text-gray-800 text-base md:text-2xl font-semibold mb-6 leading-relaxed">
-                            {t("home-page.spec_mission.mission_desc")}
-                        </p>
-                        <button className="bg-[#FF66A8] hover:bg-[#e55594] w-full md:w-auto px-8 py-4 rounded-xl text-white font-semibold transition-all duration-200">
-                            {t("home-page.spec_mission.mission_btn")}
-                        </button>
-                    </div>
-                </div>
+              
 
             </div>
         </section>
     );
 }
+
+
