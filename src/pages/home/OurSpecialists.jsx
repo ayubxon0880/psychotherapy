@@ -1,76 +1,91 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import axios from "axios";
+import { API } from "../../service/api.jsx";
+import Loading from "../../components/Loading.jsx";
+
+// Swiper importlari
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { ChevronRight, ChevronLeft } from "lucide-react";
-import { useTranslation } from "react-i18next";
 
 const OurSpecialists = () => {
-  const { t } = useTranslation();
+    const { t } = useTranslation();
+    const [specialists, setSpecialists] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-  return (
-    <div className="m-auto relative">
-      <br />
-      <h1 className="text-center text-3xl font-bold text-[#545453]">
-        {t("home-page.ourSpecialists.title")}
-      </h1>
-      <br />
-      <h1 className="text-center text-xl font-bold text-[#545453]">
-        {t("home-page.ourSpecialists.subtitle")}
-      </h1>
-      <br /><br />
-      <Swiper
-        modules={[Navigation, Pagination]}
-        navigation={{
-          nextEl: ".specialist-next",
-          prevEl: ".specialist-prev",
-        }}
-        pagination={{
-          el: ".swiper-pagination",
-          clickable: true,
-        }}
-        spaceBetween={20}
-        slidesPerView={1}
-        className="mb-8 m-auto max-w-3xl"
-      >
-        {/* Slides */}
-        {[1, 2, 3].map((i) => (
-          <SwiperSlide
-            key={i}
-            className="text-center flex items-center flex-col gap-8 mr-0"
-          >
-            <img
-              src="/images/image16.png"
-              alt="person talking"
-              className="max-w-md"
-            />
-            <div className="text-2xl max-w-96 text-[#545453]">
-              {t("home-page.ourSpecialists.slideText")}
+    const fetchSpecialists = async () => {
+        try {
+            const res = await axios.get(`${API}/specialist/filter`, {
+                params: { page: 1, size: 3, sort: "FIO" },
+            });
+            setSpecialists(res.data.content || []);
+        } catch (error) {
+            console.error("Failed to fetch specialists:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchSpecialists();
+    }, []);
+
+    if (loading) return <Loading />;
+
+    return (
+        <section className="py-16 bg-white relative">
+            <div className="text-center mb-12">
+                <h1 className="text-3xl md:text-4xl font-bold text-[#545453] mb-3">
+                    {t("home-page.ourSpecialists.title") || "Наши специалисты"}
+                </h1>
+                <p className="text-lg md:text-xl text-[#545453]">
+                    {t("home-page.ourSpecialists.subtitle") ||
+                        "Выберите подходящего специалиста"}
+                </p>
             </div>
-          </SwiperSlide>
-        ))}
 
-        {/* Navigation Arrows */}
-        <div className="specialist-prev absolute top-1/2 left-0 z-10 bg-white p-2 rounded-full shadow cursor-pointer -translate-y-1/2">
-          <ChevronLeft size={18} />
-        </div>
-        <div className="specialist-next absolute top-1/2 right-0 z-10 bg-white p-2 rounded-full shadow cursor-pointer -translate-y-1/2">
-          <ChevronRight size={18} />
-        </div>
-        <div className="swiper-pagination !bottom-0 relative z-20 mt-4" />
-      </Swiper>
-
-      <a
-        // href="https://t.me/psychotherapy_consultant_bot?start=8076698584"
-        href="/session-form/simplified"
-        className="text-2xl bg-lime-200 hover:bg-lime-300 transition-colors px-6 py-3 rounded-lg font-medium text-gray-800 max-w-96 w-full flex justify-center m-auto"
-      >
-        {t("home-page.ourSpecialists.button")}
-      </a>
-    </div>
-  );
+            <div className="max-w-6xl mx-auto px-4">
+                <Swiper
+                    modules={[Navigation, Pagination, Autoplay]}
+                    spaceBetween={30}
+                    slidesPerView={3}
+                    loop={true}
+                    navigation
+                    pagination={{ clickable: true }}
+                    autoplay={{ delay: 3000 }}
+                    breakpoints={{
+                        0: { slidesPerView: 1 },
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 },
+                    }}
+                >
+                    {specialists.map((spec, index) => (
+                        <SwiperSlide key={index}>
+                            <div className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                                <div className="h-64 w-full overflow-hidden">
+                                    <img
+                                        src={`${API}/file/files/` + spec.imageUrl}
+                                        alt={spec.fio}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div className="p-4 text-center">
+                                    <h2 className="font-semibold text-gray-800">
+                                        {spec.fio}
+                                    </h2>
+                                    <p className="text-gray-500 mt-1">{spec.fio}</p>
+                                </div>
+                            </div>
+                            <br/>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+        </section>
+    );
 };
 
 export default OurSpecialists;

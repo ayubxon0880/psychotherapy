@@ -181,7 +181,7 @@ export const SpecialistSections = ({ hasFilter, count }) => {
                                 {s.directionResponse?.map(it => it.direction + " ")}
                             </p>
                             <p className="text-sm">{s.category}</p>
-                            <p className="text-sm">Exp: {s.experience}</p>
+                            <p className="text-sm">{t("home-page.specialist-section.experience")}: {s.experience}</p>
                         </Link>
                     ))}
                 </div>
