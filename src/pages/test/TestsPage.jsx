@@ -1,5 +1,5 @@
 import {useTranslation} from "react-i18next";
-import {TESTS_ENG, TESTS_RU, TESTS_UZ} from "../data/TESTS_UZ.js";
+import {TESTS_ENG, TESTS_RU, TESTS_UZ} from "../../data/TESTS_UZ.js";
 import {useEffect, useState} from "react";
 
 export function TestsPage() {
@@ -47,6 +47,5 @@ export function TestsPage() {
                 </div>
             </div>
         </div>
-
     );
 }

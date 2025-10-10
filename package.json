@@ -34,6 +34,7 @@
     "react-slick": "^0.31.0",
     "react-toastify": "^10.0.5",
     "react-vertical-timeline-component": "^3.6.0",
+    "slick-carousel": "^1.8.1",
     "swiper": "^11.2.10"
   },
   "devDependencies": {
